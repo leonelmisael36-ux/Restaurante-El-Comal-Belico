@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CapaLogica
 {
-    internal class CL_Pedido
+    public class CL_Pedido
     {
     }
 }

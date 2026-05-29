@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CapaModelos
 {
-    internal class Platillo
+    public class Platillo
     {
         public int Id_Platillo { get; set; }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CapaModelos
 {
-    internal class Detalle_Pedido
+    public class Detalle_Pedido
     {
         public int Id_Detalle { get; set; }
 

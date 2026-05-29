@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CapaModelos
 {
-    internal class Categoria
+    public class Categoria
     {
         public int Id_Categoria { get; set; }
 

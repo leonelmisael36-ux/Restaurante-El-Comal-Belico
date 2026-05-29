@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CapaModelos
 {
-    internal class Telefono_Proveedor
+    public class Telefono_Proveedor
     {
         public int Id_TelefonoProveedor { get; set; }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CapaModelos
 {
-    internal class Ingredientes
+    public class Ingredientes
     {
         public int Id_Ingrediente { get; set; }
 

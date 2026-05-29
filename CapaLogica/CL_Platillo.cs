@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CapaLogica
 {
-    internal class CL_Platillo
+    public class CL_Platillo
     {
     }
 }
