@@ -12,9 +12,9 @@ namespace CapaMo
 
         public DateTime FechaPedido { get; set; }
 
-        public int Total { get; set; }
+        public decimal Total { get; set; }
 
-        public int Id_Cliente { get; set; }
+        public int? Id_Cliente { get; set; }
 
     }
 }

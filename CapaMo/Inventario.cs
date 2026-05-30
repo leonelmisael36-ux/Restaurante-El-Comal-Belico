@@ -12,9 +12,9 @@ namespace CapaMo
 
         public int Id_Ingrediente { get; set; }
 
-        public int Stock { get; set; }
+        public decimal Stock { get; set; }
 
-        public int StockMinimo { get; set; }
+        public decimal StockMinimo { get; set; }
 
         public DateTime FechaRegistro { get; set; }
 

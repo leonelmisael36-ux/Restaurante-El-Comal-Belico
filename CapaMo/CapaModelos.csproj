@@ -110,7 +110,6 @@
     <Compile Include="Inventario.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Platillo.cs" />
-    <Compile Include="ProbarConex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provee.cs" />
     <Compile Include="Proveedor.cs" />

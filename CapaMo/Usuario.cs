@@ -20,6 +20,8 @@ namespace CapaMo
 
         public string Contraseña { get; set; } = "";
 
+        public string Rol { get; set; } = ""; 
+
         public string EstadoUsuario { get; set; } = "";
     }
 }

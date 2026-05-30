@@ -14,7 +14,7 @@ namespace CapaMo
 
         public string Descripcion { get; set; } = "";
 
-        public int Precio_Venta { get; set; }
+        public decimal Precio_Venta { get; set; }
 
         public int Id_Categoria { get; set; }
 
