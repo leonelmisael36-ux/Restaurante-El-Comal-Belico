@@ -73,7 +73,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="CL_Categoria.cs" />
     <Compile Include="CL_Clientes.cs" />
     <Compile Include="CL_Correo_Clientes.cs" />
