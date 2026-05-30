@@ -154,5 +154,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{bf963cfe-1040-46a7-9bc4-9b1011d1f167}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaModelos\CapaModelos.csproj">
+      <Project>{d4d95df0-bc5e-48b7-a3e4-2d978e542afc}</Project>
+      <Name>CapaModelos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRUD\CapaDatos.csproj">
+      <Project>{7381c60f-b057-4fd9-beaf-6e0202b4d08b}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
