@@ -73,23 +73,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProbarConex.cs" />
     <Compile Include="ConexChuy.cs" />
-    <Compile Include="CL_Categoria.cs" />
-    <Compile Include="CL_Clientes.cs" />
-    <Compile Include="CL_Correo_Clientes.cs" />
-    <Compile Include="Cl_Correo_Proveedor.cs" />
-    <Compile Include="CL_Detalle_Pedido.cs" />
-    <Compile Include="CL_Detalle_Platillo.cs" />
-    <Compile Include="CL_Detalle_Proveedor.cs" />
-    <Compile Include="CL_Inventario.cs" />
-    <Compile Include="CL_Pedido.cs" />
-    <Compile Include="CL_Platillo.cs" />
-    <Compile Include="CL_Provee.cs" />
-    <Compile Include="CL_Proveedor.cs" />
-    <Compile Include="CL_Telefono_Cliente.cs" />
-    <Compile Include="CL_Telefono_Proveedor.cs" />
-    <Compile Include="CL_Usuario.cs" />
+    <Compile Include="ProbarConex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
