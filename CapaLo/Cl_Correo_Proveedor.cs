@@ -151,5 +151,20 @@ namespace CapaLogica
                 return count > 0;
             }
         }
+
+        public bool ExisteCorreoProveedor(int idCorreoProveedor)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = "SELECT 1 FROM correo_proveedor WHERE Id_CorreoProveedor = @Id LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id", idCorreoProveedor);
+
+                conexion.Open();
+
+                return cmd.ExecuteScalar() != null;
+            }
+        }
     }
 }

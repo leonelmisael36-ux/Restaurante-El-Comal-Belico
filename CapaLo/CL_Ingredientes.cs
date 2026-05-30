@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace CapaLo
 {
-    internal class CL_Ingredientes
+    public class CL_Ingredientes
     {
         public List<Ingredientes> Listar()
         {
@@ -136,6 +136,25 @@ namespace CapaLo
             }
 
             return respuesta;
+        }
+
+        public bool ExisteIngrediente(string nombre)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM ingrediente 
+                         WHERE LOWER(Nombre) = LOWER(@Nombre)";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+
+                conexion.Open();
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
+            }
         }
     }
 

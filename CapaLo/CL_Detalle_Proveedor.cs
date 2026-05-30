@@ -162,5 +162,35 @@ namespace CapaLogica
                 return count > 0;
             }
         }
+
+        public bool ExisteDuplicado(int idProveedor, int idIngrediente)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    string query = @"SELECT COUNT(*) 
+                             FROM detalle_proveedor 
+                             WHERE Id_Proveedor = @IdProveedor 
+                             AND Id_Ingrediente = @IdIngrediente";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                    cmd.Parameters.AddWithValue("@IdProveedor", idProveedor);
+                    cmd.Parameters.AddWithValue("@IdIngrediente", idIngrediente);
+
+                    conexion.Open();
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+            }
+        }
     }
 }

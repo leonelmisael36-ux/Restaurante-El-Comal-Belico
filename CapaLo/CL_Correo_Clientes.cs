@@ -34,7 +34,7 @@ namespace CapaLogica
                             {
                                 Id_Correo = Convert.ToInt32(dr["Id_Correo"]),
                                 Id_Cliente = Convert.ToInt32(dr["Id_Cliente"]),
-                                Correo = dr["Correo"].ToString()
+                                Correo = dr["Correo"] == DBNull.Value ? "" : dr["Correo"].ToString()
                             });
                         }
                     }
@@ -112,19 +112,79 @@ namespace CapaLogica
             return respuesta;
         }
 
+        public bool Eliminar(int idCorreo)
+        {
+            bool respuesta = false;
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    string query = "DELETE FROM correo_cliente WHERE Id_Correo = @Id_Correo";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@Id_Correo", idCorreo);
+
+                    conexion.Open();
+                    respuesta = cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    respuesta = false;
+                }
+            }
+
+            return respuesta;
+        }
+
         public bool ExisteCliente(int idCliente)
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = "SELECT COUNT(*) FROM cliente WHERE Id_Cliente = @Id";
+                try
+                {
+                    string query = "SELECT COUNT(*) FROM clientes WHERE Id_Cliente = @Id";
 
-                MySqlCommand cmd = new MySqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@Id", idCliente);
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@Id", idCliente);
 
-                conexion.Open();
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    conexion.Open();
 
-                return count > 0;
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        public bool ExisteCorreo(int idCorreo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    string query = "SELECT 1 FROM correo_cliente WHERE Id_Correo = @Id LIMIT 1";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@Id", idCorreo);
+
+                    conexion.Open();
+
+                    object result = cmd.ExecuteScalar();
+
+                    return result != null;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
             }
         }
 
