@@ -16,5 +16,21 @@ namespace Proyecto_Restaurante
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Conexion conexion = new Conexion();
+            bool exito = conexion.ProbarConexion();
+            if (exito)
+            {
+                MessageBox.Show("conexion exitosa");
+            } else
+            {
+                MessageBox.Show("error")
+            }
+                
+
+                    
+        }
     }
 }
