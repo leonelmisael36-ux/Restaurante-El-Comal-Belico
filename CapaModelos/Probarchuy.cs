@@ -5,21 +5,24 @@ using MySqlConnector;
 using System.Data;
 namespace CapaModelos
 {
-    public void ProbarConexion()
+    public class ProbarChuy
     {
-        
-        Conexion conexion = new Conexion();
-
-        using (MySqlConnection conn = conexion.ObtenerConexion())
+        public void ProbarConexion()
         {
-            try
+
+            Conexion conexion = new Conexion();
+
+            using (MySqlConnection conn = conexion.ObtenerConexion())
             {
-                conn.Open();
-                Console.WriteLine("Exito en la conexión");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al conectar a la base de datos: " + ex.Message);
+                try
+                {
+                    conn.Open();
+                    Console.WriteLine("Exito en la conexión");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al conectar a la base de datos: " + ex.Message);
+                }
             }
         }
     }
