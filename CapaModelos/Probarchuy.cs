@@ -1,21 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MySql.Data.MySqlClient;
-
+using MySqlConnector;
+using System.Data;
+using System.Windows.Forms;
 namespace CapaModelos
 {
-    public bool ProbarConexion()
+    public void ProbarConexion()
     {
-        using (MysqlConnection coon = ObtenerConexion())
+        
+        Conexion conexion = new Conexion();
+
+        using (MySqlConnection conn = conexion.ObtenerConexion())
         {
             try
             {
-                coon.Open();
-                return true;
-
+                conn.Open();
+                Console.WriteLine("Exito en la conexión")
             }
-            catch {  return false; }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al conectar a la base de datos: " + ex.Message);
+            }
         }
     }
 }

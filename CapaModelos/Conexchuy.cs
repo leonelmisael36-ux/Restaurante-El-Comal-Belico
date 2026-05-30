@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using MySqlConnector;
+using System.Data;
 namespace CapaModelos
 {
-    using .Data.MySqlClient;
-
     public class Conexion
     {
-        private string connectionString = "server=localhost;database=comal;user=root;password=;";
-        public MySqlConnection ObtenerConexion()
+        private string CadenaConexion = "Server=localhost;Database=comal;User ID=root;password=;";
+        public MySqlConnection ObtenerConexion() 
         {
-            return new MySqlConnection(connectionString);
+            return new MySqlConnection(CadenaConexion);
         }
+        
+
     }
 
 }
