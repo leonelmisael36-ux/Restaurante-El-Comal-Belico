@@ -10,6 +10,10 @@ namespace CapaMo
     {
         public int Id_Proveedor { get; set; }
 
+        public string Nombre_Proveedor { get; set; }
+
         public int Id_Platillo { get; set; }
+
+        public string Nombre_Platillo { get; set; }
     }
 }

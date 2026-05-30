@@ -198,5 +198,42 @@ namespace CapaLogica
 
             return obj;
         }
+
+        public bool ExisteCorreo(string correo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = "SELECT COUNT(*) FROM usuario WHERE Correo = @Correo";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+
+                conexion.Open();
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
+            }
+        }
+
+        public bool ExisteCorreoDuplicado(int idCliente, string correo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT 1 
+                         FROM correo_cliente 
+                         WHERE Id_Cliente = @IdCliente 
+                         AND Correo = @Correo 
+                         LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@IdCliente", idCliente);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+
+                conexion.Open();
+
+                return cmd.ExecuteScalar() != null;
+            }
+        }
     }
 }

@@ -3,10 +3,76 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaMo;
+using CapaLogica;
 
 namespace CapaValidar
 {
-    internal class CV_Proveedor
+    public class CV_Proveedor
     {
+        private CL_Proveedor datos = new CL_Proveedor();
+
+        public List<Proveedor> Listar()
+        {
+            return datos.Listar();
+        }
+
+        public bool Registrar(Proveedor obj, out string mensaje)
+        {
+            mensaje = "";
+
+            if (string.IsNullOrWhiteSpace(obj.NombreEmpresa))
+                mensaje += "El nombre de la empresa es obligatorio\n";
+
+            if (string.IsNullOrWhiteSpace(obj.EstadoProveedor))
+                mensaje += "El estado del proveedor es obligatorio\n";
+
+            if (!string.IsNullOrWhiteSpace(obj.CPPr) && obj.CPPr.Length > 10)
+                mensaje += "El código postal es demasiado largo\n";
+
+            if (mensaje != "")
+                return false;
+
+            obj.EstadoProveedor = obj.EstadoProveedor.Trim();
+
+            return datos.Registrar(obj);
+        }
+
+        public bool Editar(Proveedor obj, out string mensaje)
+        {
+            mensaje = "";
+
+            if (obj.Id_Proveedor <= 0)
+                mensaje += "ID inválido\n";
+
+            if (string.IsNullOrWhiteSpace(obj.NombreEmpresa))
+                mensaje += "El nombre de la empresa es obligatorio\n";
+
+            if (string.IsNullOrWhiteSpace(obj.EstadoProveedor))
+                mensaje += "El estado del proveedor es obligatorio\n";
+
+            if (!string.IsNullOrWhiteSpace(obj.CPPr) && obj.CPPr.Length > 10)
+                mensaje += "El código postal es demasiado largo\n";
+
+            if (mensaje != "")
+                return false;
+
+            obj.EstadoProveedor = obj.EstadoProveedor.Trim();
+
+            return datos.Editar(obj);
+        }
+
+        public bool Eliminar(int idProveedor, out string mensaje)
+        {
+            mensaje = "";
+
+            if (idProveedor <= 0)
+            {
+                mensaje = "ID inválido";
+                return false;
+            }
+
+            return datos.Eliminar(idProveedor);
+        }
     }
 }

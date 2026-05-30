@@ -19,11 +19,17 @@ namespace CapaLogica
             {
                 try
                 {
-                    string query = "SELECT * FROM provee";
+                    string query = @"
+            SELECT 
+                pr.Id_Proveedor,
+                p.Nombre_Proveedor,
+                pr.Id_Platillo,
+                pl.Nombre_Platillo
+            FROM provee pr
+            INNER JOIN proveedor p ON pr.Id_Proveedor = p.Id_Proveedor
+            INNER JOIN platillo pl ON pr.Id_Platillo = pl.Id_Platillo";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    cmd.CommandType = System.Data.CommandType.Text;
-
                     conexion.Open();
 
                     using (MySqlDataReader dr = cmd.ExecuteReader())
@@ -33,7 +39,10 @@ namespace CapaLogica
                             lista.Add(new Provee()
                             {
                                 Id_Proveedor = Convert.ToInt32(dr["Id_Proveedor"]),
-                                Id_Platillo = Convert.ToInt32(dr["Id_Platillo"])
+                                Nombre_Proveedor = dr["Nombre_Proveedor"].ToString(),
+
+                                Id_Platillo = Convert.ToInt32(dr["Id_Platillo"]),
+                                Nombre_Platillo = dr["Nombre_Platillo"].ToString()
                             });
                         }
                     }
@@ -132,6 +141,27 @@ namespace CapaLogica
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Id", idPlatillo);
+
+                conexion.Open();
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
+            }
+        }
+
+        public bool ExisteRelacion(int idProveedor, int idPlatillo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM provee 
+                         WHERE Id_Proveedor = @IdProveedor
+                         AND Id_Platillo = @IdPlatillo";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@IdProveedor", idProveedor);
+                cmd.Parameters.AddWithValue("@IdPlatillo", idPlatillo);
 
                 conexion.Open();
 
