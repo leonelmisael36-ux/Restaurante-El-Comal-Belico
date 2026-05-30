@@ -193,10 +193,6 @@
       <Project>{d4d95df0-bc5e-48b7-a3e4-2d978e542afc}</Project>
       <Name>CapaModelos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CRUD\CapaDatos.csproj">
-      <Project>{7381c60f-b057-4fd9-beaf-6e0202b4d08b}</Project>
-      <Name>CapaDatos</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
