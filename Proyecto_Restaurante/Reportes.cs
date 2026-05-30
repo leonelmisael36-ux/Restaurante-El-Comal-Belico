@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaMo;
+
 
 namespace Proyecto_Restaurante
 {
@@ -19,8 +21,8 @@ namespace Proyecto_Restaurante
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Conexion conexion = new Conexion();
-            bool exito = conexion.ProbarConexion();
+            CapaMo.ConexChuy.Conexion conexion = new CapaMo.ConexChuy.Conexion();
+            bool exito = conexion.ObtenerConexion() != null;
             if (exito)
             {
                 MessageBox.Show("conexion exitosa");

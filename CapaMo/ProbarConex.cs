@@ -9,5 +9,23 @@ namespace CapaMo
 {
     internal class ProbarConex
     {
+        public void ObtenerConexion()
+        {
+
+            ConexChuy.Conexion conexion = new ConexChuy.Conexion();
+
+            using (MySqlConnection conn = conexion.ObtenerConexion())
+            {
+                try
+                {
+                    conn.Open();
+                    Console.WriteLine("Exito en la conexión");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al conectar a la base de datos: " + ex.Message);
+                }
+            }
+        }
     }
 }
