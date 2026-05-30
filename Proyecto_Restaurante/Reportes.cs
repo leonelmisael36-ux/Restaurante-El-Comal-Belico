@@ -21,17 +21,6 @@ namespace Proyecto_Restaurante
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CapaMo.ConexChuy.Conexion conexion = new CapaMo.ConexChuy.Conexion();
-            bool exito = conexion.ObtenerConexion() != null;
-            if (exito)
-            {
-                MessageBox.Show("conexion exitosa");
-            } else
-            {
-                MessageBox.Show("error");
-            }
-                
-
                     
         }
     }
