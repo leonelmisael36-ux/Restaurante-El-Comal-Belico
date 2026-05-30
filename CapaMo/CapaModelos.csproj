@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>974c1048-3766-4c15-ac21-16f4322b7abb</ProjectGuid>
+    <ProjectGuid>{974C1048-3766-4C15-AC21-16F4322B7ABB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CapaMo</RootNamespace>
@@ -31,24 +31,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CL_Categoria.cs" />
+    <Compile Include="CL_Clientes.cs" />
+    <Compile Include="CL_Correo_Clientes.cs" />
+    <Compile Include="Cl_Correo_Proveedor.cs" />
+    <Compile Include="CL_Detalle_Pedido.cs" />
+    <Compile Include="CL_Detalle_Platillo.cs" />
+    <Compile Include="CL_Detalle_Proveedor.cs" />
+    <Compile Include="CL_Inventario.cs" />
+    <Compile Include="CL_Pedido.cs" />
+    <Compile Include="CL_Platillo.cs" />
+    <Compile Include="CL_Provee.cs" />
+    <Compile Include="CL_Proveedor.cs" />
+    <Compile Include="CL_Telefono_Cliente.cs" />
+    <Compile Include="CL_Telefono_Proveedor.cs" />
+    <Compile Include="CL_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
