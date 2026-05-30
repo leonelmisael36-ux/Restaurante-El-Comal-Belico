@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using MySqlConnector;
 using System.Data;
-using System.Windows.Forms;
 namespace CapaModelos
 {
     public void ProbarConexion()
@@ -16,7 +15,7 @@ namespace CapaModelos
             try
             {
                 conn.Open();
-                Console.WriteLine("Exito en la conexión")
+                Console.WriteLine("Exito en la conexión");
             }
             catch (Exception ex)
             {
