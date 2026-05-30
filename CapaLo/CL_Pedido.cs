@@ -162,5 +162,22 @@ namespace CapaLogica
                 return count > 0;
             }
         }
+
+        public decimal CalcularTotal(int idPedido)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT IFNULL(SUM(Subtotal),0)
+                         FROM detalle_pedido
+                         WHERE Id_Pedido = @Id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id", idPedido);
+
+                conexion.Open();
+
+                return Convert.ToDecimal(cmd.ExecuteScalar());
+            }
+        }
     }
 }
