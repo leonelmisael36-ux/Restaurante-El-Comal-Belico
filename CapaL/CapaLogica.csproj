@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="CL_Categoria.cs" />
     <Compile Include="CL_Clientes.cs" />
     <Compile Include="CL_Correo_Clientes.cs" />
@@ -58,6 +57,16 @@
     <Compile Include="CL_Telefono_Proveedor.cs" />
     <Compile Include="CL_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatoss\CapaDatos.csproj">
+      <Project>{138b4b30-22b9-42e7-9448-1804a4252105}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaM\CapaModelos.csproj">
+      <Project>{3bd01ba5-3e37-4f76-bba9-9f3447f88a64}</Project>
+      <Name>CapaModelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
