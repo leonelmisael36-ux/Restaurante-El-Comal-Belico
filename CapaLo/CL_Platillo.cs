@@ -145,5 +145,24 @@ namespace CapaLogica
 
             return respuesta;
         }
+
+        public bool ExistePlatillo(string nombrePlatillo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*) 
+                 FROM platillo 
+                 WHERE LOWER(Nombre_Platillo) = LOWER(@Nombre)";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Nombre_Platillo", nombrePlatillo);
+
+                conexion.Open();
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
+            }
+        }
     }
 }

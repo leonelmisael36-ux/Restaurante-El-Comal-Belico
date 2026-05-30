@@ -11,32 +11,30 @@ namespace CapaValidar
 {
     public class CV_Ingredientes
     {
-        private CL_Detalle_Proveedor datos = new CL_Detalle_Proveedor();
+        private CL_Ingredientes datos = new CL_Ingredientes();
 
-        public List<Detalle_Proveedor> Listar()
+        public List<Ingredientes> Listar()
         {
             return datos.Listar();
         }
 
-        public bool Registrar(Detalle_Proveedor obj, out string mensaje)
+        public bool Registrar(Ingredientes obj, out string mensaje)
         {
             mensaje = "";
 
-            if (obj.Id_Proveedor <= 0)
-                mensaje += "El proveedor es obligatorio\n";
-            else if (!datos.ExisteProveedor(obj.Id_Proveedor))
-                mensaje += "El proveedor no existe\n";
+            if (string.IsNullOrWhiteSpace(obj.Nombre))
+                mensaje += "El nombre del ingrediente es obligatorio\n";
 
-            if (obj.Id_Ingrediente <= 0)
-                mensaje += "El ingrediente es obligatorio\n";
+            if (string.IsNullOrWhiteSpace(obj.Unidad))
+                mensaje += "La unidad es obligatoria\n";
 
-            if (obj.Cantidad <= 0)
-                mensaje += "La cantidad debe ser mayor a 0\n";
+            if (mensaje != "")
+                return false;
 
-            if (obj.Fecha == default)
-                mensaje += "La fecha no es válida\n";
-            else if (datos.ExisteDuplicado(obj.Id_Proveedor, obj.Id_Ingrediente))
-                mensaje += "Este proveedor ya tiene registrado este ingrediente\n";
+            obj.Nombre = obj.Nombre.Trim();
+
+            if (datos.ExisteIngrediente(obj.Nombre))
+                mensaje += "Ya existe un ingrediente con ese nombre\n";
 
             if (mensaje != "")
                 return false;
@@ -44,28 +42,26 @@ namespace CapaValidar
             return datos.Registrar(obj);
         }
 
-        public bool Editar(Detalle_Proveedor obj, out string mensaje)
+        public bool Editar(Ingredientes obj, out string mensaje)
         {
             mensaje = "";
 
-            if (obj.Id_DetalleProveedor <= 0)
-                mensaje += "ID de detalle inválido\n";
-
-            if (obj.Id_Proveedor <= 0)
-                mensaje += "El proveedor es obligatorio\n";
-            else if (!datos.ExisteProveedor(obj.Id_Proveedor))
-                mensaje += "El proveedor no existe\n";
-
             if (obj.Id_Ingrediente <= 0)
-                mensaje += "El ingrediente es obligatorio\n";
+                mensaje += "ID de ingrediente inválido\n";
 
-            if (obj.Cantidad <= 0)
-                mensaje += "La cantidad debe ser mayor a 0\n";
+            if (string.IsNullOrWhiteSpace(obj.Nombre))
+                mensaje += "El nombre del ingrediente es obligatorio\n";
 
-            if (obj.Fecha == default)
-                mensaje += "La fecha no es válida\n";
-            else if (datos.ExisteDuplicado(obj.Id_Proveedor, obj.Id_Ingrediente))
-                mensaje += "Este proveedor ya tiene registrado este ingrediente\n";
+            if (string.IsNullOrWhiteSpace(obj.Unidad))
+                mensaje += "La unidad es obligatoria\n";
+
+            if (mensaje != "")
+                return false;
+
+            obj.Nombre = obj.Nombre.Trim();
+
+            if (datos.ExisteIngredienteEditar(obj.Id_Ingrediente, obj.Nombre))
+                mensaje += "Ya existe otro ingrediente con ese nombre\n";
 
             if (mensaje != "")
                 return false;
@@ -73,17 +69,17 @@ namespace CapaValidar
             return datos.Editar(obj);
         }
 
-        public bool Eliminar(int idDetalleProveedor, out string mensaje)
+        public bool Eliminar(int idIngrediente, out string mensaje)
         {
             mensaje = "";
 
-            if (idDetalleProveedor <= 0)
+            if (idIngrediente <= 0)
             {
                 mensaje = "ID inválido";
                 return false;
             }
 
-            return datos.Eliminar(idDetalleProveedor);
+            return datos.Eliminar(idIngrediente);
         }
     }
 }

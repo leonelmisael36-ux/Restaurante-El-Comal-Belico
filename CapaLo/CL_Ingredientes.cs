@@ -156,6 +156,27 @@ namespace CapaLo
                 return count > 0;
             }
         }
+
+        public bool ExisteIngredienteEditar(int idIngrediente, string nombre)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM ingrediente 
+                         WHERE LOWER(Nombre) = LOWER(@Nombre)
+                         AND Id_Ingrediente != @Id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Nombre", nombre);
+                cmd.Parameters.AddWithValue("@Id", idIngrediente);
+
+                conexion.Open();
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
+            }
+        }
     }
 
 }

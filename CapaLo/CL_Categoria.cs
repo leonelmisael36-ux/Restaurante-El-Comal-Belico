@@ -62,9 +62,12 @@ namespace CapaLogica
                                    (@Descripcion, @Disponible, @FechaRegistro)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                    obj.FechaRegistro = DateTime.Today;
+
                     cmd.Parameters.AddWithValue("@Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("@Disponible", obj.Disponible ? 1 : 0);
-                    cmd.Parameters.AddWithValue("@FechaRegistro", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@FechaRegistro", obj.FechaRegistro);
 
                     conexion.Open();
                     respuesta = cmd.ExecuteNonQuery() > 0;
