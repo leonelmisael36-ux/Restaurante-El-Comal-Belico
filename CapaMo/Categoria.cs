@@ -8,11 +8,11 @@ namespace CapaMo
 {
     public class Categoria
     {
-        public int Id_Categporia { get; set; }
+        public int Id_Categoria { get; set; }
 
         public string Descripcion { get; set; } = "";
 
-        public byte Disponible { get; set; } 
+        public bool Disponible { get; set; } 
 
         public DateTime FechaRegistro { get; set; }
 

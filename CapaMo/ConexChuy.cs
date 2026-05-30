@@ -11,11 +11,8 @@ namespace CapaMo
     {
         public class Conexion
         {
-            private string CadenaConexion = "Server=localhost;Database=comal;User ID=root;password=;";
-            public MySqlConnection ObtenerConexion()
-            {
-                return new MySqlConnection(CadenaConexion);
-            }
+            public static string cadena =
+                "Server=.;Database=Restaurante;Integrated Security=True;";
         }
     }
 }

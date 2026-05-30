@@ -104,7 +104,8 @@
     <Compile Include="CL_Correo_Clientes.cs" />
     <Compile Include="Cl_Correo_Proveedor.cs" />
     <Compile Include="CL_Detalle_Pedido.cs" />
-    <Compile Include="CL_Detalle_Platillo.cs" />
+    <Compile Include="CL_Ingredientes.cs" />
+    <Compile Include="CL_Tipo_Platillo.cs" />
     <Compile Include="CL_Detalle_Proveedor.cs" />
     <Compile Include="CL_Inventario.cs" />
     <Compile Include="CL_Pedido.cs" />
@@ -119,6 +120,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaMo\CapaModelos.csproj">
+      <Project>{974c1048-3766-4c15-ac21-16f4322b7abb}</Project>
+      <Name>CapaModelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica
+namespace CapaValidar
 {
-    public class CL_Detalle_Platillo
+    public class Class1
     {
     }
 }

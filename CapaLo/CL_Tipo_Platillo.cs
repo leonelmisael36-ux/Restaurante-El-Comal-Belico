@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static CapaMo.ConexChuy;
-using CapaMo;
-using MySql.Data.MySqlClient;
 
 namespace CapaLogica
 {
-    public class CL_Inventario
+    public class CL_Tipo_Platillo
     {
     }
 }
