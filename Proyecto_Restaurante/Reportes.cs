@@ -26,7 +26,7 @@ namespace Proyecto_Restaurante
                 MessageBox.Show("conexion exitosa");
             } else
             {
-                MessageBox.Show("error")
+                MessageBox.Show("error");
             }
                 
 
