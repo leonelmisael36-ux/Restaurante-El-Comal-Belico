@@ -34,6 +34,8 @@ namespace CapaValidar
 
                 if (!obj.Correo.Contains("@") || !obj.Correo.Contains("."))
                     mensaje += "Formato de correo inválido\n";
+                else if (datos.ExisteCorreoProveedorDuplicado(obj.Id_Proveedor, obj.Correo))
+                    mensaje += "Este proveedor ya tiene este correo registrado\n";
             }
 
             if (mensaje != "")
@@ -65,6 +67,8 @@ namespace CapaValidar
 
                 if (!obj.Correo.Contains("@") || !obj.Correo.Contains("."))
                     mensaje += "Formato de correo inválido\n";
+                else if (datos.ExisteCorreoProveedorEditar(obj.Id_CorreoProveedor, obj.Id_Proveedor, obj.Correo))
+                    mensaje += "Este proveedor ya tiene este correo registrado\n";
             }
 
             if (mensaje != "")

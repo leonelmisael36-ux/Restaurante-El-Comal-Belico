@@ -210,25 +210,18 @@ namespace CapaLogica
 
                 conexion.Open();
 
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                return count > 0;
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
             }
         }
 
-        public bool ExisteCorreoDuplicado(int idCliente, string correo)
+        public bool ExisteUsuario(int idUsuario)
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = @"SELECT 1 
-                         FROM correo_cliente 
-                         WHERE Id_Cliente = @IdCliente 
-                         AND Correo = @Correo 
-                         LIMIT 1";
+                string query = "SELECT 1 FROM usuario WHERE Id_Usuario = @Id LIMIT 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@IdCliente", idCliente);
-                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@Id", idUsuario);
 
                 conexion.Open();
 

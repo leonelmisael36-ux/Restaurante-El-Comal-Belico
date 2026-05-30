@@ -142,24 +142,34 @@ namespace CapaLogica
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                try
-                {
-                    string query = "SELECT COUNT(*) FROM clientes WHERE Id_Cliente = @Id";
+                string query = "SELECT 1 FROM cliente WHERE Id_Cliente = @Id LIMIT 1";
 
-                    MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    cmd.Parameters.AddWithValue("@Id", idCliente);
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id", idCliente);
 
-                    conexion.Open();
+                conexion.Open();
 
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return cmd.ExecuteScalar() != null;
+            }
+        }
 
-                    return count > 0;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    return false;
-                }
+        public bool ExisteCorreoDuplicado(int idCliente, string correo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT 1 
+                         FROM correo_cliente 
+                         WHERE Id_Cliente = @IdCliente 
+                         AND Correo = @Correo 
+                         LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@IdCliente", idCliente);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+
+                conexion.Open();
+
+                return cmd.ExecuteScalar() != null;
             }
         }
 
@@ -167,24 +177,38 @@ namespace CapaLogica
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                try
-                {
-                    string query = "SELECT 1 FROM correo_cliente WHERE Id_Correo = @Id LIMIT 1";
+                string query = @"SELECT 1 
+                         FROM correo_cliente 
+                         WHERE Id_Correo = @Id 
+                         LIMIT 1";
 
-                    MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    cmd.Parameters.AddWithValue("@Id", idCorreo);
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id", idCorreo);
 
-                    conexion.Open();
+                conexion.Open();
 
-                    object result = cmd.ExecuteScalar();
+                return cmd.ExecuteScalar() != null;
+            }
+        }
 
-                    return result != null;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    return false;
-                }
+        public bool ExisteCorreoDuplicadoEditar(int idCorreo, int idCliente, string correo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT 1 
+                         FROM correo_cliente 
+                         WHERE Id_Cliente = @IdCliente 
+                         AND Correo = @Correo
+                         AND Id_Correo <> @IdCorreo
+                         LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@IdCliente", idCliente);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@IdCorreo", idCorreo);
+
+                conexion.Open();
+                return cmd.ExecuteScalar() != null;
             }
         }
 

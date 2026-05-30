@@ -17,7 +17,6 @@ namespace CapaValidar
             return datos.Listar();
         }
 
-
         public bool Registrar(Correo_Cliente obj, out string mensaje)
         {
             mensaje = "";
@@ -29,9 +28,15 @@ namespace CapaValidar
 
             if (string.IsNullOrWhiteSpace(obj.Correo))
                 mensaje += "El correo es obligatorio\n";
+            else
+            {
+                obj.Correo = obj.Correo.Trim();
 
-            else if (!obj.Correo.Contains("@") || !obj.Correo.Contains("."))
-                mensaje += "Formato de correo inválido\n";
+                if (!obj.Correo.Contains("@") || !obj.Correo.Contains("."))
+                    mensaje += "Formato de correo inválido\n";
+                else if (datos.ExisteCorreoDuplicado(obj.Id_Cliente, obj.Correo))
+                    mensaje += "Este cliente ya tiene este correo registrado\n";
+            }
 
             if (mensaje != "")
                 return false;
@@ -61,7 +66,9 @@ namespace CapaValidar
                 obj.Correo = obj.Correo.Trim();
 
                 if (!obj.Correo.Contains("@") || !obj.Correo.Contains("."))
-                    mensaje += "El correo no es válido\n";
+                    mensaje += "Formato de correo inválido\n";
+                else if (datos.ExisteCorreoDuplicadoEditar(obj.Id_Correo, obj.Id_Cliente, obj.Correo))
+                    mensaje += "Este cliente ya tiene este correo registrado\n";
             }
 
             if (mensaje != "")

@@ -30,6 +30,18 @@ namespace CapaValidar
             if (string.IsNullOrWhiteSpace(obj.AMaterno))
                 mensaje += "El apellido materno es obligatorio\n";
 
+            if (string.IsNullOrWhiteSpace(obj.Correo))
+                mensaje += "El correo es obligatorio\n";
+            else
+            {
+                obj.Correo = obj.Correo.Trim();
+
+                if (!obj.Correo.Contains("@") || !obj.Correo.Contains("."))
+                    mensaje += "Formato de correo inválido\n";
+                else if (datos.ExisteCorreo(obj.Correo))
+                    mensaje += "Este correo ya está registrado\n";
+            }
+
             if (string.IsNullOrWhiteSpace(obj.Contraseña))
                 mensaje += "La contraseña es obligatoria\n";
 
@@ -39,20 +51,8 @@ namespace CapaValidar
             if (string.IsNullOrWhiteSpace(obj.EstadoUsuario))
                 mensaje += "El estado del usuario es obligatorio\n";
 
-            if (!string.IsNullOrWhiteSpace(obj.Correo))
-            {
-                if (datos.ExisteCorreo(obj.Correo))
-                    mensaje += "El correo ya está registrado\n";
-            }
-            else
-            {
-                mensaje += "El correo es obligatorio\n";
-            }
-
             if (mensaje != "")
                 return false;
-
-            obj.EstadoUsuario = obj.EstadoUsuario.Trim();
 
             return datos.Registrar(obj);
         }
@@ -62,7 +62,7 @@ namespace CapaValidar
             mensaje = "";
 
             if (obj.Id_Usuario <= 0)
-                mensaje += "ID de usuario inválido\n";
+                mensaje += "ID inválido\n";
 
             if (string.IsNullOrWhiteSpace(obj.Nombre_usuario))
                 mensaje += "El nombre de usuario es obligatorio\n";
@@ -73,6 +73,18 @@ namespace CapaValidar
             if (string.IsNullOrWhiteSpace(obj.AMaterno))
                 mensaje += "El apellido materno es obligatorio\n";
 
+            if (string.IsNullOrWhiteSpace(obj.Correo))
+                mensaje += "El correo es obligatorio\n";
+            else
+            {
+                obj.Correo = obj.Correo.Trim();
+
+                if (!obj.Correo.Contains("@") || !obj.Correo.Contains("."))
+                    mensaje += "Formato de correo inválido\n";
+                else if (datos.ExisteCorreo(obj.Correo))
+                    mensaje += "Este correo ya está registrado\n";
+            }
+
             if (string.IsNullOrWhiteSpace(obj.Contraseña))
                 mensaje += "La contraseña es obligatoria\n";
 
@@ -81,16 +93,6 @@ namespace CapaValidar
 
             if (string.IsNullOrWhiteSpace(obj.EstadoUsuario))
                 mensaje += "El estado del usuario es obligatorio\n";
-
-            if (!string.IsNullOrWhiteSpace(obj.Correo))
-            {
-                if (datos.ExisteCorreo(obj.Correo, obj.Id_Usuario))
-                    mensaje += "El correo ya está registrado por otro usuario\n";
-            }
-            else
-            {
-                mensaje += "El correo es obligatorio\n";
-            }
 
             if (mensaje != "")
                 return false;
@@ -108,23 +110,13 @@ namespace CapaValidar
                 return false;
             }
 
+            if (!datos.ExisteUsuario(idUsuario))
+            {
+                mensaje = "El usuario no existe";
+                return false;
+            }
+
             return datos.Eliminar(idUsuario);
-        }
-
-        public Usuario Login(string usuario, string contrasena, out string mensaje)
-        {
-            mensaje = "";
-
-            if (string.IsNullOrWhiteSpace(usuario))
-                mensaje += "El usuario es obligatorio\n";
-
-            if (string.IsNullOrWhiteSpace(contrasena))
-                mensaje += "La contraseña es obligatoria\n";
-
-            if (mensaje != "")
-                return null;
-
-            return datos.Login(usuario, contrasena);
         }
     }
 }

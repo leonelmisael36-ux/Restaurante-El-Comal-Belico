@@ -166,5 +166,47 @@ namespace CapaLogica
                 return cmd.ExecuteScalar() != null;
             }
         }
+
+        public bool ExisteCorreoProveedorEditar(int idCorreoProveedor, int idProveedor, string correo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT 1 
+                         FROM correo_proveedor
+                         WHERE Id_Proveedor = @IdProveedor
+                         AND Correo = @Correo
+                         AND Id_CorreoProveedor <> @IdCorreoProveedor
+                         LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@IdProveedor", idProveedor);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@IdCorreoProveedor", idCorreoProveedor);
+
+                conexion.Open();
+
+                return cmd.ExecuteScalar() != null;
+            }
+        }
+
+        public bool ExisteCorreoProveedorDuplicado(int idProveedor, string correo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT 1 
+                         FROM correo_proveedor 
+                         WHERE Id_Proveedor = @IdProveedor 
+                         AND Correo = @Correo 
+                         LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@IdProveedor", idProveedor);
+                cmd.Parameters.AddWithValue("@Correo", correo);
+
+                conexion.Open();
+
+                return cmd.ExecuteScalar() != null;
+            }
+        }
     }
 }
