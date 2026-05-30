@@ -161,5 +161,50 @@ namespace CapaLogica
                 return count > 0;
             }
         }
+
+        public bool AumentarStock(int idIngrediente, decimal cantidad)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    string existeQuery = @"SELECT COUNT(*) FROM inventario 
+                                   WHERE Id_Ingrediente = @Id";
+
+                    MySqlCommand cmdExiste = new MySqlCommand(existeQuery, conexion);
+                    cmdExiste.Parameters.AddWithValue("@Id", idIngrediente);
+
+                    int existe = Convert.ToInt32(cmdExiste.ExecuteScalar());
+
+                    string query;
+
+                    if (existe > 0)
+                    {
+                        query = @"UPDATE inventario
+                          SET Stock = Stock + @Cantidad
+                          WHERE Id_Ingrediente = @Id";
+                    }
+                    else
+                    {
+                        query = @"INSERT INTO inventario
+                          (Id_Ingrediente, Stock, StockMinimo, FechaRegistro)
+                          VALUES (@Id, @Cantidad, 0, CURDATE())";
+                    }
+
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@Cantidad", cantidad);
+                    cmd.Parameters.AddWithValue("@Id", idIngrediente);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+            }
+        }
     }
 }

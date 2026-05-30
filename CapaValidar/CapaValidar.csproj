@@ -49,6 +49,14 @@
     <Compile Include="CV_Detalle_Pedido.cs" />
     <Compile Include="CV_Ingredientes.cs" />
     <Compile Include="CV_Inventario.cs" />
+    <Compile Include="CV_Pedido.cs" />
+    <Compile Include="CV_Platillo.cs" />
+    <Compile Include="CV_Provee.cs" />
+    <Compile Include="CV_Proveedor.cs" />
+    <Compile Include="CV_Telefono_Cliente.cs" />
+    <Compile Include="CV_Telefono_Proveedor.cs" />
+    <Compile Include="CV_Tipo_Platillo.cs" />
+    <Compile Include="CV_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

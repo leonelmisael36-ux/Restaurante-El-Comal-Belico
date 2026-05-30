@@ -61,10 +61,12 @@ namespace CapaLogica
             {
                 try
                 {
+                    decimal subtotal = obj.Cantidad * obj.PrecioUnitario;
+
                     string query = @"INSERT INTO detalle_pedido
-                            (Id_Pedido, Id_Tipo, Cantidad, PrecioUnitario, Subtotal, FechaRegistro)
-                            VALUES
-                            (@Id_Pedido, @Id_Tipo, @Cantidad, @PrecioUnitario, @Subtotal, @FechaRegistro)";
+                    (Id_Pedido, Id_Tipo, Cantidad, PrecioUnitario, Subtotal, FechaRegistro)
+                    VALUES
+                    (@Id_Pedido, @Id_Tipo, @Cantidad, @PrecioUnitario, @Subtotal, @FechaRegistro)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
 
@@ -72,7 +74,7 @@ namespace CapaLogica
                     cmd.Parameters.AddWithValue("@Id_Tipo", obj.Id_Tipo);
                     cmd.Parameters.AddWithValue("@Cantidad", obj.Cantidad);
                     cmd.Parameters.AddWithValue("@PrecioUnitario", obj.PrecioUnitario);
-                    cmd.Parameters.AddWithValue("@Subtotal", obj.Subtotal);
+                    cmd.Parameters.AddWithValue("@Subtotal", subtotal);
                     cmd.Parameters.AddWithValue("@FechaRegistro", obj.Fecha_registro);
 
                     conexion.Open();
