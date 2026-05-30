@@ -185,16 +185,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
-      <Project>{bf963cfe-1040-46a7-9bc4-9b1011d1f167}</Project>
-      <Name>CapaLogica</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaModelos\CapaModelos.csproj">
-      <Project>{d4d95df0-bc5e-48b7-a3e4-2d978e542afc}</Project>
-      <Name>CapaModelos</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>

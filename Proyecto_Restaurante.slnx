@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="CapaDatoss/CapaDatos.csproj" Id="138b4b30-22b9-42e7-9448-1804a4252105" />
-  <Project Path="CapaLogica/CapaLogica.csproj" Id="bf963cfe-1040-46a7-9bc4-9b1011d1f167" />
-  <Project Path="CapaModelos/CapaModelos.csproj" Id="d4d95df0-bc5e-48b7-a3e4-2d978e542afc" />
+  <Project Path="CapaL/CapaLogica.csproj" Id="de6ddd61-14af-4fa2-a051-39ba0990a9ad" />
+  <Project Path="CapaM/CapaModelos.csproj" Id="3bd01ba5-3e37-4f76-bba9-9f3447f88a64" />
   <Project Path="Proyecto_Restaurante/Proyecto_Restaurante.csproj" Id="2141d050-8513-4be6-8d98-bbb7543be99f" />
 </Solution>
