@@ -149,11 +149,23 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crear_Cuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crear_Cuenta.Designer.cs">
+      <DependentUpon>Crear_Cuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Iniciar_Sesión.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Iniciar_Sesión.Designer.cs">
+      <DependentUpon>Iniciar_Sesión.cs</DependentUpon>
     </Compile>
     <Compile Include="Pantalla_Principalcs.cs">
       <SubType>Form</SubType>
