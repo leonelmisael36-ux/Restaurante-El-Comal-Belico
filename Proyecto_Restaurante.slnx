@@ -1,4 +1,16 @@
 <Solution>
+  <Folder Name="/Imagenes/">
+    <File Path="Imagenes/1eb81457-6859-4119-9567-c9234c615f06.png" />
+    <File Path="Imagenes/ac4195e9-f959-4e67-a731-ef20de244345.png" />
+    <File Path="Imagenes/Captura de pantalla 2026-05-31 123514.png" />
+    <File Path="Imagenes/Captura de pantalla 2026-05-31 123801.png" />
+    <File Path="Imagenes/Captura de pantalla 2026-05-31 123849.png" />
+    <File Path="Imagenes/Captura de pantalla 2026-05-31 123922.png" />
+    <File Path="Imagenes/Captura de pantalla 2026-05-31 124241.png" />
+    <File Path="Imagenes/Captura de pantalla 2026-05-31 124301.png" />
+    <File Path="Imagenes/Captura de pantalla 2026-05-31 124319.png" />
+    <File Path="Imagenes/Captura de pantalla 2026-05-31 124332.png" />
+  </Folder>
   <Project Path="CapaLo/CapaLogica.csproj" Id="e1dc719f-ca02-4bd1-9917-7a0962302bf0" />
   <Project Path="CapaMo/CapaModelos.csproj" Id="974c1048-3766-4c15-ac21-16f4322b7abb" />
   <Project Path="CapaValidar/CapaValidar.csproj" Id="9a02a178-658d-4dc7-9450-7990e68b6e57" />
