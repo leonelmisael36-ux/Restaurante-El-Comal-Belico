@@ -11,6 +11,7 @@
     <File Path="Imagenes/Captura de pantalla 2026-05-31 124319.png" />
     <File Path="Imagenes/Captura de pantalla 2026-05-31 124332.png" />
   </Folder>
+  <Project Path="Busqueda/Busqueda.csproj" Id="8c85c885-bc88-4992-9480-c73897db8da3" />
   <Project Path="CapaLo/CapaLogica.csproj" Id="e1dc719f-ca02-4bd1-9917-7a0962302bf0" />
   <Project Path="CapaMo/CapaModelos.csproj" Id="974c1048-3766-4c15-ac21-16f4322b7abb" />
   <Project Path="CapaValidar/CapaValidar.csproj" Id="9a02a178-658d-4dc7-9450-7990e68b6e57" />

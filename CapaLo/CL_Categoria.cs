@@ -114,32 +114,56 @@ namespace CapaLogica
             return respuesta;
         }
 
-        public bool Eliminar(int idCategoria)
-        {
-            bool respuesta = false;
 
+        public bool Existe(int idCategoria)
+        {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                try
-                {
-                    string query = @"UPDATE categoria
-                             SET Disponible = 0
-                             WHERE Id_Categoria = @Id_Categoria";
+                string query = "SELECT COUNT(*) FROM categoria WHERE Id_Categoria = @Id";
 
-                    MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    cmd.Parameters.AddWithValue("@Id_Categoria", idCategoria);
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id", idCategoria);
 
-                    conexion.Open();
-                    respuesta = cmd.ExecuteNonQuery() > 0;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    respuesta = false;
-                }
+                conexion.Open();
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return count > 0;
             }
+        }
 
-            return respuesta;
+        public bool YaExisteDescripcion(string descripcion)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = "SELECT COUNT(*) FROM categoria WHERE Descripcion = @Desc";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Desc", descripcion);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
+        public bool YaExisteDescripcionEditar(int id, string descripcion)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM categoria 
+                         WHERE Descripcion = @Desc 
+                         AND Id_Categoria <> @Id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Desc", descripcion);
+                cmd.Parameters.AddWithValue("@Id", id);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
         }
     }
 }

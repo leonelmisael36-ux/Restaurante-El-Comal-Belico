@@ -11,8 +11,7 @@ namespace CapaMo
     {
         public class Conexion
         {
-            public static string cadena =
-                "Server=.;Database=Restaurante;Integrated Security=True;";
+            public static string cadena = "server=127.0.0.1;port=3306;database=el_comal;uid=root;pwd=;";
         }
     }
 }

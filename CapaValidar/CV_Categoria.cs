@@ -24,6 +24,12 @@ namespace CapaValidar
             if (string.IsNullOrWhiteSpace(obj.Descripcion))
                 mensaje += "La descripción es obligatoria\n";
 
+            if (obj.Descripcion != null && obj.Descripcion.Trim().Length < 3)
+                mensaje += "La descripción debe tener al menos 3 caracteres\n";
+
+            if (datos.YaExisteDescripcion(obj.Descripcion))
+                mensaje += "Ya existe una categoría con esa descripción\n";
+
             if (mensaje != "")
                 return false;
 
@@ -43,23 +49,21 @@ namespace CapaValidar
             if (string.IsNullOrWhiteSpace(obj.Descripcion))
                 mensaje += "La descripción es obligatoria\n";
 
+            if (obj.Descripcion != null && obj.Descripcion.Trim().Length < 3)
+                mensaje += "La descripción debe tener al menos 3 caracteres\n";
+
+            if (!string.IsNullOrWhiteSpace(obj.Descripcion))
+            {
+                if (datos.YaExisteDescripcionEditar(obj.Id_Categoria, obj.Descripcion.Trim()))
+                    mensaje += "Ya existe otra categoría con esa descripción\n";
+            }
+
             if (mensaje != "")
                 return false;
 
             return datos.Editar(obj);
         }
 
-        public bool Eliminar(int id, out string mensaje)
-        {
-            mensaje = "";
 
-            if (id == 0)
-            {
-                mensaje = "ID inválido";
-                return false;
-            }
-
-            return datos.Eliminar(id);
-        }
     }
 }

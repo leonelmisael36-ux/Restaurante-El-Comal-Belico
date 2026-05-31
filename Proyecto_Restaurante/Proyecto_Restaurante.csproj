@@ -281,6 +281,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Busqueda\Busqueda.csproj">
+      <Project>{8c85c885-bc88-4992-9480-c73897db8da3}</Project>
+      <Name>Busqueda</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaLo\CapaLogica.csproj">
+      <Project>{e1dc719f-ca02-4bd1-9917-7a0962302bf0}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaMo\CapaModelos.csproj">
       <Project>{974c1048-3766-4c15-ac21-16f4322b7abb}</Project>
       <Name>CapaModelos</Name>
