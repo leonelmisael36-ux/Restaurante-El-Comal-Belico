@@ -34,6 +34,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources._1eb81457_6859_4119_9567_c9234c615f06;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 553);
             this.Name = "Pantalla_Principalcs";
             this.Text = "Pantalla_Principalcs";
