@@ -156,6 +156,9 @@ namespace Proyecto_Restaurante
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             MostrarPlatillos();
+
+            cmbBuscar.SelectedIndex = -1;
+            txbBuscar.Text = "";
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

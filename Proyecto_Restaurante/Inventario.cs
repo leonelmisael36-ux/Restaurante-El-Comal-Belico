@@ -263,6 +263,8 @@ namespace Proyecto_Restaurante
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             MostrarInventario();
+            cmbBuscar.SelectedIndex = -1;
+            txbBuscar.Clear();
         }
 
         private void dtgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -292,6 +294,9 @@ namespace Proyecto_Restaurante
         private void btnReiniciarIngrediente_Click(object sender, EventArgs e)
         {
             MostrarIngredientes();
+
+            cmbBuscarIngrediente.SelectedIndex = -1;
+            txtbBsucarIngrediente.Clear();
         }
 
         private void btnBuscarIngrediente_Click(object sender, EventArgs e)
@@ -339,6 +344,11 @@ namespace Proyecto_Restaurante
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

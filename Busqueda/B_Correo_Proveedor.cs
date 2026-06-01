@@ -19,7 +19,7 @@ namespace Busqueda
             {
                 string query = @"SELECT * 
                          FROM correo_proveedor 
-                         WHERE Id_Correo = @Id";
+                         WHERE Id_CorreoProveedor = @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Id", id);
@@ -32,7 +32,7 @@ namespace Busqueda
                     {
                         lista.Add(new Correo_Proveedor()
                         {
-                            Id_CorreoProveedor = Convert.ToInt32(dr["Id_Correo"]),
+                            Id_CorreoProveedor = Convert.ToInt32(dr["Id_CorreoProveedor"]),
                             Id_Proveedor = Convert.ToInt32(dr["Id_Proveedor"]),
                             Correo = dr["Correo"].ToString()
                         });
@@ -64,7 +64,7 @@ namespace Busqueda
                     {
                         lista.Add(new Correo_Proveedor()
                         {
-                            Id_CorreoProveedor = Convert.ToInt32(dr["Id_Correo"]),
+                            Id_CorreoProveedor = Convert.ToInt32(dr["Id_CorreoProveedor"]),
                             Id_Proveedor = Convert.ToInt32(dr["Id_Proveedor"]),
                             Correo = dr["Correo"].ToString()
                         });
@@ -96,7 +96,7 @@ namespace Busqueda
                     {
                         lista.Add(new Correo_Proveedor()
                         {
-                            Id_CorreoProveedor = Convert.ToInt32(dr["Id_Correo"]),
+                            Id_CorreoProveedor = Convert.ToInt32(dr["Id_CorreoProveedor"]),
                             Id_Proveedor = Convert.ToInt32(dr["Id_Proveedor"]),
                             Correo = dr["Correo"].ToString()
                         });

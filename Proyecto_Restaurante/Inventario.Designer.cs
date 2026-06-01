@@ -81,7 +81,7 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(756, 345);
+            this.btnReiniciar.Location = new System.Drawing.Point(568, 345);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciar.TabIndex = 74;
@@ -93,7 +93,7 @@
             // 
             this.txbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(815, 28);
+            this.txbBuscar.Location = new System.Drawing.Point(741, 39);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(192, 24);
             this.txbBuscar.TabIndex = 73;
@@ -103,7 +103,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Peru;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(587, 343);
+            this.btnBuscar.Location = new System.Drawing.Point(399, 343);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(128, 29);
             this.btnBuscar.TabIndex = 72;
@@ -113,20 +113,17 @@
             // 
             // cmbBuscar
             // 
-            this.cmbBuscar.BackColor = System.Drawing.Color.Sienna;
+            this.cmbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.cmbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Items.AddRange(new object[] {
             "ID",
-            "",
             "Ingrediente",
-            "",
             "Fecha",
-            "",
             "Stock",
             "Stock",
             "Minimo"});
-            this.cmbBuscar.Location = new System.Drawing.Point(615, 25);
+            this.cmbBuscar.Location = new System.Drawing.Point(541, 36);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscar.TabIndex = 71;
@@ -137,7 +134,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(473, 28);
+            this.label11.Location = new System.Drawing.Point(399, 39);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 70;
@@ -149,7 +146,7 @@
             this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCliente.Location = new System.Drawing.Point(404, 78);
             this.dtgvCliente.Name = "dtgvCliente";
-            this.dtgvCliente.Size = new System.Drawing.Size(663, 261);
+            this.dtgvCliente.Size = new System.Drawing.Size(690, 261);
             this.dtgvCliente.TabIndex = 69;
             this.dtgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellClick);
             this.dtgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellContentClick);
@@ -158,7 +155,7 @@
             // 
             this.btnReiniciarIngrediente.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarIngrediente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarIngrediente.Location = new System.Drawing.Point(741, 712);
+            this.btnReiniciarIngrediente.Location = new System.Drawing.Point(568, 722);
             this.btnReiniciarIngrediente.Name = "btnReiniciarIngrediente";
             this.btnReiniciarIngrediente.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarIngrediente.TabIndex = 80;
@@ -170,7 +167,7 @@
             // 
             this.txtbBsucarIngrediente.BackColor = System.Drawing.Color.Chocolate;
             this.txtbBsucarIngrediente.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbBsucarIngrediente.Location = new System.Drawing.Point(815, 415);
+            this.txtbBsucarIngrediente.Location = new System.Drawing.Point(741, 415);
             this.txtbBsucarIngrediente.Name = "txtbBsucarIngrediente";
             this.txtbBsucarIngrediente.Size = new System.Drawing.Size(192, 24);
             this.txtbBsucarIngrediente.TabIndex = 79;
@@ -180,7 +177,7 @@
             // 
             this.btnBuscarIngrediente.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarIngrediente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarIngrediente.Location = new System.Drawing.Point(572, 710);
+            this.btnBuscarIngrediente.Location = new System.Drawing.Point(399, 720);
             this.btnBuscarIngrediente.Name = "btnBuscarIngrediente";
             this.btnBuscarIngrediente.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarIngrediente.TabIndex = 78;
@@ -190,14 +187,14 @@
             // 
             // cmbBuscarIngrediente
             // 
-            this.cmbBuscarIngrediente.BackColor = System.Drawing.Color.Sienna;
+            this.cmbBuscarIngrediente.BackColor = System.Drawing.Color.Chocolate;
             this.cmbBuscarIngrediente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscarIngrediente.FormattingEnabled = true;
             this.cmbBuscarIngrediente.Items.AddRange(new object[] {
             "ID",
             "Nombre",
             "Unidad"});
-            this.cmbBuscarIngrediente.Location = new System.Drawing.Point(615, 412);
+            this.cmbBuscarIngrediente.Location = new System.Drawing.Point(541, 412);
             this.cmbBuscarIngrediente.Name = "cmbBuscarIngrediente";
             this.cmbBuscarIngrediente.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscarIngrediente.TabIndex = 77;
@@ -208,7 +205,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(473, 415);
+            this.label1.Location = new System.Drawing.Point(399, 415);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 21);
             this.label1.TabIndex = 76;
@@ -220,9 +217,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(404, 445);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(663, 261);
+            this.dataGridView1.Size = new System.Drawing.Size(690, 261);
             this.dataGridView1.TabIndex = 75;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnEliminar
             // 

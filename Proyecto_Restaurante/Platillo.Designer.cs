@@ -132,9 +132,9 @@
             // 
             this.txbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(837, 86);
+            this.txbBuscar.Location = new System.Drawing.Point(852, 86);
             this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(220, 24);
+            this.txbBuscar.Size = new System.Drawing.Size(205, 24);
             this.txbBuscar.TabIndex = 67;
             // 
             // btnBuscar
@@ -151,17 +151,18 @@
             // 
             // cmbBuscar
             // 
-            this.cmbBuscar.BackColor = System.Drawing.Color.Sienna;
+            this.cmbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.cmbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Items.AddRange(new object[] {
             "ID",
             "Nombre",
+            "Descripción",
             "Categoria",
             "Precio"});
             this.cmbBuscar.Location = new System.Drawing.Point(637, 83);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
+            this.cmbBuscar.Size = new System.Drawing.Size(193, 26);
             this.cmbBuscar.TabIndex = 65;
             // 
             // label11

@@ -65,10 +65,10 @@
             // txtbId_Platillo
             // 
             this.txtbId_Platillo.BackColor = System.Drawing.Color.Chocolate;
-            this.txtbId_Platillo.Font = new System.Drawing.Font("Modern No. 20", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbId_Platillo.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbId_Platillo.Location = new System.Drawing.Point(33, 271);
             this.txtbId_Platillo.Name = "txtbId_Platillo";
-            this.txtbId_Platillo.Size = new System.Drawing.Size(289, 36);
+            this.txtbId_Platillo.Size = new System.Drawing.Size(289, 30);
             this.txtbId_Platillo.TabIndex = 21;
             this.txtbId_Platillo.TextChanged += new System.EventHandler(this.txtbId_Platillo_TextChanged);
             // 
@@ -87,10 +87,10 @@
             // txtbId_Proveedor
             // 
             this.txtbId_Proveedor.BackColor = System.Drawing.Color.Chocolate;
-            this.txtbId_Proveedor.Font = new System.Drawing.Font("Modern No. 20", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbId_Proveedor.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbId_Proveedor.Location = new System.Drawing.Point(33, 146);
             this.txtbId_Proveedor.Name = "txtbId_Proveedor";
-            this.txtbId_Proveedor.Size = new System.Drawing.Size(289, 36);
+            this.txtbId_Proveedor.Size = new System.Drawing.Size(289, 30);
             this.txtbId_Proveedor.TabIndex = 19;
             this.txtbId_Proveedor.TextChanged += new System.EventHandler(this.txtbId_Proveedor_TextChanged);
             // 
@@ -109,7 +109,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(33, 524);
+            this.btnEliminar.Location = new System.Drawing.Point(63, 490);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(204, 58);
             this.btnEliminar.TabIndex = 55;
@@ -121,7 +121,7 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Peru;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(33, 455);
+            this.btnEditar.Location = new System.Drawing.Point(63, 421);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(204, 54);
             this.btnEditar.TabIndex = 54;
@@ -133,7 +133,7 @@
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Peru;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(33, 385);
+            this.btnAgregar.Location = new System.Drawing.Point(63, 351);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(204, 56);
             this.btnAgregar.TabIndex = 53;
@@ -199,14 +199,14 @@
             // 
             // cmbBuscar
             // 
-            this.cmbBuscar.BackColor = System.Drawing.Color.Sienna;
+            this.cmbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.cmbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Items.AddRange(new object[] {
-            "Id",
-            "Descripcion",
-            "Disponible",
-            "Fecha"});
+            "ID Proveedor",
+            "Nombre Proveedor",
+            "ID Ingrediente",
+            "Nombre Ingrediente"});
             this.cmbBuscar.Location = new System.Drawing.Point(558, 16);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
@@ -264,6 +264,7 @@
             this.button1.TabIndex = 93;
             this.button1.Text = "Reiniciar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
@@ -288,14 +289,14 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Sienna;
+            this.comboBox1.BackColor = System.Drawing.Color.Chocolate;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "ID",
-            "Nombre",
-            "Categoria",
-            "Precio"});
+            "Id",
+            "Descripcion",
+            "Disponible",
+            "Fecha"});
             this.comboBox1.Location = new System.Drawing.Point(558, 335);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 26);
@@ -331,6 +332,7 @@
             this.button3.TabIndex = 99;
             this.button3.Text = "Reiniciar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox2
             // 
@@ -351,17 +353,19 @@
             this.button4.TabIndex = 97;
             this.button4.Text = "Buscar";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox2
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.Sienna;
+            this.comboBox2.BackColor = System.Drawing.Color.Chocolate;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Id",
-            "Descripcion",
-            "Disponible",
-            "Fecha"});
+            "ID",
+            "Nombre",
+            "Ciudad",
+            "Estado",
+            "Estado Proveedor"});
             this.comboBox2.Location = new System.Drawing.Point(558, 667);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(182, 26);

@@ -21,5 +21,10 @@ namespace Proyecto_Restaurante
         {
 
         }
+
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

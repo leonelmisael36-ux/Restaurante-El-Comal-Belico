@@ -223,8 +223,10 @@ namespace Proyecto_Restaurante
 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
-            CL_Categoria datos = new CL_Categoria();
-            dgvCategoria.DataSource = datos.Listar();
+            MostrarCategorias();
+
+            cmbBuscar.SelectedIndex = -1;
+            textBox1.Clear();
         }
     }
 }

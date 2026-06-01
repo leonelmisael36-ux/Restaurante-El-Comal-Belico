@@ -175,7 +175,7 @@
             // 
             // cmbBuscar
             // 
-            this.cmbBuscar.BackColor = System.Drawing.Color.Sienna;
+            this.cmbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.cmbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Items.AddRange(new object[] {

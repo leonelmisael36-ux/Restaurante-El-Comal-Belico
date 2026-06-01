@@ -9,7 +9,7 @@ using static CapaMo.ConexChuy;
 
 namespace Busqueda
 {
-    internal class B_Proveedor
+    public class B_Proveedor
     {
         public List<Proveedor> BuscarPorId(int id)
         {

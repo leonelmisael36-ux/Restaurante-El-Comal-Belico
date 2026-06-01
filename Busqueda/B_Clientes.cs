@@ -19,7 +19,7 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM cliente 
+                         FROM clientes 
                          WHERE NombreC LIKE @Texto";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -57,7 +57,7 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM cliente 
+                         FROM clientes 
                          WHERE ApellidoC LIKE @Texto";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -95,7 +95,7 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM cliente 
+                         FROM clientes 
                          WHERE Ciudad LIKE @Texto";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -133,7 +133,7 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM cliente 
+                         FROM clientes 
                          WHERE Estado LIKE @Texto";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -171,7 +171,7 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM cliente 
+                         FROM clientes 
                          WHERE Id_Cliente = @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);

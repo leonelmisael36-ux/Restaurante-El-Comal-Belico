@@ -132,6 +132,7 @@
             this.btnReiniciar.TabIndex = 62;
             this.btnReiniciar.Text = "Reiniciar";
             this.btnReiniciar.UseVisualStyleBackColor = false;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // txbCliente
             // 

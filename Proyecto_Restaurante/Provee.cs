@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Prov = CapaMo.Provee;
 using Pla = CapaMo.Platillo;
-
+using Prove = CapaMo.Proveedor;
 
 
 namespace Proyecto_Restaurante
@@ -28,6 +28,8 @@ namespace Proyecto_Restaurante
         B_Provee busqueda = new B_Provee();
         CL_Platillo objPlatillo = new CL_Platillo();
         B_Platillo busquedaPlatillo = new B_Platillo();
+        CL_Proveedor objProveedor = new CL_Proveedor();
+        B_Proveedor busquedaProveedor = new B_Proveedor();
 
         private int proveedorOriginal;
         private int platilloOriginal;
@@ -56,6 +58,17 @@ namespace Proyecto_Restaurante
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.MultiSelect = false;
+        }
+
+        void MostrarProveedores()
+        {
+            dataGridView2.DataSource = objProveedor.Listar();
+
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.ReadOnly = true;
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.MultiSelect = false;
         }
 
         void Limpiar()
@@ -240,6 +253,8 @@ namespace Proyecto_Restaurante
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             MostrarProveedorIngrediente();
+            cmbBuscar.SelectedIndex = -1;
+            txbBuscar.Text = "";
         }
 
         private void Provee_Load_1(object sender, EventArgs e)
@@ -337,6 +352,73 @@ namespace Proyecto_Restaurante
             }
 
             dataGridView1.DataSource = resultado;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(comboBox1.Text))
+            {
+                MessageBox.Show("Selecciona un tipo de búsqueda");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Ingresa un valor para buscar");
+                return;
+            }
+
+            string filtro = comboBox1.Text;
+            string texto = textBox1.Text.Trim();
+
+            List<Prove> resultado = new List<Prove>();
+
+            if (filtro == "ID")
+            {
+                if (int.TryParse(texto, out int id))
+                {
+                    resultado = busquedaProveedor.BuscarPorId(id);
+                }
+                else
+                {
+                    MessageBox.Show("El ID debe ser numérico");
+                    return;
+                }
+            }
+            else if (filtro == "Nombre")
+            {
+                resultado = busquedaProveedor.BuscarPorNombre(texto);
+            }
+            else if (filtro == "Ciudad")
+            {
+                resultado = busquedaProveedor.BuscarPorCiudad(texto);
+            }
+            else if (filtro == "Estado")
+            {
+                resultado = busquedaProveedor.BuscarPorEstado(texto);
+            }
+            else if (filtro == "Estado Proveedor")
+            {
+                resultado = busquedaProveedor.BuscarPorEstadoProveedor(texto);
+            }
+
+            dataGridView1.DataSource = resultado;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MostrarProveedores();
+
+            textBox1.Text = "";
+            comboBox2.SelectedIndex = -1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MostrarPlatillos();
+
+            textBox1.Text = "";
+            comboBox1.SelectedIndex = -1;
         }
     }
 }

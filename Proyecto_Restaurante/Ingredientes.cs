@@ -194,6 +194,8 @@ namespace Proyecto_Restaurante
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             MostrarIngredientes();
+            cmbBuscar.SelectedIndex = -1;
+            txbBuscar.Clear();
         }
 
         private void dtgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)

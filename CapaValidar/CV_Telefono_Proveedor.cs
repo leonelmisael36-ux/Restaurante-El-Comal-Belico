@@ -8,7 +8,7 @@ using CapaLogica;
 
 namespace CapaValidar
 {
-    internal class CV_Telefono_Proveedor
+    public class CV_Telefono_Proveedor
     {
         private CL_Telefono_Proveedor datos = new CL_Telefono_Proveedor();
 

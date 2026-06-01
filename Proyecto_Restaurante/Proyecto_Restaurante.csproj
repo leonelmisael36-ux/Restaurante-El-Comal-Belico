@@ -149,6 +149,12 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente_Correo_Telefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente_Correo_Telefono.Designer.cs">
+      <DependentUpon>Cliente_Correo_Telefono.cs</DependentUpon>
+    </Compile>
     <Compile Include="Crear_Cuenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,12 @@
     <Compile Include="Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proveedor_Correo_Telefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor_Correo_Telefono.Designer.cs">
+      <DependentUpon>Proveedor_Correo_Telefono.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipoPlatillo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente_Correo_Telefono.resx">
+      <DependentUpon>Cliente_Correo_Telefono.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ingredientes.resx">
       <DependentUpon>Ingredientes.cs</DependentUpon>
@@ -250,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor_Correo_Telefono.resx">
+      <DependentUpon>Proveedor_Correo_Telefono.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TipoPlatillo.resx">
       <DependentUpon>TipoPlatillo.cs</DependentUpon>
