@@ -21,7 +21,8 @@ namespace Proyecto_Restaurante
         B_Detalle_Pedido busqueda = new B_Detalle_Pedido();
         B_Tipo_Platillo_Union busquedaUnion = new B_Tipo_Platillo_Union();
 
-        CL_Pedido objPedido = new CL_Pedido();
+        CV_Pedido objPedido = new CV_Pedido();
+
         public Registros_Pedidos()
         {
             InitializeComponent();
@@ -121,6 +122,9 @@ namespace Proyecto_Restaurante
             if (cvDetalle.Editar(obj, out mensaje))
             {
                 MessageBox.Show("Detalle actualizado 😄");
+
+                objPedido.ActualizarTotal(obj.Id_Pedido); 
+
                 MostrarDetalle();
                 Limpiar();
             }
@@ -160,18 +164,25 @@ namespace Proyecto_Restaurante
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(lbl_Id.Text, out int id))
+            if (!int.TryParse(lbl_Id.Text, out int idDetalle))
             {
                 MessageBox.Show("Selecciona un detalle");
                 return;
-            }
+            } 
+
+            int idPedido = Convert.ToInt32(
+                dtgvPedido.Rows[dtgvPedido.CurrentRow.Index]
+                .Cells["Id_Pedido"].Value
+            );
 
             string mensaje = "";
 
-            if (cvDetalle.Eliminar(id, out mensaje))
+            if (cvDetalle.Eliminar(idDetalle, out mensaje))
             {
                 MessageBox.Show("Eliminado 😄");
-                objPedido.ActualizarTotal(id);
+
+                objPedido.ActualizarTotal(idPedido);
+
                 MostrarDetalle();
                 Limpiar();
             }

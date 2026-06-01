@@ -75,14 +75,6 @@ namespace CapaValidar
             return datos.Eliminar(idPedido);
         }
 
-        public decimal CalcularTotal(int idPedido)
-        {
-            if (idPedido <= 0)
-                return 0;
-
-            return datos.CalcularTotal(idPedido);
-        }
-
         public bool ActualizarTotal(int idPedido)
         {
             if (idPedido <= 0)
