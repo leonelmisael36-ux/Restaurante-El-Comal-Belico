@@ -24,9 +24,6 @@ namespace CapaValidar
             if (obj.FechaPedido == default)
                 mensaje += "La fecha del pedido no es válida\n";
 
-            if (obj.Total < 0)
-                mensaje += "El total no puede ser negativo\n";
-
             if (obj.Id_Cliente.HasValue)
             {
                 if (obj.Id_Cliente <= 0)
@@ -50,9 +47,6 @@ namespace CapaValidar
 
             if (obj.FechaPedido == default)
                 mensaje += "La fecha del pedido no es válida\n";
-
-            if (obj.Total < 0)
-                mensaje += "El total no puede ser negativo\n";
 
             if (obj.Id_Cliente.HasValue)
             {
@@ -87,6 +81,14 @@ namespace CapaValidar
                 return 0;
 
             return datos.CalcularTotal(idPedido);
+        }
+
+        public bool ActualizarTotal(int idPedido)
+        {
+            if (idPedido <= 0)
+                return false;
+
+            return datos.ActualizarTotal(idPedido);
         }
     }
 }

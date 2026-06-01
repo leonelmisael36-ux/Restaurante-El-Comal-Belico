@@ -34,9 +34,6 @@ namespace CapaValidar
             if (obj.Cantidad <= 0)
                 mensaje += "La cantidad debe ser mayor a 0\n";
 
-            if (obj.PrecioUnitario <= 0)
-                mensaje += "El precio debe ser mayor a 0\n";
-
             if (mensaje != "")
                 return false;
 

@@ -16,5 +16,10 @@ namespace Proyecto_Restaurante
         {
             InitializeComponent();
         }
+
+        private void Pedidos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

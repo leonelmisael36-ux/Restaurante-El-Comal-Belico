@@ -62,16 +62,15 @@ namespace CapaLogica
                 try
                 {
                     string query = @"INSERT INTO pedido
-                            (FechaPedido, Total, Id_Cliente)
-                            VALUES
-                            (@FechaPedido, @Total, @Id_Cliente)";
+                    (FechaPedido, Id_Cliente)
+                    VALUES
+                    (@FechaPedido, @Id_Cliente)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
 
                     obj.FechaPedido = DateTime.Today;
 
                     cmd.Parameters.AddWithValue("@FechaPedido", obj.FechaPedido);
-                    cmd.Parameters.AddWithValue("@Total", obj.Total);
                     cmd.Parameters.AddWithValue("@Id_Cliente",
                         obj.Id_Cliente.HasValue ? obj.Id_Cliente.Value : (object)DBNull.Value);
 
@@ -108,7 +107,7 @@ namespace CapaLogica
                     cmd.Parameters.AddWithValue("@FechaPedido", obj.FechaPedido);
                     cmd.Parameters.AddWithValue("@Total", obj.Total);
                     cmd.Parameters.AddWithValue("@Id_Cliente",
-                        obj.Id_Cliente.HasValue ? obj.Id_Cliente : (object)DBNull.Value);
+                        obj.Id_Cliente.HasValue ? obj.Id_Cliente.Value : (object)DBNull.Value);
 
                     conexion.Open();
                     respuesta = cmd.ExecuteNonQuery() > 0;
@@ -167,9 +166,11 @@ namespace CapaLogica
 
         public decimal CalcularTotal(int idPedido)
         {
+            decimal total = 0;
+
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = @"SELECT IFNULL(SUM(Subtotal),0)
+                string query = @"SELECT SUM(Subtotal) 
                          FROM detalle_pedido
                          WHERE Id_Pedido = @Id";
 
@@ -178,7 +179,31 @@ namespace CapaLogica
 
                 conexion.Open();
 
-                return Convert.ToDecimal(cmd.ExecuteScalar());
+                object result = cmd.ExecuteScalar();
+
+                if (result != DBNull.Value && result != null)
+                    total = Convert.ToDecimal(result);
+            }
+
+            return total;
+        }
+
+        public bool ActualizarTotal(int idPedido)
+        {
+            decimal total = CalcularTotal(idPedido);
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"UPDATE pedido
+                         SET Total = @Total
+                         WHERE Id_Pedido = @Id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Total", total);
+                cmd.Parameters.AddWithValue("@Id", idPedido);
+
+                conexion.Open();
+                return cmd.ExecuteNonQuery() > 0;
             }
         }
     }

@@ -61,25 +61,33 @@ namespace CapaLogica
             {
                 try
                 {
-                    decimal subtotal = obj.Cantidad * obj.PrecioUnitario;
+                    conexion.Open();
+
+                    string queryPrecio = @"SELECT Precio_Venta 
+                                   FROM platillo 
+                                   WHERE Id_Platillo = @Id";
+
+                    MySqlCommand cmdPrecio = new MySqlCommand(queryPrecio, conexion);
+                    cmdPrecio.Parameters.AddWithValue("@Id", obj.Id_Tipo);
+
+                    decimal precioUnitario = Convert.ToDecimal(cmdPrecio.ExecuteScalar());
+
+                    decimal subtotal = obj.Cantidad * precioUnitario;
 
                     string query = @"INSERT INTO detalle_pedido
-                    (Id_Pedido, Id_Tipo, Cantidad, PrecioUnitario, Subtotal, FechaRegistro)
-                    VALUES
-                    (@Id_Pedido, @Id_Tipo, @Cantidad, @PrecioUnitario, @Subtotal, @FechaRegistro)";
+            (Id_Pedido, Id_Tipo, Cantidad, PrecioUnitario, Subtotal, FechaPedido)
+            VALUES
+            (@Id_Pedido, @Id_Tipo, @Cantidad, @PrecioUnitario, @Subtotal, @FechaPedido)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
-
-                    obj.Fecha_registro = DateTime.Today;
 
                     cmd.Parameters.AddWithValue("@Id_Pedido", obj.Id_Pedido);
                     cmd.Parameters.AddWithValue("@Id_Tipo", obj.Id_Tipo);
                     cmd.Parameters.AddWithValue("@Cantidad", obj.Cantidad);
-                    cmd.Parameters.AddWithValue("@PrecioUnitario", obj.PrecioUnitario);
+                    cmd.Parameters.AddWithValue("@PrecioUnitario", precioUnitario);
                     cmd.Parameters.AddWithValue("@Subtotal", subtotal);
-                    cmd.Parameters.AddWithValue("@FechaRegistro", obj.Fecha_registro);
+                    cmd.Parameters.AddWithValue("@FechaPedido", DateTime.Today);
 
-                    conexion.Open();
                     respuesta = cmd.ExecuteNonQuery() > 0;
                 }
                 catch (Exception ex)

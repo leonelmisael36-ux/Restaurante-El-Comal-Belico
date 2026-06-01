@@ -41,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnReiniciar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,12 +191,32 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Peru;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(743, 51);
+            this.btnBuscar.Location = new System.Drawing.Point(942, 51);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(153, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(128, 29);
             this.btnBuscar.TabIndex = 13;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Chocolate;
+            this.textBox1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(731, 56);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(192, 24);
+            this.textBox1.TabIndex = 14;
+            // 
+            // btnReiniciar
+            // 
+            this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
+            this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReiniciar.Location = new System.Drawing.Point(1076, 53);
+            this.btnReiniciar.Name = "btnReiniciar";
+            this.btnReiniciar.Size = new System.Drawing.Size(111, 30);
+            this.btnReiniciar.TabIndex = 15;
+            this.btnReiniciar.Text = "Reiniciar";
+            this.btnReiniciar.UseVisualStyleBackColor = false;
             // 
             // Categorias
             // 
@@ -203,6 +225,8 @@
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_124332;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1199, 655);
+            this.Controls.Add(this.btnReiniciar);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.label3);
@@ -242,5 +266,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnReiniciar;
     }
 }
