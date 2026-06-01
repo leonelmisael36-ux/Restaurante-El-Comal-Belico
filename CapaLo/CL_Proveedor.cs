@@ -140,30 +140,40 @@ namespace CapaLogica
             return respuesta;
         }
 
-        public bool Eliminar(int idProveedor)
+        public bool YaExisteNombre(string nombreEmpresa)
         {
-            bool respuesta = false;
-
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                try
-                {
-                    string query = "DELETE FROM proveedor WHERE Id_Proveedor = @Id_Proveedor";
+                string query = @"SELECT COUNT(*) 
+                         FROM proveedor 
+                         WHERE NombreEmpresa = @Nombre";
 
-                    MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    cmd.Parameters.AddWithValue("@Id_Proveedor", idProveedor);
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Nombre", nombreEmpresa);
 
-                    conexion.Open();
-                    respuesta = cmd.ExecuteNonQuery() > 0;
-                }
-                catch (Exception ex)
-                {
-                    Console .WriteLine(ex.Message);
-                    respuesta = false;
-                }
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
             }
+        }
 
-            return respuesta;
+        public bool YaExisteNombreEditar(int id, string nombreEmpresa)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM proveedor 
+                         WHERE NombreEmpresa = @Nombre 
+                         AND Id_Proveedor <> @Id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Nombre", nombreEmpresa);
+                cmd.Parameters.AddWithValue("@Id", id);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
         }
     }
 }
