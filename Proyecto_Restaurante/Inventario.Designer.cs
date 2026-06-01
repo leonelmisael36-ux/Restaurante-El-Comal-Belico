@@ -155,7 +155,7 @@
             // 
             this.btnReiniciarIngrediente.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarIngrediente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarIngrediente.Location = new System.Drawing.Point(568, 722);
+            this.btnReiniciarIngrediente.Location = new System.Drawing.Point(580, 712);
             this.btnReiniciarIngrediente.Name = "btnReiniciarIngrediente";
             this.btnReiniciarIngrediente.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarIngrediente.TabIndex = 80;
@@ -177,7 +177,7 @@
             // 
             this.btnBuscarIngrediente.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarIngrediente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarIngrediente.Location = new System.Drawing.Point(399, 720);
+            this.btnBuscarIngrediente.Location = new System.Drawing.Point(411, 710);
             this.btnBuscarIngrediente.Name = "btnBuscarIngrediente";
             this.btnBuscarIngrediente.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarIngrediente.TabIndex = 78;

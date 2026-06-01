@@ -105,6 +105,7 @@
     <Compile Include="B_Telefono_Cliente.cs" />
     <Compile Include="B_Telefono_Proveedor.cs" />
     <Compile Include="B_Tipo_Platillo.cs" />
+    <Compile Include="B_Tipo_Platillo_Union.cs" />
     <Compile Include="B_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

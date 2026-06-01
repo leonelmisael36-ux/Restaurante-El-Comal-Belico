@@ -170,9 +170,14 @@ namespace CapaLogica
 
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = @"SELECT SUM(Subtotal) 
-                         FROM detalle_pedido
-                         WHERE Id_Pedido = @Id";
+                string query = @"
+            SELECT SUM(dp.Cantidad * p.Precio_Venta)
+            FROM detalle_pedido dp
+            INNER JOIN tipo_platillo t 
+                ON dp.Id_Tipo = t.Id_Tipo
+            INNER JOIN platillo p 
+                ON t.Id_Platillo = p.Id_Platillo
+            WHERE dp.Id_Pedido = @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Id", idPedido);
@@ -190,6 +195,8 @@ namespace CapaLogica
 
         public bool ActualizarTotal(int idPedido)
         {
+            if (idPedido <= 0) return false;
+
             decimal total = CalcularTotal(idPedido);
 
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))

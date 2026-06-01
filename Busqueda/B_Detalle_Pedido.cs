@@ -11,6 +11,27 @@ namespace Busqueda
 {
     public class B_Detalle_Pedido
     {
+        private Detalle_Pedido Map(MySqlDataReader dr)
+        {
+            int cantidad = Convert.ToInt32(dr["Cantidad"]);
+            decimal precio = Convert.ToDecimal(dr["PrecioUnitario"]);
+
+            return new Detalle_Pedido()
+            {
+                Id_Detalle = Convert.ToInt32(dr["Id_Detalle"]),
+                Id_Pedido = Convert.ToInt32(dr["Id_Pedido"]),
+                Id_Tipo = Convert.ToInt32(dr["Id_Tipo"]),
+
+                Cantidad = cantidad,
+                PrecioUnitario = precio,
+
+                // 🔥 siempre consistente
+                Subtotal = cantidad * precio,
+
+                Fecha_registro = Convert.ToDateTime(dr["FechaRegistro"])
+            };
+        }
+
         public List<Detalle_Pedido> BuscarPorIdDetalle(int id)
         {
             List<Detalle_Pedido> lista = new List<Detalle_Pedido>();
@@ -18,8 +39,8 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM detalle_pedido 
-                         WHERE Id_Detalle = @Id";
+                             FROM detalle_pedido 
+                             WHERE Id_Detalle = @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Id", id);
@@ -29,18 +50,7 @@ namespace Busqueda
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
-                    {
-                        lista.Add(new Detalle_Pedido()
-                        {
-                            Id_Detalle = Convert.ToInt32(dr["Id_Detalle"]),
-                            Id_Pedido = Convert.ToInt32(dr["Id_Pedido"]),
-                            Id_Tipo = Convert.ToInt32(dr["Id_Tipo"]),
-                            Cantidad = Convert.ToInt32(dr["Cantidad"]),
-                            PrecioUnitario = Convert.ToDecimal(dr["PrecioUnitario"]),
-                            Subtotal = Convert.ToDecimal(dr["Subtotal"]),
-                            Fecha_registro = Convert.ToDateTime(dr["Fecha_registro"])
-                        });
-                    }
+                        lista.Add(Map(dr));
                 }
             }
 
@@ -54,8 +64,8 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM detalle_pedido 
-                         WHERE Id_Pedido = @IdPedido";
+                             FROM detalle_pedido 
+                             WHERE Id_Pedido = @IdPedido";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@IdPedido", idPedido);
@@ -65,18 +75,7 @@ namespace Busqueda
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
-                    {
-                        lista.Add(new Detalle_Pedido()
-                        {
-                            Id_Detalle = Convert.ToInt32(dr["Id_Detalle"]),
-                            Id_Pedido = Convert.ToInt32(dr["Id_Pedido"]),
-                            Id_Tipo = Convert.ToInt32(dr["Id_Tipo"]),
-                            Cantidad = Convert.ToInt32(dr["Cantidad"]),
-                            PrecioUnitario = Convert.ToDecimal(dr["PrecioUnitario"]),
-                            Subtotal = Convert.ToDecimal(dr["Subtotal"]),
-                            Fecha_registro = Convert.ToDateTime(dr["FechaRegistro"])
-                        });
-                    }
+                        lista.Add(Map(dr));
                 }
             }
 
@@ -90,8 +89,8 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM detalle_pedido 
-                         WHERE Id_Tipo = @IdTipo";
+                             FROM detalle_pedido 
+                             WHERE Id_Tipo = @IdTipo";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@IdTipo", idTipo);
@@ -101,18 +100,7 @@ namespace Busqueda
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
-                    {
-                        lista.Add(new Detalle_Pedido()
-                        {
-                            Id_Detalle = Convert.ToInt32(dr["Id_Detalle"]),
-                            Id_Pedido = Convert.ToInt32(dr["Id_Pedido"]),
-                            Id_Tipo = Convert.ToInt32(dr["Id_Tipo"]),
-                            Cantidad = Convert.ToInt32(dr["Cantidad"]),
-                            PrecioUnitario = Convert.ToDecimal(dr["PrecioUnitario"]),
-                            Subtotal = Convert.ToDecimal(dr["Subtotal"]),
-                            Fecha_registro = Convert.ToDateTime(dr["FechaRegistro"])
-                        });
-                    }
+                        lista.Add(Map(dr));
                 }
             }
 
@@ -126,8 +114,8 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT * 
-                         FROM detalle_pedido 
-                         WHERE DATE(FechaRegistro) = @Fecha";
+                             FROM detalle_pedido 
+                             WHERE DATE(FechaRegistro) = @Fecha";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Fecha", fecha.Date);
@@ -137,22 +125,12 @@ namespace Busqueda
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
                     while (dr.Read())
-                    {
-                        lista.Add(new Detalle_Pedido()
-                        {
-                            Id_Detalle = Convert.ToInt32(dr["Id_Detalle"]),
-                            Id_Pedido = Convert.ToInt32(dr["Id_Pedido"]),
-                            Id_Tipo = Convert.ToInt32(dr["Id_Tipo"]),
-                            Cantidad = Convert.ToInt32(dr["Cantidad"]),
-                            PrecioUnitario = Convert.ToDecimal(dr["PrecioUnitario"]),
-                            Subtotal = Convert.ToDecimal(dr["Subtotal"]),
-                            Fecha_registro = Convert.ToDateTime(dr["FechaRegistro"])
-                        });
-                    }
+                        lista.Add(Map(dr));
                 }
             }
 
             return lista;
         }
+
     }
 }
