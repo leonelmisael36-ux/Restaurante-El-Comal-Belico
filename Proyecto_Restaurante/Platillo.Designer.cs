@@ -36,10 +36,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnReiniciar = new System.Windows.Forms.Button();
             this.txbBuscar = new System.Windows.Forms.TextBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dtgvCliente = new System.Windows.Forms.DataGridView();
+            this.dtgvPlatillo = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -47,8 +47,9 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtbIdcategoria = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.lbl_Id = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPlatillo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,6 +72,7 @@
             this.rtxtboxDescripcion.Size = new System.Drawing.Size(298, 165);
             this.rtxtboxDescripcion.TabIndex = 2;
             this.rtxtboxDescripcion.Text = "";
+            this.rtxtboxDescripcion.TextChanged += new System.EventHandler(this.rtxtboxDescripcion_TextChanged);
             // 
             // txtbNombre
             // 
@@ -80,6 +82,7 @@
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(240, 24);
             this.txtbNombre.TabIndex = 19;
+            this.txtbNombre.TextChanged += new System.EventHandler(this.txtbNombre_TextChanged);
             // 
             // label2
             // 
@@ -117,32 +120,34 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(1246, 41);
+            this.btnReiniciar.Location = new System.Drawing.Point(1248, 86);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciar.TabIndex = 68;
             this.btnReiniciar.Text = "Reiniciar";
             this.btnReiniciar.UseVisualStyleBackColor = false;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // txbBuscar
             // 
             this.txbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(835, 41);
+            this.txbBuscar.Location = new System.Drawing.Point(837, 86);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(192, 24);
             this.txbBuscar.TabIndex = 67;
             // 
-            // btnBuscarCliente
+            // btnBuscar
             // 
-            this.btnBuscarCliente.BackColor = System.Drawing.Color.Peru;
-            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCliente.Location = new System.Drawing.Point(1077, 39);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(128, 29);
-            this.btnBuscarCliente.TabIndex = 66;
-            this.btnBuscarCliente.Text = "Buscar";
-            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscar.BackColor = System.Drawing.Color.Peru;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(1079, 84);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(128, 29);
+            this.btnBuscar.TabIndex = 66;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cmbBuscar
             // 
@@ -150,11 +155,11 @@
             this.cmbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Items.AddRange(new object[] {
-            "Id",
-            "Descripcion",
-            "Disponible",
-            "Fecha"});
-            this.cmbBuscar.Location = new System.Drawing.Point(635, 38);
+            "ID",
+            "Nombre",
+            "Categoria",
+            "Precio"});
+            this.cmbBuscar.Location = new System.Drawing.Point(637, 83);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscar.TabIndex = 65;
@@ -164,20 +169,20 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(493, 41);
+            this.label11.Location = new System.Drawing.Point(495, 86);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 64;
             this.label11.Text = "Buscar Por:";
             // 
-            // dtgvCliente
+            // dtgvPlatillo
             // 
-            this.dtgvCliente.BackgroundColor = System.Drawing.Color.RosyBrown;
-            this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCliente.Location = new System.Drawing.Point(497, 74);
-            this.dtgvCliente.Name = "dtgvCliente";
-            this.dtgvCliente.Size = new System.Drawing.Size(904, 450);
-            this.dtgvCliente.TabIndex = 63;
+            this.dtgvPlatillo.BackgroundColor = System.Drawing.Color.RosyBrown;
+            this.dtgvPlatillo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPlatillo.Location = new System.Drawing.Point(499, 119);
+            this.dtgvPlatillo.Name = "dtgvPlatillo";
+            this.dtgvPlatillo.Size = new System.Drawing.Size(904, 450);
+            this.dtgvPlatillo.TabIndex = 63;
             // 
             // btnEliminar
             // 
@@ -189,6 +194,7 @@
             this.btnEliminar.TabIndex = 80;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -200,6 +206,7 @@
             this.btnEditar.TabIndex = 79;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -211,6 +218,7 @@
             this.btnAgregar.TabIndex = 78;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnRegresar
             // 
@@ -242,6 +250,7 @@
             this.txtbIdcategoria.Name = "txtbIdcategoria";
             this.txtbIdcategoria.Size = new System.Drawing.Size(240, 24);
             this.txtbIdcategoria.TabIndex = 84;
+            this.txtbIdcategoria.TextChanged += new System.EventHandler(this.txtbIdcategoria_TextChanged);
             // 
             // label4
             // 
@@ -254,6 +263,16 @@
             this.label4.TabIndex = 83;
             this.label4.Text = "Id Categoria";
             // 
+            // lbl_Id
+            // 
+            this.lbl_Id.AutoSize = true;
+            this.lbl_Id.Location = new System.Drawing.Point(407, 76);
+            this.lbl_Id.Name = "lbl_Id";
+            this.lbl_Id.Size = new System.Drawing.Size(35, 13);
+            this.lbl_Id.TabIndex = 85;
+            this.lbl_Id.Text = "label3";
+            this.lbl_Id.Visible = false;
+            // 
             // Platillo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +280,7 @@
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_123801;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1472, 752);
+            this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.txtbIdcategoria);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalir);
@@ -270,10 +290,10 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnReiniciar);
             this.Controls.Add(this.txbBuscar);
-            this.Controls.Add(this.btnBuscarCliente);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbBuscar);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dtgvCliente);
+            this.Controls.Add(this.dtgvPlatillo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.nudPrecioVenta);
             this.Controls.Add(this.txtbNombre);
@@ -284,8 +304,9 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Platillo";
             this.Text = "Platillo";
+            this.Load += new System.EventHandler(this.Platillo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPlatillo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,10 +322,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnReiniciar;
         private System.Windows.Forms.TextBox txbBuscar;
-        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dtgvCliente;
+        private System.Windows.Forms.DataGridView dtgvPlatillo;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
@@ -312,5 +333,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtbIdcategoria;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_Id;
     }
 }

@@ -146,5 +146,39 @@ namespace Busqueda
 
             return lista;
         }
+
+        public List<Platillo> BuscarPorDescripcion(string descripcion)
+        {
+            List<Platillo> lista = new List<Platillo>();
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT * 
+                         FROM platillo 
+                         WHERE Descripcion LIKE @Descripcion";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Descripcion", "%" + descripcion + "%");
+
+                conexion.Open();
+
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Platillo()
+                        {
+                            Id_Platillo = Convert.ToInt32(dr["Id_Platillo"]),
+                            Nombre_Platillo = dr["Nombre_Platillo"].ToString(),
+                            Descripcion = dr["Descripcion"].ToString(),
+                            Precio_Venta = Convert.ToDecimal(dr["Precio_Venta"]),
+                            Id_Categoria = Convert.ToInt32(dr["Id_Categoria"])
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
     }
 }
