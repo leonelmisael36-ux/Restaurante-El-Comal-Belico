@@ -247,11 +247,17 @@
     <EmbeddedResource Include="Cliente_Correo_Telefono.resx">
       <DependentUpon>Cliente_Correo_Telefono.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Crear_Cuenta.resx">
+      <DependentUpon>Crear_Cuenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entrega_Inventario.resx">
       <DependentUpon>Entrega_Inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ingredientes.resx">
       <DependentUpon>Ingredientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Iniciar_Sesión.resx">
+      <DependentUpon>Iniciar_Sesión.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -366,6 +372,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-05-31 1238011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Iniciar sesión.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crear.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

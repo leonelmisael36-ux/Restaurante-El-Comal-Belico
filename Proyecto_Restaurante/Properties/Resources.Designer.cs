@@ -173,9 +173,29 @@ namespace Proyecto_Restaurante.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Crear {
+            get {
+                object obj = ResourceManager.GetObject("Crear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap El_comal {
             get {
                 object obj = ResourceManager.GetObject("El comal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Iniciar_sesión {
+            get {
+                object obj = ResourceManager.GetObject("Iniciar sesión", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
