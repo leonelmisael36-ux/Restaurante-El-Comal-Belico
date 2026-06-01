@@ -170,7 +170,7 @@ namespace CapaLogica
                 {
                     conexion.Open();
 
-                    string existeQuery = @"SELECT COUNT(*) FROM inventario 
+                    string existeQuery = @"SELECT COUNT(*) FROM detalle_proveedor 
                                    WHERE Id_Ingrediente = @Id";
 
                     MySqlCommand cmdExiste = new MySqlCommand(existeQuery, conexion);

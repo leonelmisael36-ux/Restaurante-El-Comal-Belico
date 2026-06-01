@@ -1,4 +1,5 @@
-﻿using CapaLogica;
+﻿using Busqueda;
+using CapaLogica;
 using CapaMo;
 using CapaValidar;
 using MySql.Data.MySqlClient;
@@ -20,6 +21,8 @@ namespace Proyecto_Restaurante
         CL_Categoria objCategoria = new CL_Categoria();
 
         CV_Categoria cvCategoria = new CV_Categoria();
+
+        B_Categoria busqueda = new B_Categoria();
 
         public Categorias()
         {
@@ -149,6 +152,79 @@ namespace Proyecto_Restaurante
         private void cmbBuscar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbBuscar.Text))
+            {
+                MessageBox.Show("Selecciona un tipo de búsqueda", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Ingresa un valor para buscar", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string filtro = cmbBuscar.Text;
+            string texto = textBox1.Text.Trim();
+
+            List<Categoria> resultado = new List<Categoria>();
+
+            if (filtro == "ID")
+            {
+                if (int.TryParse(texto, out int id))
+                    resultado = busqueda.BuscarPorId(id);
+                else
+                {
+                    MessageBox.Show("El ID debe ser numérico", "Validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            else if (filtro == "Descripción")
+            {
+                resultado = busqueda.BuscarPorDescripcion(texto);
+            }
+            else if (filtro == "Estado")
+            {
+                
+                string input = texto.ToLower().Trim();
+
+                if (input == "activo")
+                    resultado = busqueda.BuscarPorEstado(true);
+                else if (input == "inactivo")
+                    resultado = busqueda.BuscarPorEstado(false);
+                else
+                {
+                    MessageBox.Show("Escribe 'Activo' o 'Inactivo'", "Validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            else if (filtro == "Fecha")
+            {
+                if (DateTime.TryParse(texto, out DateTime fecha))
+                    resultado = busqueda.BuscarPorFecha(fecha);
+                else
+                {
+                    MessageBox.Show("Formato de fecha inválido (ej: 2026-05-31)", "Validación",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            dgvCategoria.DataSource = resultado;
+        }
+
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            CL_Categoria datos = new CL_Categoria();
+            dgvCategoria.DataSource = datos.Listar();
         }
     }
 }

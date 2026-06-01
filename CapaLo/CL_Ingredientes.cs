@@ -19,7 +19,7 @@ namespace CapaLo
             {
                 try
                 {
-                    string query = "SELECT * FROM ingrediente";
+                    string query = "SELECT * FROM ingredientes";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
                     cmd.CommandType = System.Data.CommandType.Text;
@@ -57,7 +57,7 @@ namespace CapaLo
             {
                 try
                 {
-                    string query = @"INSERT INTO ingrediente
+                    string query = @"INSERT INTO ingredientes
                             (Nombre, Unidad)
                             VALUES
                             (@Nombre, @Unidad)";
@@ -88,7 +88,7 @@ namespace CapaLo
             {
                 try
                 {
-                    string query = @"UPDATE ingrediente
+                    string query = @"UPDATE ingredientes
                             SET Nombre = @Nombre,
                                 Unidad = @Unidad
                             WHERE Id_Ingrediente = @Id_Ingrediente";
@@ -120,7 +120,7 @@ namespace CapaLo
             {
                 try
                 {
-                    string query = "DELETE FROM ingrediente WHERE Id_Ingrediente = @Id_Ingrediente";
+                    string query = "DELETE FROM ingredientes WHERE Id_Ingrediente = @Id_Ingrediente";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
                     cmd.Parameters.AddWithValue("@Id_Ingrediente", idIngrediente);
@@ -143,7 +143,7 @@ namespace CapaLo
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT COUNT(*) 
-                         FROM ingrediente 
+                         FROM ingredientes 
                          WHERE LOWER(Nombre) = LOWER(@Nombre)";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -162,7 +162,7 @@ namespace CapaLo
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT COUNT(*) 
-                         FROM ingrediente 
+                         FROM ingredientes 
                          WHERE LOWER(Nombre) = LOWER(@Nombre)
                          AND Id_Ingrediente != @Id";
 

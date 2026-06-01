@@ -16,5 +16,12 @@ namespace Proyecto_Restaurante
         {
             InitializeComponent();
         }
+
+        private void nudPrecioVenta_ValueChanged(object sender, EventArgs e)
+        {
+            nudPrecioVenta.DecimalPlaces = 2;
+            nudPrecioVenta.Minimum = 0;
+            nudPrecioVenta.Maximum = 100000;
+        }
     }
 }

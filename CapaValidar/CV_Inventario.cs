@@ -53,12 +53,6 @@ namespace CapaValidar
             else if (!datos.ExisteIngrediente(obj.Id_Ingrediente))
                 mensaje += "El ingrediente no existe\n";
 
-            if (obj.Stock < 0)
-                mensaje += "El stock no puede ser negativo\n";
-
-            if (obj.StockMinimo < 0)
-                mensaje += "El stock mínimo no puede ser negativo\n";
-
             if (obj.FechaRegistro == default)
                 mensaje += "La fecha no es válida\n";
 
@@ -79,24 +73,6 @@ namespace CapaValidar
             }
 
             return datos.Eliminar(idInventario);
-        }
-
-        public bool AumentarStock(int idIngrediente, decimal cantidad, out string mensaje)
-        {
-            mensaje = "";
-
-            if (idIngrediente <= 0)
-                mensaje += "El ingrediente es obligatorio\n";
-            else if (!datos.ExisteIngrediente(idIngrediente))
-                mensaje += "El ingrediente no existe\n";
-
-            if (cantidad <= 0)
-                mensaje += "La cantidad debe ser mayor a 0\n";
-
-            if (mensaje != "")
-                return false;
-
-            return datos.AumentarStock(idIngrediente, cantidad);
         }
     }
 }

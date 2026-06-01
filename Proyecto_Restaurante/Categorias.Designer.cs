@@ -177,9 +177,9 @@
             this.cmbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Items.AddRange(new object[] {
-            "Id",
-            "Descripcion",
-            "Disponible",
+            "ID",
+            "Descripción",
+            "Estado",
             "Fecha"});
             this.cmbBuscar.Location = new System.Drawing.Point(530, 53);
             this.cmbBuscar.Name = "cmbBuscar";
@@ -197,6 +197,7 @@
             this.btnBuscar.TabIndex = 13;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // textBox1
             // 
@@ -217,6 +218,7 @@
             this.btnReiniciar.TabIndex = 15;
             this.btnReiniciar.Text = "Reiniciar";
             this.btnReiniciar.UseVisualStyleBackColor = false;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // Categorias
             // 
