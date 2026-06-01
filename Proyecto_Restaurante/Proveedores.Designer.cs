@@ -144,6 +144,7 @@
             this.btnSalir.TabIndex = 81;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnRegresar
             // 
@@ -155,6 +156,7 @@
             this.btnRegresar.TabIndex = 80;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // txtbCP
             // 
@@ -393,6 +395,7 @@
             this.Correo_Telefono.TabIndex = 108;
             this.Correo_Telefono.Text = "Correo/Telefono";
             this.Correo_Telefono.UseVisualStyleBackColor = false;
+            this.Correo_Telefono.Click += new System.EventHandler(this.Correo_Telefono_Click);
             // 
             // Proveedores
             // 

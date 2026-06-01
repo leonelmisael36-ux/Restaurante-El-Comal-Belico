@@ -420,5 +420,17 @@ namespace Proyecto_Restaurante
             textBox1.Text = "";
             comboBox1.SelectedIndex = -1;
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

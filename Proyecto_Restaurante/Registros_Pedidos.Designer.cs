@@ -60,31 +60,33 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1215, 662);
+            this.btnSalir.Location = new System.Drawing.Point(1116, 696);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(234, 81);
+            this.btnSalir.Size = new System.Drawing.Size(202, 56);
             this.btnSalir.TabIndex = 102;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(61, 679);
+            this.btnRegresar.Location = new System.Drawing.Point(61, 696);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(244, 73);
+            this.btnRegresar.Size = new System.Drawing.Size(190, 56);
             this.btnRegresar.TabIndex = 101;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(61, 537);
+            this.btnEliminar.Location = new System.Drawing.Point(61, 480);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(236, 56);
+            this.btnEliminar.Size = new System.Drawing.Size(177, 49);
             this.btnEliminar.TabIndex = 100;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -94,9 +96,9 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Peru;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(61, 459);
+            this.btnEditar.Location = new System.Drawing.Point(61, 405);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(236, 57);
+            this.btnEditar.Size = new System.Drawing.Size(177, 46);
             this.btnEditar.TabIndex = 99;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -106,9 +108,9 @@
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Peru;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(61, 379);
+            this.btnAgregar.Location = new System.Drawing.Point(61, 342);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(236, 56);
+            this.btnAgregar.Size = new System.Drawing.Size(177, 46);
             this.btnAgregar.TabIndex = 98;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -118,7 +120,7 @@
             // 
             this.btnReiniciarTipo.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarTipo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarTipo.Location = new System.Drawing.Point(1185, 356);
+            this.btnReiniciarTipo.Location = new System.Drawing.Point(1141, 348);
             this.btnReiniciarTipo.Name = "btnReiniciarTipo";
             this.btnReiniciarTipo.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarTipo.TabIndex = 97;
@@ -130,7 +132,7 @@
             // 
             this.txtTipo.BackColor = System.Drawing.Color.Chocolate;
             this.txtTipo.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(774, 356);
+            this.txtTipo.Location = new System.Drawing.Point(730, 348);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(192, 24);
             this.txtTipo.TabIndex = 96;
@@ -140,7 +142,7 @@
             // 
             this.btnBuscarTipo.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarTipo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarTipo.Location = new System.Drawing.Point(1016, 354);
+            this.btnBuscarTipo.Location = new System.Drawing.Point(972, 346);
             this.btnBuscarTipo.Name = "btnBuscarTipo";
             this.btnBuscarTipo.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarTipo.TabIndex = 95;
@@ -158,7 +160,7 @@
             "Descripcion",
             "Disponible",
             "Fecha"});
-            this.cmbTipo.Location = new System.Drawing.Point(574, 353);
+            this.cmbTipo.Location = new System.Drawing.Point(530, 345);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(182, 26);
             this.cmbTipo.TabIndex = 94;
@@ -169,7 +171,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(432, 356);
+            this.label5.Location = new System.Drawing.Point(388, 348);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 21);
             this.label5.TabIndex = 93;
@@ -179,9 +181,9 @@
             // 
             this.dtgvTipo.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvTipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvTipo.Location = new System.Drawing.Point(436, 389);
+            this.dtgvTipo.Location = new System.Drawing.Point(392, 381);
             this.dtgvTipo.Name = "dtgvTipo";
-            this.dtgvTipo.Size = new System.Drawing.Size(1013, 214);
+            this.dtgvTipo.Size = new System.Drawing.Size(904, 253);
             this.dtgvTipo.TabIndex = 92;
             this.dtgvTipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTipo_CellContentClick);
             // 
@@ -189,7 +191,7 @@
             // 
             this.btnReiniciarPedido.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarPedido.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarPedido.Location = new System.Drawing.Point(1185, 61);
+            this.btnReiniciarPedido.Location = new System.Drawing.Point(1141, 53);
             this.btnReiniciarPedido.Name = "btnReiniciarPedido";
             this.btnReiniciarPedido.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarPedido.TabIndex = 91;
@@ -201,7 +203,7 @@
             // 
             this.txbPedido.BackColor = System.Drawing.Color.Chocolate;
             this.txbPedido.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPedido.Location = new System.Drawing.Point(774, 61);
+            this.txbPedido.Location = new System.Drawing.Point(730, 53);
             this.txbPedido.Name = "txbPedido";
             this.txbPedido.Size = new System.Drawing.Size(192, 24);
             this.txbPedido.TabIndex = 90;
@@ -211,7 +213,7 @@
             // 
             this.btnBuscarPedido.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarPedido.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPedido.Location = new System.Drawing.Point(1016, 59);
+            this.btnBuscarPedido.Location = new System.Drawing.Point(972, 51);
             this.btnBuscarPedido.Name = "btnBuscarPedido";
             this.btnBuscarPedido.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarPedido.TabIndex = 89;
@@ -232,7 +234,7 @@
             "PrecioUnitario",
             "SubTotal",
             "Fecha"});
-            this.cmbBuscarPedido.Location = new System.Drawing.Point(574, 58);
+            this.cmbBuscarPedido.Location = new System.Drawing.Point(530, 50);
             this.cmbBuscarPedido.Name = "cmbBuscarPedido";
             this.cmbBuscarPedido.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscarPedido.TabIndex = 88;
@@ -243,7 +245,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(432, 61);
+            this.label11.Location = new System.Drawing.Point(388, 53);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 87;
@@ -253,9 +255,9 @@
             // 
             this.dtgvPedido.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvPedido.Location = new System.Drawing.Point(436, 94);
+            this.dtgvPedido.Location = new System.Drawing.Point(392, 86);
             this.dtgvPedido.Name = "dtgvPedido";
-            this.dtgvPedido.Size = new System.Drawing.Size(1013, 205);
+            this.dtgvPedido.Size = new System.Drawing.Size(904, 232);
             this.dtgvPedido.TabIndex = 86;
             this.dtgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPedido_CellClick);
             this.dtgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPedido_CellContentClick);
@@ -326,7 +328,7 @@
             // lbl_Id
             // 
             this.lbl_Id.AutoSize = true;
-            this.lbl_Id.Location = new System.Drawing.Point(355, 216);
+            this.lbl_Id.Location = new System.Drawing.Point(311, 208);
             this.lbl_Id.Name = "lbl_Id";
             this.lbl_Id.Size = new System.Drawing.Size(35, 13);
             this.lbl_Id.TabIndex = 103;
@@ -339,7 +341,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources._1eb81457_6859_4119_9567_c9234c615f06;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1490, 766);
+            this.ClientSize = new System.Drawing.Size(1378, 766);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnRegresar);

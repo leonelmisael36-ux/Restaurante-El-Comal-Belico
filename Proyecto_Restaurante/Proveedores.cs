@@ -279,5 +279,24 @@ namespace Proyecto_Restaurante
             cmbEstado.Text = dtgvCliente.Rows[e.RowIndex]
                 .Cells["EstadoProveedor"].Value.ToString();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void Correo_Telefono_Click(object sender, EventArgs e)
+        {
+            Proveedor_Correo_Telefono frm = new Proveedor_Correo_Telefono();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

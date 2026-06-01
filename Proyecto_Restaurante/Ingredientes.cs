@@ -211,5 +211,17 @@ namespace Proyecto_Restaurante
             cmBoxUnidad.Text = dtgvCliente.Rows[e.RowIndex]
                 .Cells["Unidad"].Value.ToString();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

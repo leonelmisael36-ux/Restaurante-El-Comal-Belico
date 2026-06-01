@@ -8,7 +8,7 @@ using CapaLogica;
 
 namespace CapaValidar
 {
-    internal class CV_Usuario
+    public class CV_Usuario
     {
         private CL_Usuario datos = new CL_Usuario();
 

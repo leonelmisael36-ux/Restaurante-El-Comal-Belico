@@ -227,5 +227,15 @@ namespace Proyecto_Restaurante
             txtIdCliente.Text = dtgvDetallePedido.Rows[e.RowIndex]
                 .Cells["Id_Cliente"].Value.ToString();
         }
+
+        private void dtgvDetallePedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

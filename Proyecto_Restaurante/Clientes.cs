@@ -185,17 +185,21 @@ namespace Proyecto_Restaurante
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-
+            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            frm.Show();
+            this.Hide();
         }
 
         private void btnCorreo_Telefono_Click(object sender, EventArgs e)
         {
-
+            Cliente_Correo_Telefono frm = new Cliente_Correo_Telefono();
+            frm.Show();
+            this.Hide();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void btnReiniciar_Click(object sender, EventArgs e)

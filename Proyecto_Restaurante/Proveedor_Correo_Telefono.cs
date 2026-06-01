@@ -438,5 +438,17 @@ namespace Proyecto_Restaurante
                 dtgvCorreo.Rows[e.RowIndex]
                 .Cells["Correo"].Value.ToString();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Proveedores frm = new Proveedores();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

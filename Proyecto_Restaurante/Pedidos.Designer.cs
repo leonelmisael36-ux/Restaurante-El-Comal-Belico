@@ -56,6 +56,7 @@
             this.btnSalir.TabIndex = 79;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnRegresar
             // 
@@ -138,6 +139,7 @@
             this.dtgvDetallePedido.Size = new System.Drawing.Size(790, 316);
             this.dtgvDetallePedido.TabIndex = 80;
             this.dtgvDetallePedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDetallePedido_CellClick);
+            this.dtgvDetallePedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDetallePedido_CellContentClick);
             // 
             // txtIdCliente
             // 

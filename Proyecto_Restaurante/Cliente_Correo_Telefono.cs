@@ -351,5 +351,17 @@ namespace Proyecto_Restaurante
             txtbCorreo.Text =
                 dtgvCorreo.Rows[e.RowIndex].Cells["Correo"].Value.ToString();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Clientes frm = new Clientes();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

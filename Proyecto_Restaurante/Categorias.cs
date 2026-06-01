@@ -146,7 +146,7 @@ namespace Proyecto_Restaurante
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void cmbBuscar_SelectedIndexChanged(object sender, EventArgs e)
@@ -227,6 +227,13 @@ namespace Proyecto_Restaurante
 
             cmbBuscar.SelectedIndex = -1;
             textBox1.Clear();
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            frm.Show();
+            this.Hide();
         }
     }
 }

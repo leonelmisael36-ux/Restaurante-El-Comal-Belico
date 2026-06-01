@@ -334,6 +334,7 @@
             this.btnRegresar.TabIndex = 122;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnSalir
             // 
@@ -345,6 +346,7 @@
             this.btnSalir.TabIndex = 123;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtIdProveedor_Correo
             // 

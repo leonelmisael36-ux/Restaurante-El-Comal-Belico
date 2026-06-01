@@ -348,5 +348,17 @@ namespace Proyecto_Restaurante
             txtCantidad.Text = dtgvPedido.Rows[e.RowIndex]
                 .Cells["Cantidad"].Value.ToString();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

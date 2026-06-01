@@ -143,7 +143,7 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(680, 400);
+            this.btnReiniciar.Location = new System.Drawing.Point(459, 388);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(127, 29);
             this.btnReiniciar.TabIndex = 92;
@@ -155,7 +155,7 @@
             // 
             this.txbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(704, 52);
+            this.txbBuscar.Location = new System.Drawing.Point(647, 50);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(192, 24);
             this.txbBuscar.TabIndex = 91;
@@ -165,7 +165,7 @@
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCliente.Location = new System.Drawing.Point(486, 400);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(306, 388);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarCliente.TabIndex = 90;
@@ -182,7 +182,7 @@
             "ID",
             "Nombre",
             "Unidad"});
-            this.cmbBuscar.Location = new System.Drawing.Point(504, 49);
+            this.cmbBuscar.Location = new System.Drawing.Point(447, 47);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscar.TabIndex = 89;
@@ -193,7 +193,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(362, 52);
+            this.label11.Location = new System.Drawing.Point(305, 50);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 88;
@@ -203,9 +203,9 @@
             // 
             this.dtgvCliente.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCliente.Location = new System.Drawing.Point(432, 91);
+            this.dtgvCliente.Location = new System.Drawing.Point(309, 81);
             this.dtgvCliente.Name = "dtgvCliente";
-            this.dtgvCliente.Size = new System.Drawing.Size(427, 292);
+            this.dtgvCliente.Size = new System.Drawing.Size(530, 292);
             this.dtgvCliente.TabIndex = 87;
             this.dtgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellClick);
             this.dtgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellContentClick);
@@ -214,28 +214,30 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(63, 543);
+            this.btnRegresar.Location = new System.Drawing.Point(27, 479);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(191, 48);
             this.btnRegresar.TabIndex = 93;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(704, 543);
+            this.btnSalir.Location = new System.Drawing.Point(705, 479);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(191, 48);
             this.btnSalir.TabIndex = 94;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lbl_Id
             // 
             this.lbl_Id.AutoSize = true;
-            this.lbl_Id.Location = new System.Drawing.Point(378, 144);
+            this.lbl_Id.Location = new System.Drawing.Point(245, 131);
             this.lbl_Id.Name = "lbl_Id";
             this.lbl_Id.Size = new System.Drawing.Size(35, 13);
             this.lbl_Id.TabIndex = 95;
@@ -248,7 +250,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_124319;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(981, 628);
+            this.ClientSize = new System.Drawing.Size(939, 542);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnRegresar);

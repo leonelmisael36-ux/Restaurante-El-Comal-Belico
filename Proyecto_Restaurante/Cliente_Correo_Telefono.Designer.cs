@@ -129,6 +129,7 @@
             this.btnSalir.TabIndex = 153;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnRegresar
             // 
@@ -140,6 +141,7 @@
             this.btnRegresar.TabIndex = 152;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnEliminar_Telefono
             // 
