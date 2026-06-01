@@ -16,5 +16,10 @@ namespace Proyecto_Restaurante
         {
             InitializeComponent();
         }
+
+        private void Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
     }
 }
