@@ -16,7 +16,7 @@ namespace Proyecto_Restaurante
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Proveedor_Correo_Telefono());
+            Application.Run(new log_in());
         }
     }
 }
