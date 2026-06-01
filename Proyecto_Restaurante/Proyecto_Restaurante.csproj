@@ -205,6 +205,12 @@
     <Compile Include="Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="TipoPlatillo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoPlatillo.Designer.cs">
+      <DependentUpon>TipoPlatillo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administracion.resx">
       <DependentUpon>Administracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoPlatillo.resx">
+      <DependentUpon>TipoPlatillo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

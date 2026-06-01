@@ -55,5 +55,36 @@ namespace CapaValidar
 
             return datos.Eliminar(idProveedor, idPlatillo);
         }
+
+        public bool Editar(Provee obj,
+                    int proveedorOriginal,
+                    int platilloOriginal,
+                    out string mensaje)
+        {
+            mensaje = "";
+
+            if (obj.Id_Proveedor <= 0)
+                mensaje += "El proveedor es obligatorio\n";
+            else if (!datos.ExisteProveedor(obj.Id_Proveedor))
+                mensaje += "El proveedor no existe\n";
+
+            if (obj.Id_Platillo <= 0)
+                mensaje += "El platillo es obligatorio\n";
+            else if (!datos.ExistePlatillo(obj.Id_Platillo))
+                mensaje += "El platillo no existe\n";
+
+            if (mensaje != "")
+                return false;
+
+            if ((obj.Id_Proveedor != proveedorOriginal ||
+                 obj.Id_Platillo != platilloOriginal) &&
+                 datos.ExisteRelacion(obj.Id_Proveedor, obj.Id_Platillo))
+            {
+                mensaje = "Esta relación ya existe";
+                return false;
+            }
+
+            return datos.Editar(obj, proveedorOriginal, platilloOriginal);
+        }
     }
 }

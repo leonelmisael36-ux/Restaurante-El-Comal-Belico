@@ -48,7 +48,8 @@
             // 
             // rtxtboxDescripcion
             // 
-            this.rtxtboxDescripcion.BackColor = System.Drawing.Color.Sienna;
+            this.rtxtboxDescripcion.BackColor = System.Drawing.Color.Chocolate;
+            this.rtxtboxDescripcion.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtboxDescripcion.ForeColor = System.Drawing.SystemColors.Info;
             this.rtxtboxDescripcion.Location = new System.Drawing.Point(53, 103);
             this.rtxtboxDescripcion.Name = "rtxtboxDescripcion";
@@ -81,7 +82,7 @@
             // 
             // cmBoxDisponible
             // 
-            this.cmBoxDisponible.BackColor = System.Drawing.Color.Sienna;
+            this.cmBoxDisponible.BackColor = System.Drawing.Color.Chocolate;
             this.cmBoxDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmBoxDisponible.FormattingEnabled = true;
             this.cmBoxDisponible.Items.AddRange(new object[] {
@@ -173,7 +174,7 @@
             // 
             // cmbBuscar
             // 
-            this.cmbBuscar.BackColor = System.Drawing.Color.Sienna;
+            this.cmbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.cmbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBuscar.FormattingEnabled = true;
             this.cmbBuscar.Items.AddRange(new object[] {

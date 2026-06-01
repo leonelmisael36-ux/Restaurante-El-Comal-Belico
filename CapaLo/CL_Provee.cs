@@ -170,5 +170,42 @@ namespace CapaLogica
                 return count > 0;
             }
         }
+
+        public bool Editar(Provee obj, int proveedorOriginal, int platilloOriginal)
+        {
+            bool respuesta = false;
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    string query = @"
+                UPDATE provee
+                SET Id_Proveedor = @NuevoProveedor,
+                    Id_Platillo = @NuevoPlatillo
+                WHERE Id_Proveedor = @ProveedorOriginal
+                AND Id_Platillo = @PlatilloOriginal";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                    cmd.Parameters.AddWithValue("@NuevoProveedor", obj.Id_Proveedor);
+                    cmd.Parameters.AddWithValue("@NuevoPlatillo", obj.Id_Platillo);
+
+                    cmd.Parameters.AddWithValue("@ProveedorOriginal", proveedorOriginal);
+                    cmd.Parameters.AddWithValue("@PlatilloOriginal", platilloOriginal);
+
+                    conexion.Open();
+
+                    respuesta = cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    respuesta = false;
+                }
+            }
+
+            return respuesta;
+        }
     }
 }

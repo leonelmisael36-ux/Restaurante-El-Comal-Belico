@@ -66,6 +66,8 @@ namespace CapaLogica
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
 
+                    obj.FechaRegistro = DateTime.Today;
+
                     cmd.Parameters.AddWithValue("@Id_Ingrediente", obj.Id_Ingrediente);
                     cmd.Parameters.AddWithValue("@Stock", obj.Stock);
                     cmd.Parameters.AddWithValue("@StockMinimo", obj.StockMinimo);
@@ -96,7 +98,6 @@ namespace CapaLogica
                             SET Id_Ingrediente = @Id_Ingrediente,
                                 Stock = @Stock,
                                 StockMinimo = @StockMinimo,
-                                FechaRegistro = @FechaRegistro
                             WHERE Id_Inventario = @Id_Inventario";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
@@ -150,7 +151,7 @@ namespace CapaLogica
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = "SELECT COUNT(*) FROM ingrediente WHERE Id_Ingrediente = @Id";
+                string query = "SELECT COUNT(*) FROM ingredientes WHERE Id_Ingrediente = @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Id", idIngrediente);

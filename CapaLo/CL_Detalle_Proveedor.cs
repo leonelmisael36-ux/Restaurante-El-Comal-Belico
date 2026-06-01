@@ -66,8 +66,6 @@ namespace CapaLogica
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
 
-                    obj.Fecha = DateTime.Today;
-
                     cmd.Parameters.AddWithValue("@Id_Proveedor", obj.Id_Proveedor);
                     cmd.Parameters.AddWithValue("@Id_Ingrediente", obj.Id_Ingrediente);
                     cmd.Parameters.AddWithValue("@Cantidad", obj.Cantidad);

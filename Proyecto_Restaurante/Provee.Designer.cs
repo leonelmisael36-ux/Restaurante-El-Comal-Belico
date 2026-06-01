@@ -43,46 +43,65 @@
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dtgvCliente = new System.Windows.Forms.DataGridView();
+            this.lbl_IdProveedor = new System.Windows.Forms.Label();
+            this.lbl_IdPlatillo = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtbId_Platillo
             // 
             this.txtbId_Platillo.BackColor = System.Drawing.Color.Chocolate;
-            this.txtbId_Platillo.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbId_Platillo.Location = new System.Drawing.Point(29, 149);
+            this.txtbId_Platillo.Font = new System.Drawing.Font("Modern No. 20", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbId_Platillo.Location = new System.Drawing.Point(33, 271);
             this.txtbId_Platillo.Name = "txtbId_Platillo";
-            this.txtbId_Platillo.Size = new System.Drawing.Size(192, 24);
+            this.txtbId_Platillo.Size = new System.Drawing.Size(289, 36);
             this.txtbId_Platillo.TabIndex = 21;
+            this.txtbId_Platillo.TextChanged += new System.EventHandler(this.txtbId_Platillo_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 111);
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(39, 223);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 21);
+            this.label1.Size = new System.Drawing.Size(162, 31);
             this.label1.TabIndex = 20;
             this.label1.Text = "Id_Platillo";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtbId_Proveedor
             // 
             this.txtbId_Proveedor.BackColor = System.Drawing.Color.Chocolate;
-            this.txtbId_Proveedor.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbId_Proveedor.Location = new System.Drawing.Point(29, 66);
+            this.txtbId_Proveedor.Font = new System.Drawing.Font("Modern No. 20", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbId_Proveedor.Location = new System.Drawing.Point(33, 146);
             this.txtbId_Proveedor.Name = "txtbId_Proveedor";
-            this.txtbId_Proveedor.Size = new System.Drawing.Size(192, 24);
+            this.txtbId_Proveedor.Size = new System.Drawing.Size(289, 36);
             this.txtbId_Proveedor.TabIndex = 19;
+            this.txtbId_Proveedor.TextChanged += new System.EventHandler(this.txtbId_Proveedor_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 28);
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 21);
+            this.label2.Size = new System.Drawing.Size(190, 31);
             this.label2.TabIndex = 18;
             this.label2.Text = "Id_Proveedor";
             // 
@@ -90,42 +109,45 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(29, 358);
+            this.btnEliminar.Location = new System.Drawing.Point(33, 524);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(176, 47);
+            this.btnEliminar.Size = new System.Drawing.Size(204, 58);
             this.btnEliminar.TabIndex = 55;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Peru;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(29, 289);
+            this.btnEditar.Location = new System.Drawing.Point(33, 455);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(176, 47);
+            this.btnEditar.Size = new System.Drawing.Size(204, 54);
             this.btnEditar.TabIndex = 54;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Peru;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(29, 219);
+            this.btnAgregar.Location = new System.Drawing.Point(33, 385);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(176, 47);
+            this.btnAgregar.Size = new System.Drawing.Size(204, 56);
             this.btnAgregar.TabIndex = 53;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(29, 494);
+            this.btnRegresar.Location = new System.Drawing.Point(33, 748);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(167, 50);
+            this.btnRegresar.Size = new System.Drawing.Size(182, 50);
             this.btnRegresar.TabIndex = 56;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
@@ -134,7 +156,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1062, 494);
+            this.btnSalir.Location = new System.Drawing.Point(33, 814);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(182, 50);
             this.btnSalir.TabIndex = 57;
@@ -145,32 +167,35 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(982, 38);
+            this.btnReiniciar.Location = new System.Drawing.Point(1093, 18);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciar.TabIndex = 63;
             this.btnReiniciar.Text = "Reiniciar";
             this.btnReiniciar.UseVisualStyleBackColor = false;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // txbBuscar
             // 
             this.txbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(653, 38);
+            this.txbBuscar.Location = new System.Drawing.Point(764, 18);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(137, 24);
             this.txbBuscar.TabIndex = 62;
+            this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Peru;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(820, 35);
+            this.btnBuscar.Location = new System.Drawing.Point(931, 15);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(128, 29);
             this.btnBuscar.TabIndex = 61;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cmbBuscar
             // 
@@ -182,17 +207,18 @@
             "Descripcion",
             "Disponible",
             "Fecha"});
-            this.cmbBuscar.Location = new System.Drawing.Point(447, 36);
+            this.cmbBuscar.Location = new System.Drawing.Point(558, 16);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscar.TabIndex = 60;
+            this.cmbBuscar.SelectedIndexChanged += new System.EventHandler(this.cmbBuscar_SelectedIndexChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(312, 38);
+            this.label11.Location = new System.Drawing.Point(423, 18);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 59;
@@ -202,10 +228,164 @@
             // 
             this.dtgvCliente.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCliente.Location = new System.Drawing.Point(482, 89);
+            this.dtgvCliente.Location = new System.Drawing.Point(427, 66);
             this.dtgvCliente.Name = "dtgvCliente";
-            this.dtgvCliente.Size = new System.Drawing.Size(519, 339);
+            this.dtgvCliente.Size = new System.Drawing.Size(821, 247);
             this.dtgvCliente.TabIndex = 58;
+            this.dtgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellClick);
+            // 
+            // lbl_IdProveedor
+            // 
+            this.lbl_IdProveedor.AutoSize = true;
+            this.lbl_IdProveedor.Location = new System.Drawing.Point(376, 137);
+            this.lbl_IdProveedor.Name = "lbl_IdProveedor";
+            this.lbl_IdProveedor.Size = new System.Drawing.Size(35, 13);
+            this.lbl_IdProveedor.TabIndex = 86;
+            this.lbl_IdProveedor.Text = "label3";
+            this.lbl_IdProveedor.Visible = false;
+            // 
+            // lbl_IdPlatillo
+            // 
+            this.lbl_IdPlatillo.AutoSize = true;
+            this.lbl_IdPlatillo.Location = new System.Drawing.Point(376, 196);
+            this.lbl_IdPlatillo.Name = "lbl_IdPlatillo";
+            this.lbl_IdPlatillo.Size = new System.Drawing.Size(35, 13);
+            this.lbl_IdPlatillo.TabIndex = 87;
+            this.lbl_IdPlatillo.Text = "label4";
+            this.lbl_IdPlatillo.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Peru;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1093, 337);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 30);
+            this.button1.TabIndex = 93;
+            this.button1.Text = "Reiniciar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Chocolate;
+            this.textBox1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(764, 337);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(137, 24);
+            this.textBox1.TabIndex = 92;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Peru;
+            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(931, 334);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 29);
+            this.button2.TabIndex = 91;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.Sienna;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ID",
+            "Nombre",
+            "Categoria",
+            "Precio"});
+            this.comboBox1.Location = new System.Drawing.Point(558, 335);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(182, 26);
+            this.comboBox1.TabIndex = 90;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(423, 337);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 21);
+            this.label3.TabIndex = 89;
+            this.label3.Text = "Buscar Por:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.RosyBrown;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(427, 385);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(821, 247);
+            this.dataGridView1.TabIndex = 88;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Peru;
+            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(1093, 669);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(155, 30);
+            this.button3.TabIndex = 99;
+            this.button3.Text = "Reiniciar";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.Chocolate;
+            this.textBox2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(764, 669);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(137, 24);
+            this.textBox2.TabIndex = 98;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Peru;
+            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(931, 666);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(128, 29);
+            this.button4.TabIndex = 97;
+            this.button4.Text = "Buscar";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.Sienna;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Id",
+            "Descripcion",
+            "Disponible",
+            "Fecha"});
+            this.comboBox2.Location = new System.Drawing.Point(558, 667);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(182, 26);
+            this.comboBox2.TabIndex = 96;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(423, 669);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 21);
+            this.label4.TabIndex = 95;
+            this.label4.Text = "Buscar Por:";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.RosyBrown;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(427, 717);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(821, 256);
+            this.dataGridView2.TabIndex = 94;
             // 
             // Provee
             // 
@@ -213,7 +393,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_123849;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1256, 568);
+            this.ClientSize = new System.Drawing.Size(1340, 982);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lbl_IdPlatillo);
+            this.Controls.Add(this.lbl_IdProveedor);
             this.Controls.Add(this.btnReiniciar);
             this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.btnBuscar);
@@ -233,7 +427,10 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Provee";
             this.Text = "Provee";
+            this.Load += new System.EventHandler(this.Provee_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +453,19 @@
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dtgvCliente;
+        private System.Windows.Forms.Label lbl_IdProveedor;
+        private System.Windows.Forms.Label lbl_IdPlatillo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

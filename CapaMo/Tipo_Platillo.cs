@@ -16,6 +16,5 @@ namespace CapaMo
 
         public string TipoPreparacion { get; set; } = "";
 
-        public string NombreTipo { get; set; } = "";
     }
 }

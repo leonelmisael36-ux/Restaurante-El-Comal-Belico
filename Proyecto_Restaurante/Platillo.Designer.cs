@@ -134,7 +134,7 @@
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbBuscar.Location = new System.Drawing.Point(837, 86);
             this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(192, 24);
+            this.txbBuscar.Size = new System.Drawing.Size(220, 24);
             this.txbBuscar.TabIndex = 67;
             // 
             // btnBuscar
@@ -224,9 +224,9 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(59, 676);
+            this.btnRegresar.Location = new System.Drawing.Point(49, 687);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(212, 66);
+            this.btnRegresar.Size = new System.Drawing.Size(190, 55);
             this.btnRegresar.TabIndex = 81;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
@@ -235,9 +235,9 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1248, 676);
+            this.btnSalir.Location = new System.Drawing.Point(1248, 687);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(212, 66);
+            this.btnSalir.Size = new System.Drawing.Size(193, 55);
             this.btnSalir.TabIndex = 82;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;

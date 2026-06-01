@@ -203,9 +203,9 @@
             // 
             this.dtgvCliente.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCliente.Location = new System.Drawing.Point(432, 122);
+            this.dtgvCliente.Location = new System.Drawing.Point(432, 91);
             this.dtgvCliente.Name = "dtgvCliente";
-            this.dtgvCliente.Size = new System.Drawing.Size(427, 261);
+            this.dtgvCliente.Size = new System.Drawing.Size(427, 292);
             this.dtgvCliente.TabIndex = 87;
             this.dtgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellClick);
             this.dtgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellContentClick);

@@ -51,7 +51,7 @@ namespace Proyecto_Restaurante
 
         private void nudPrecioVenta_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtbIdcategoria_TextChanged(object sender, EventArgs e)
@@ -229,4 +229,5 @@ namespace Proyecto_Restaurante
 
             dtgvPlatillo.DataSource = resultado;
         }
+    }
 }

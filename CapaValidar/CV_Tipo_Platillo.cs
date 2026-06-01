@@ -8,7 +8,7 @@ using CapaMo;
 
 namespace CapaValidar
 {
-    internal class CV_Tipo_Platillo
+    public class CV_Tipo_Platillo
     {
         private CL_Tipo_Platillo datos = new CL_Tipo_Platillo();
 
