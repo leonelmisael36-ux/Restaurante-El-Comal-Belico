@@ -19,6 +19,8 @@ namespace Proyecto_Restaurante
         CL_Detalle_Proveedor objDetalle = new CL_Detalle_Proveedor();
         CV_Detalle_Proveedor cvDetalle = new CV_Detalle_Proveedor();
         B_Detalle_Proveedor busqueda = new B_Detalle_Proveedor();
+        B_Proveedor busquedaPro = new B_Proveedor();
+        CL_Proveedor objProveedor = new CL_Proveedor();
         public Entrega_Inventario()
         {
             InitializeComponent();
@@ -208,6 +210,17 @@ namespace Proyecto_Restaurante
 
         }
 
+        void MostrarProveedores()
+        {
+            dtgvCliente.DataSource = objProveedor.Listar();
+
+            dtgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgvCliente.ReadOnly = true;
+            dtgvCliente.AllowUserToAddRows = false;
+            dtgvCliente.AllowUserToDeleteRows = false;
+            dtgvCliente.MultiSelect = false;
+        }
+
         private void Entrega_Inventario_Load(object sender, EventArgs e)
         {
             lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
@@ -220,6 +233,8 @@ namespace Proyecto_Restaurante
             cmbEntrega.Items.Add("Ingrediente");
             cmbEntrega.Items.Add("Fecha");
             cmbEntrega.Items.Add("Cantidad");
+
+
         }
 
         private void dtgvEntrega_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -243,6 +258,80 @@ namespace Proyecto_Restaurante
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void cmbBuscarProveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbProveedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarProveedor_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbBuscarProveedor.Text))
+            {
+                MessageBox.Show("Selecciona un tipo de búsqueda");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txbProveedor.Text))
+            {
+                MessageBox.Show("Ingresa un valor para buscar");
+                return;
+            }
+
+            string filtro = cmbBuscarProveedor.Text;
+            string texto = txbProveedor.Text.Trim();
+
+            List<Proveedor> resultado = new List<Proveedor>();
+
+            if (filtro == "ID")
+            {
+                if (int.TryParse(texto, out int id))
+                {
+                    resultado = busquedaPro.BuscarPorId(id);
+                }
+                else
+                {
+                    MessageBox.Show("El ID debe ser numérico");
+                    return;
+                }
+            }
+            else if (filtro == "Nombre")
+            {
+                resultado = busquedaPro.BuscarPorNombre(texto);
+            }
+            else if (filtro == "Ciudad")
+            {
+                resultado = busquedaPro.BuscarPorCiudad(texto);
+            }
+            else if (filtro == "Estado")
+            {
+                resultado = busquedaPro.BuscarPorEstado(texto);
+            }
+            else if (filtro == "Estado Proveedor")
+            {
+                resultado = busquedaPro.BuscarPorEstadoProveedor(texto);
+            }
+
+            dtgvCliente.DataSource = resultado;
+        }
+
+        private void btnReiniciarProveedor_Click(object sender, EventArgs e)
+        {
+            MostrarProveedores();
+
+            cmbBuscarProveedor.SelectedIndex = -1;
+            txbProveedor.Text = "";
+        }
+
+        private void dtgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
