@@ -65,6 +65,8 @@ namespace Proyecto_Restaurante
 
         private void Proveedores_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
+
             MostrarProveedores();
         }
 
@@ -297,6 +299,13 @@ namespace Proyecto_Restaurante
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Provee frm = new Provee();
+            this.Hide();
+            frm.Show();
         }
     }
 }

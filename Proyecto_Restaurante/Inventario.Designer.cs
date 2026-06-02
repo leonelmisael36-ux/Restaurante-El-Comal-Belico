@@ -53,6 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             this.txtbIdIngrediente.BackColor = System.Drawing.Color.Chocolate;
             this.txtbIdIngrediente.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbIdIngrediente.Location = new System.Drawing.Point(51, 80);
+            this.txtbIdIngrediente.Location = new System.Drawing.Point(51, 92);
             this.txtbIdIngrediente.Name = "txtbIdIngrediente";
             this.txtbIdIngrediente.Size = new System.Drawing.Size(192, 24);
             this.txtbIdIngrediente.TabIndex = 19;
@@ -71,7 +72,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 42);
+            this.label2.Location = new System.Drawing.Point(47, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 21);
             this.label2.TabIndex = 18;
@@ -81,9 +82,9 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(568, 345);
+            this.btnReiniciar.Location = new System.Drawing.Point(1000, 43);
             this.btnReiniciar.Name = "btnReiniciar";
-            this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
+            this.btnReiniciar.Size = new System.Drawing.Size(126, 28);
             this.btnReiniciar.TabIndex = 74;
             this.btnReiniciar.Text = "Reiniciar";
             this.btnReiniciar.UseVisualStyleBackColor = false;
@@ -93,7 +94,7 @@
             // 
             this.txbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(741, 39);
+            this.txbBuscar.Location = new System.Drawing.Point(650, 50);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(192, 24);
             this.txbBuscar.TabIndex = 73;
@@ -103,7 +104,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Peru;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(399, 343);
+            this.btnBuscar.Location = new System.Drawing.Point(853, 45);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(128, 29);
             this.btnBuscar.TabIndex = 72;
@@ -123,7 +124,7 @@
             "Stock",
             "Stock",
             "Minimo"});
-            this.cmbBuscar.Location = new System.Drawing.Point(541, 36);
+            this.cmbBuscar.Location = new System.Drawing.Point(450, 47);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscar.TabIndex = 71;
@@ -134,7 +135,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(399, 39);
+            this.label11.Location = new System.Drawing.Point(308, 50);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 70;
@@ -144,9 +145,9 @@
             // 
             this.dtgvCliente.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCliente.Location = new System.Drawing.Point(404, 78);
+            this.dtgvCliente.Location = new System.Drawing.Point(313, 89);
             this.dtgvCliente.Name = "dtgvCliente";
-            this.dtgvCliente.Size = new System.Drawing.Size(690, 261);
+            this.dtgvCliente.Size = new System.Drawing.Size(842, 261);
             this.dtgvCliente.TabIndex = 69;
             this.dtgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellClick);
             this.dtgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellContentClick);
@@ -155,9 +156,9 @@
             // 
             this.btnReiniciarIngrediente.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarIngrediente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarIngrediente.Location = new System.Drawing.Point(580, 712);
+            this.btnReiniciarIngrediente.Location = new System.Drawing.Point(1000, 380);
             this.btnReiniciarIngrediente.Name = "btnReiniciarIngrediente";
-            this.btnReiniciarIngrediente.Size = new System.Drawing.Size(155, 30);
+            this.btnReiniciarIngrediente.Size = new System.Drawing.Size(126, 28);
             this.btnReiniciarIngrediente.TabIndex = 80;
             this.btnReiniciarIngrediente.Text = "Reiniciar";
             this.btnReiniciarIngrediente.UseVisualStyleBackColor = false;
@@ -167,7 +168,7 @@
             // 
             this.txtbBsucarIngrediente.BackColor = System.Drawing.Color.Chocolate;
             this.txtbBsucarIngrediente.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbBsucarIngrediente.Location = new System.Drawing.Point(741, 415);
+            this.txtbBsucarIngrediente.Location = new System.Drawing.Point(649, 385);
             this.txtbBsucarIngrediente.Name = "txtbBsucarIngrediente";
             this.txtbBsucarIngrediente.Size = new System.Drawing.Size(192, 24);
             this.txtbBsucarIngrediente.TabIndex = 79;
@@ -177,7 +178,7 @@
             // 
             this.btnBuscarIngrediente.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarIngrediente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarIngrediente.Location = new System.Drawing.Point(411, 710);
+            this.btnBuscarIngrediente.Location = new System.Drawing.Point(855, 380);
             this.btnBuscarIngrediente.Name = "btnBuscarIngrediente";
             this.btnBuscarIngrediente.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarIngrediente.TabIndex = 78;
@@ -194,7 +195,7 @@
             "ID",
             "Nombre",
             "Unidad"});
-            this.cmbBuscarIngrediente.Location = new System.Drawing.Point(541, 412);
+            this.cmbBuscarIngrediente.Location = new System.Drawing.Point(449, 382);
             this.cmbBuscarIngrediente.Name = "cmbBuscarIngrediente";
             this.cmbBuscarIngrediente.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscarIngrediente.TabIndex = 77;
@@ -205,7 +206,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(399, 415);
+            this.label1.Location = new System.Drawing.Point(307, 385);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 21);
             this.label1.TabIndex = 76;
@@ -215,9 +216,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(404, 445);
+            this.dataGridView1.Location = new System.Drawing.Point(312, 415);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(690, 261);
+            this.dataGridView1.Size = new System.Drawing.Size(837, 261);
             this.dataGridView1.TabIndex = 75;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -262,7 +263,7 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(51, 542);
+            this.btnRegresar.Location = new System.Drawing.Point(51, 686);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(163, 48);
             this.btnRegresar.TabIndex = 84;
@@ -274,7 +275,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(51, 627);
+            this.btnSalir.Location = new System.Drawing.Point(963, 686);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(163, 49);
             this.btnSalir.TabIndex = 85;
@@ -285,7 +286,7 @@
             // lbl_IdInventario
             // 
             this.lbl_IdInventario.AutoSize = true;
-            this.lbl_IdInventario.Location = new System.Drawing.Point(301, 122);
+            this.lbl_IdInventario.Location = new System.Drawing.Point(303, 26);
             this.lbl_IdInventario.Name = "lbl_IdInventario";
             this.lbl_IdInventario.Size = new System.Drawing.Size(35, 13);
             this.lbl_IdInventario.TabIndex = 86;
@@ -295,7 +296,7 @@
             // lbl_IdIngrediente
             // 
             this.lbl_IdIngrediente.AutoSize = true;
-            this.lbl_IdIngrediente.Location = new System.Drawing.Point(314, 455);
+            this.lbl_IdIngrediente.Location = new System.Drawing.Point(435, 26);
             this.lbl_IdIngrediente.Name = "lbl_IdIngrediente";
             this.lbl_IdIngrediente.Size = new System.Drawing.Size(35, 13);
             this.lbl_IdIngrediente.TabIndex = 87;
@@ -306,7 +307,7 @@
             // 
             this.txtStockMinimo.BackColor = System.Drawing.Color.Chocolate;
             this.txtStockMinimo.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStockMinimo.Location = new System.Drawing.Point(51, 154);
+            this.txtStockMinimo.Location = new System.Drawing.Point(51, 166);
             this.txtStockMinimo.Name = "txtStockMinimo";
             this.txtStockMinimo.Size = new System.Drawing.Size(192, 24);
             this.txtStockMinimo.TabIndex = 89;
@@ -316,7 +317,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 116);
+            this.label3.Location = new System.Drawing.Point(47, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 21);
             this.label3.TabIndex = 88;
@@ -328,7 +329,7 @@
             this.dtpFecha.CalendarMonthBackground = System.Drawing.Color.Chocolate;
             this.dtpFecha.CalendarTitleBackColor = System.Drawing.SystemColors.InactiveBorder;
             this.dtpFecha.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlDark;
-            this.dtpFecha.Location = new System.Drawing.Point(51, 232);
+            this.dtpFecha.Location = new System.Drawing.Point(51, 244);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 90;
@@ -338,11 +339,22 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(47, 195);
+            this.label4.Location = new System.Drawing.Point(47, 207);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 21);
             this.label4.TabIndex = 91;
             this.label4.Text = "Fecha";
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lblInfo.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(21, 9);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(89, 21);
+            this.lblInfo.TabIndex = 92;
+            this.lblInfo.Text = "Usuario: ";
             // 
             // Inventario
             // 
@@ -350,7 +362,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.ac4195e9_f959_4e67_a731_ef20de244345;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1155, 747);
+            this.ClientSize = new System.Drawing.Size(1173, 747);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.txtStockMinimo);
@@ -413,5 +426,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

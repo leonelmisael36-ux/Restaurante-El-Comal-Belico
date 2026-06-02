@@ -41,6 +41,8 @@ namespace Proyecto_Restaurante
 
         private void Ingredientes_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
+
             MostrarIngredientes();
         }
 

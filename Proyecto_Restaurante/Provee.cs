@@ -259,6 +259,8 @@ namespace Proyecto_Restaurante
 
         private void Provee_Load_1(object sender, EventArgs e)
         {
+            lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
+
             MostrarProveedorIngrediente();
             MostrarPlatillos();
         }
@@ -423,7 +425,7 @@ namespace Proyecto_Restaurante
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            Proveedores frm = new Proveedores();
             frm.Show();
             this.Hide();
         }

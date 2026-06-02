@@ -71,6 +71,8 @@ namespace Proyecto_Restaurante
 
         private void Platillo_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
+
             nudPrecioVenta.DecimalPlaces = 2;
             nudPrecioVenta.Minimum = 0;
             nudPrecioVenta.Maximum = 100000;

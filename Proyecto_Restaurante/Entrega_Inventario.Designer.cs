@@ -46,13 +46,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvEntrega)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Id
             // 
             this.lbl_Id.AutoSize = true;
-            this.lbl_Id.Location = new System.Drawing.Point(315, 220);
+            this.lbl_Id.Location = new System.Drawing.Point(402, 38);
             this.lbl_Id.Name = "lbl_Id";
             this.lbl_Id.Size = new System.Drawing.Size(35, 13);
             this.lbl_Id.TabIndex = 107;
@@ -120,7 +121,7 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(1004, 33);
+            this.btnReiniciar.Location = new System.Drawing.Point(963, 60);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciar.TabIndex = 100;
@@ -132,7 +133,7 @@
             // 
             this.txtEntrega.BackColor = System.Drawing.Color.Chocolate;
             this.txtEntrega.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntrega.Location = new System.Drawing.Point(672, 37);
+            this.txtEntrega.Location = new System.Drawing.Point(631, 64);
             this.txtEntrega.Name = "txtEntrega";
             this.txtEntrega.Size = new System.Drawing.Size(192, 24);
             this.txtEntrega.TabIndex = 99;
@@ -142,7 +143,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Peru;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(870, 33);
+            this.btnBuscar.Location = new System.Drawing.Point(829, 60);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(128, 29);
             this.btnBuscar.TabIndex = 98;
@@ -160,7 +161,7 @@
             "Descripcion",
             "Disponible",
             "Fecha"});
-            this.cmbEntrega.Location = new System.Drawing.Point(484, 37);
+            this.cmbEntrega.Location = new System.Drawing.Point(443, 64);
             this.cmbEntrega.Name = "cmbEntrega";
             this.cmbEntrega.Size = new System.Drawing.Size(182, 26);
             this.cmbEntrega.TabIndex = 97;
@@ -171,7 +172,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(365, 37);
+            this.label4.Location = new System.Drawing.Point(324, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 21);
             this.label4.TabIndex = 96;
@@ -181,7 +182,7 @@
             // 
             this.dtgvEntrega.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvEntrega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvEntrega.Location = new System.Drawing.Point(369, 78);
+            this.dtgvEntrega.Location = new System.Drawing.Point(328, 105);
             this.dtgvEntrega.Name = "dtgvEntrega";
             this.dtgvEntrega.Size = new System.Drawing.Size(790, 420);
             this.dtgvEntrega.TabIndex = 95;
@@ -192,7 +193,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(935, 565);
+            this.btnSalir.Location = new System.Drawing.Point(906, 567);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(212, 57);
             this.btnSalir.TabIndex = 94;
@@ -254,13 +255,25 @@
             this.label3.TabIndex = 110;
             this.label3.Text = "Cantidad";
             // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lblInfo.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(31, 9);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(89, 21);
+            this.lblInfo.TabIndex = 112;
+            this.lblInfo.Text = "Usuario: ";
+            // 
             // Entrega_Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_123849;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1188, 644);
+            this.ClientSize = new System.Drawing.Size(1155, 644);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIdIngrediente);
@@ -309,5 +322,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

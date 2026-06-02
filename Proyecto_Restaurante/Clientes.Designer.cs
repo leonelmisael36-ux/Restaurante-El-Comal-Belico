@@ -57,6 +57,7 @@
             this.btnReiniciar = new System.Windows.Forms.Button();
             this.btnCorreo_Telefono = new System.Windows.Forms.Button();
             this.lbl_Id = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,7 +281,7 @@
             // 
             this.txbCliente.BackColor = System.Drawing.Color.Chocolate;
             this.txbCliente.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCliente.Location = new System.Drawing.Point(928, 32);
+            this.txbCliente.Location = new System.Drawing.Point(925, 52);
             this.txbCliente.Name = "txbCliente";
             this.txbCliente.Size = new System.Drawing.Size(192, 24);
             this.txbCliente.TabIndex = 41;
@@ -290,7 +291,7 @@
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCliente.Location = new System.Drawing.Point(1170, 30);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(1167, 50);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarCliente.TabIndex = 40;
@@ -308,7 +309,7 @@
             "Descripcion",
             "Disponible",
             "Fecha"});
-            this.cmbBuscarCliente.Location = new System.Drawing.Point(728, 29);
+            this.cmbBuscarCliente.Location = new System.Drawing.Point(725, 49);
             this.cmbBuscarCliente.Name = "cmbBuscarCliente";
             this.cmbBuscarCliente.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscarCliente.TabIndex = 39;
@@ -319,7 +320,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(586, 32);
+            this.label11.Location = new System.Drawing.Point(583, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 38;
@@ -329,7 +330,7 @@
             // 
             this.dtgvCliente.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCliente.Location = new System.Drawing.Point(574, 68);
+            this.dtgvCliente.Location = new System.Drawing.Point(571, 88);
             this.dtgvCliente.Name = "dtgvCliente";
             this.dtgvCliente.Size = new System.Drawing.Size(920, 369);
             this.dtgvCliente.TabIndex = 37;
@@ -352,7 +353,7 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(1339, 32);
+            this.btnReiniciar.Location = new System.Drawing.Point(1336, 52);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciar.TabIndex = 56;
@@ -382,6 +383,17 @@
             this.lbl_Id.Text = "label9";
             this.lbl_Id.Visible = false;
             // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lblInfo.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(20, 9);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(89, 21);
+            this.lblInfo.TabIndex = 59;
+            this.lblInfo.Text = "Usuario: ";
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +401,7 @@
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_124301;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1554, 665);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.btnCorreo_Telefono);
             this.Controls.Add(this.btnReiniciar);
@@ -460,5 +473,6 @@
         private System.Windows.Forms.Button btnReiniciar;
         private System.Windows.Forms.Button btnCorreo_Telefono;
         private System.Windows.Forms.Label lbl_Id;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

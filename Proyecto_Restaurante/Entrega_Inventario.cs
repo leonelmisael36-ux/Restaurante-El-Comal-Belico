@@ -210,6 +210,8 @@ namespace Proyecto_Restaurante
 
         private void Entrega_Inventario_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
+
             MostrarEntrega();
 
             cmbEntrega.Items.Clear();

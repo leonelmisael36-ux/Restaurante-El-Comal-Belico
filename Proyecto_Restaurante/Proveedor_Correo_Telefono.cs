@@ -68,6 +68,8 @@ namespace Proyecto_Restaurante
 
         private void Proveedor_Correo_Telefono_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
+
             MostrarTelefonos();
             MostrarCorreos();
         }

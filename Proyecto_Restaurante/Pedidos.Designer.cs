@@ -43,6 +43,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.lbl_Id = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDetallePedido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             // 
             this.btnReiniciarDetallePedido.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarDetallePedido.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarDetallePedido.Location = new System.Drawing.Point(957, 32);
+            this.btnReiniciarDetallePedido.Location = new System.Drawing.Point(957, 59);
             this.btnReiniciarDetallePedido.Name = "btnReiniciarDetallePedido";
             this.btnReiniciarDetallePedido.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarDetallePedido.TabIndex = 85;
@@ -85,7 +86,7 @@
             // 
             this.txtDetallePedido.BackColor = System.Drawing.Color.Chocolate;
             this.txtDetallePedido.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetallePedido.Location = new System.Drawing.Point(625, 36);
+            this.txtDetallePedido.Location = new System.Drawing.Point(625, 63);
             this.txtDetallePedido.Name = "txtDetallePedido";
             this.txtDetallePedido.Size = new System.Drawing.Size(192, 24);
             this.txtDetallePedido.TabIndex = 84;
@@ -95,7 +96,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Peru;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(823, 32);
+            this.btnBuscar.Location = new System.Drawing.Point(823, 59);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(128, 29);
             this.btnBuscar.TabIndex = 83;
@@ -113,7 +114,7 @@
             "Descripcion",
             "Disponible",
             "Fecha"});
-            this.cmbDetallePedido.Location = new System.Drawing.Point(437, 36);
+            this.cmbDetallePedido.Location = new System.Drawing.Point(437, 63);
             this.cmbDetallePedido.Name = "cmbDetallePedido";
             this.cmbDetallePedido.Size = new System.Drawing.Size(182, 26);
             this.cmbDetallePedido.TabIndex = 82;
@@ -124,7 +125,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(318, 36);
+            this.label4.Location = new System.Drawing.Point(318, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 21);
             this.label4.TabIndex = 81;
@@ -134,7 +135,7 @@
             // 
             this.dtgvDetallePedido.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvDetallePedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDetallePedido.Location = new System.Drawing.Point(322, 77);
+            this.dtgvDetallePedido.Location = new System.Drawing.Point(322, 104);
             this.dtgvDetallePedido.Name = "dtgvDetallePedido";
             this.dtgvDetallePedido.Size = new System.Drawing.Size(790, 316);
             this.dtgvDetallePedido.TabIndex = 80;
@@ -213,12 +214,23 @@
             // lbl_Id
             // 
             this.lbl_Id.AutoSize = true;
-            this.lbl_Id.Location = new System.Drawing.Point(275, 218);
+            this.lbl_Id.Location = new System.Drawing.Point(275, 245);
             this.lbl_Id.Name = "lbl_Id";
             this.lbl_Id.Size = new System.Drawing.Size(35, 13);
             this.lbl_Id.TabIndex = 92;
             this.lbl_Id.Text = "label1";
             this.lbl_Id.Visible = false;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lblInfo.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(26, 9);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(89, 21);
+            this.lblInfo.TabIndex = 93;
+            this.lblInfo.Text = "Usuario: ";
             // 
             // Pedidos
             // 
@@ -227,6 +239,7 @@
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_123514;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1156, 541);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnEliminar);
@@ -270,5 +283,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label lbl_Id;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

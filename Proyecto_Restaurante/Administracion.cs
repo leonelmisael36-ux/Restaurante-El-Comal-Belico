@@ -59,6 +59,8 @@ namespace Proyecto_Restaurante
 
         private void Administracion_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
+
             MostrarUsuarios();
 
             cmbBuscar.Items.Clear();

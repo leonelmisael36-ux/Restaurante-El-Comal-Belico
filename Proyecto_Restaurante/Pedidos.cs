@@ -44,7 +44,9 @@ namespace Proyecto_Restaurante
 
         private void Pedidos_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
 
+            MostrarPedidos();
         }
 
         private void label2_Click(object sender, EventArgs e)

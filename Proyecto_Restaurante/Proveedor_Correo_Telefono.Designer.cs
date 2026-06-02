@@ -58,6 +58,7 @@
             this.btnEliminar_Correo = new System.Windows.Forms.Button();
             this.btnEditar_Correo = new System.Windows.Forms.Button();
             this.btnAgregar_Correo = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCorreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTelefono)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +67,7 @@
             // 
             this.mtbTelefono.BackColor = System.Drawing.Color.Chocolate;
             this.mtbTelefono.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbTelefono.Location = new System.Drawing.Point(40, 153);
+            this.mtbTelefono.Location = new System.Drawing.Point(35, 175);
             this.mtbTelefono.Mask = "000-000-0000";
             this.mtbTelefono.Name = "mtbTelefono";
             this.mtbTelefono.Size = new System.Drawing.Size(192, 24);
@@ -77,7 +78,7 @@
             // 
             this.txtbCorreo.BackColor = System.Drawing.Color.Chocolate;
             this.txtbCorreo.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbCorreo.Location = new System.Drawing.Point(40, 450);
+            this.txtbCorreo.Location = new System.Drawing.Point(35, 472);
             this.txtbCorreo.Name = "txtbCorreo";
             this.txtbCorreo.Size = new System.Drawing.Size(192, 24);
             this.txtbCorreo.TabIndex = 85;
@@ -88,7 +89,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label9.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(36, 412);
+            this.label9.Location = new System.Drawing.Point(31, 434);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 21);
             this.label9.TabIndex = 84;
@@ -99,7 +100,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label10.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(36, 111);
+            this.label10.Location = new System.Drawing.Point(31, 133);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 21);
             this.label10.TabIndex = 83;
@@ -109,7 +110,7 @@
             // 
             this.txtIdProveedor_Telefono.BackColor = System.Drawing.Color.Chocolate;
             this.txtIdProveedor_Telefono.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdProveedor_Telefono.Location = new System.Drawing.Point(40, 71);
+            this.txtIdProveedor_Telefono.Location = new System.Drawing.Point(35, 93);
             this.txtIdProveedor_Telefono.Name = "txtIdProveedor_Telefono";
             this.txtIdProveedor_Telefono.Size = new System.Drawing.Size(192, 24);
             this.txtIdProveedor_Telefono.TabIndex = 88;
@@ -120,7 +121,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 35);
+            this.label1.Location = new System.Drawing.Point(31, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 21);
             this.label1.TabIndex = 87;
@@ -130,7 +131,7 @@
             // 
             this.btnReiniciarCorreo.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarCorreo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarCorreo.Location = new System.Drawing.Point(1104, 345);
+            this.btnReiniciarCorreo.Location = new System.Drawing.Point(1099, 367);
             this.btnReiniciarCorreo.Name = "btnReiniciarCorreo";
             this.btnReiniciarCorreo.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarCorreo.TabIndex = 116;
@@ -142,7 +143,7 @@
             // 
             this.btnReiniciarTelefono.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarTelefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarTelefono.Location = new System.Drawing.Point(1104, 35);
+            this.btnReiniciarTelefono.Location = new System.Drawing.Point(1099, 57);
             this.btnReiniciarTelefono.Name = "btnReiniciarTelefono";
             this.btnReiniciarTelefono.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarTelefono.TabIndex = 115;
@@ -154,7 +155,7 @@
             // 
             this.txbBuscarCorreo.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscarCorreo.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscarCorreo.Location = new System.Drawing.Point(693, 352);
+            this.txbBuscarCorreo.Location = new System.Drawing.Point(688, 374);
             this.txbBuscarCorreo.Name = "txbBuscarCorreo";
             this.txbBuscarCorreo.Size = new System.Drawing.Size(192, 24);
             this.txbBuscarCorreo.TabIndex = 114;
@@ -164,7 +165,7 @@
             // 
             this.btnBuscarCorreo.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarCorreo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarCorreo.Location = new System.Drawing.Point(935, 346);
+            this.btnBuscarCorreo.Location = new System.Drawing.Point(930, 368);
             this.btnBuscarCorreo.Name = "btnBuscarCorreo";
             this.btnBuscarCorreo.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarCorreo.TabIndex = 113;
@@ -181,7 +182,7 @@
             "ID",
             "ID Proveedor",
             "Correo"});
-            this.cmbBuscarCorreo.Location = new System.Drawing.Point(493, 349);
+            this.cmbBuscarCorreo.Location = new System.Drawing.Point(488, 371);
             this.cmbBuscarCorreo.Name = "cmbBuscarCorreo";
             this.cmbBuscarCorreo.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscarCorreo.TabIndex = 112;
@@ -192,7 +193,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label13.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(339, 355);
+            this.label13.Location = new System.Drawing.Point(334, 377);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(113, 21);
             this.label13.TabIndex = 111;
@@ -202,7 +203,7 @@
             // 
             this.dtgvCorreo.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvCorreo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCorreo.Location = new System.Drawing.Point(412, 381);
+            this.dtgvCorreo.Location = new System.Drawing.Point(407, 403);
             this.dtgvCorreo.Name = "dtgvCorreo";
             this.dtgvCorreo.Size = new System.Drawing.Size(847, 219);
             this.dtgvCorreo.TabIndex = 110;
@@ -212,7 +213,7 @@
             // 
             this.txbBuscarTelefono.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscarTelefono.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscarTelefono.Location = new System.Drawing.Point(693, 38);
+            this.txbBuscarTelefono.Location = new System.Drawing.Point(688, 60);
             this.txbBuscarTelefono.Name = "txbBuscarTelefono";
             this.txbBuscarTelefono.Size = new System.Drawing.Size(192, 24);
             this.txbBuscarTelefono.TabIndex = 109;
@@ -222,7 +223,7 @@
             // 
             this.btnBuscarTelefono.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarTelefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarTelefono.Location = new System.Drawing.Point(935, 36);
+            this.btnBuscarTelefono.Location = new System.Drawing.Point(930, 58);
             this.btnBuscarTelefono.Name = "btnBuscarTelefono";
             this.btnBuscarTelefono.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarTelefono.TabIndex = 108;
@@ -239,7 +240,7 @@
             "ID",
             "ID Proveedor",
             "Teléfono"});
-            this.cmbBuscarTelefono.Location = new System.Drawing.Point(493, 35);
+            this.cmbBuscarTelefono.Location = new System.Drawing.Point(488, 57);
             this.cmbBuscarTelefono.Name = "cmbBuscarTelefono";
             this.cmbBuscarTelefono.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscarTelefono.TabIndex = 107;
@@ -250,7 +251,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label12.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(339, 38);
+            this.label12.Location = new System.Drawing.Point(334, 60);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(113, 21);
             this.label12.TabIndex = 106;
@@ -260,7 +261,7 @@
             // 
             this.dtgvTelefono.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvTelefono.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvTelefono.Location = new System.Drawing.Point(412, 71);
+            this.dtgvTelefono.Location = new System.Drawing.Point(407, 93);
             this.dtgvTelefono.Name = "dtgvTelefono";
             this.dtgvTelefono.Size = new System.Drawing.Size(847, 219);
             this.dtgvTelefono.TabIndex = 105;
@@ -269,7 +270,7 @@
             // lbl_IdTelefono
             // 
             this.lbl_IdTelefono.AutoSize = true;
-            this.lbl_IdTelefono.Location = new System.Drawing.Point(340, 164);
+            this.lbl_IdTelefono.Location = new System.Drawing.Point(335, 186);
             this.lbl_IdTelefono.Name = "lbl_IdTelefono";
             this.lbl_IdTelefono.Size = new System.Drawing.Size(41, 13);
             this.lbl_IdTelefono.TabIndex = 117;
@@ -280,7 +281,7 @@
             // lbl_IdCorreo
             // 
             this.lbl_IdCorreo.AutoSize = true;
-            this.lbl_IdCorreo.Location = new System.Drawing.Point(340, 474);
+            this.lbl_IdCorreo.Location = new System.Drawing.Point(335, 496);
             this.lbl_IdCorreo.Name = "lbl_IdCorreo";
             this.lbl_IdCorreo.Size = new System.Drawing.Size(41, 13);
             this.lbl_IdCorreo.TabIndex = 118;
@@ -292,7 +293,7 @@
             // 
             this.btnEliminar_Telefono.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar_Telefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar_Telefono.Location = new System.Drawing.Point(188, 220);
+            this.btnEliminar_Telefono.Location = new System.Drawing.Point(183, 242);
             this.btnEliminar_Telefono.Name = "btnEliminar_Telefono";
             this.btnEliminar_Telefono.Size = new System.Drawing.Size(142, 38);
             this.btnEliminar_Telefono.TabIndex = 121;
@@ -304,7 +305,7 @@
             // 
             this.btnEditar_Telefono.BackColor = System.Drawing.Color.Peru;
             this.btnEditar_Telefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar_Telefono.Location = new System.Drawing.Point(40, 246);
+            this.btnEditar_Telefono.Location = new System.Drawing.Point(35, 268);
             this.btnEditar_Telefono.Name = "btnEditar_Telefono";
             this.btnEditar_Telefono.Size = new System.Drawing.Size(142, 44);
             this.btnEditar_Telefono.TabIndex = 120;
@@ -316,7 +317,7 @@
             // 
             this.btnAgregar_Telefono.BackColor = System.Drawing.Color.Peru;
             this.btnAgregar_Telefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar_Telefono.Location = new System.Drawing.Point(40, 199);
+            this.btnAgregar_Telefono.Location = new System.Drawing.Point(35, 221);
             this.btnAgregar_Telefono.Name = "btnAgregar_Telefono";
             this.btnAgregar_Telefono.Size = new System.Drawing.Size(142, 41);
             this.btnAgregar_Telefono.TabIndex = 119;
@@ -340,7 +341,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1262, 645);
+            this.btnSalir.Location = new System.Drawing.Point(1073, 645);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(181, 50);
             this.btnSalir.TabIndex = 123;
@@ -352,7 +353,7 @@
             // 
             this.txtIdProveedor_Correo.BackColor = System.Drawing.Color.Chocolate;
             this.txtIdProveedor_Correo.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdProveedor_Correo.Location = new System.Drawing.Point(40, 381);
+            this.txtIdProveedor_Correo.Location = new System.Drawing.Point(35, 403);
             this.txtIdProveedor_Correo.Name = "txtIdProveedor_Correo";
             this.txtIdProveedor_Correo.Size = new System.Drawing.Size(192, 24);
             this.txtIdProveedor_Correo.TabIndex = 125;
@@ -363,7 +364,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 343);
+            this.label2.Location = new System.Drawing.Point(31, 365);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 21);
             this.label2.TabIndex = 124;
@@ -373,7 +374,7 @@
             // 
             this.btnEliminar_Correo.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar_Correo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar_Correo.Location = new System.Drawing.Point(188, 518);
+            this.btnEliminar_Correo.Location = new System.Drawing.Point(183, 540);
             this.btnEliminar_Correo.Name = "btnEliminar_Correo";
             this.btnEliminar_Correo.Size = new System.Drawing.Size(142, 38);
             this.btnEliminar_Correo.TabIndex = 128;
@@ -385,7 +386,7 @@
             // 
             this.btnEditar_Correo.BackColor = System.Drawing.Color.Peru;
             this.btnEditar_Correo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar_Correo.Location = new System.Drawing.Point(40, 544);
+            this.btnEditar_Correo.Location = new System.Drawing.Point(35, 566);
             this.btnEditar_Correo.Name = "btnEditar_Correo";
             this.btnEditar_Correo.Size = new System.Drawing.Size(142, 44);
             this.btnEditar_Correo.TabIndex = 127;
@@ -397,7 +398,7 @@
             // 
             this.btnAgregar_Correo.BackColor = System.Drawing.Color.Peru;
             this.btnAgregar_Correo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar_Correo.Location = new System.Drawing.Point(40, 497);
+            this.btnAgregar_Correo.Location = new System.Drawing.Point(35, 519);
             this.btnAgregar_Correo.Name = "btnAgregar_Correo";
             this.btnAgregar_Correo.Size = new System.Drawing.Size(142, 41);
             this.btnAgregar_Correo.TabIndex = 126;
@@ -405,13 +406,25 @@
             this.btnAgregar_Correo.UseVisualStyleBackColor = false;
             this.btnAgregar_Correo.Click += new System.EventHandler(this.btnAgregar_Correo_Click);
             // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.lblInfo.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(20, 9);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(89, 21);
+            this.lblInfo.TabIndex = 129;
+            this.lblInfo.Text = "Usuario: ";
+            // 
             // Proveedor_Correo_Telefono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.ac4195e9_f959_4e67_a731_ef20de244345;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1455, 707);
+            this.ClientSize = new System.Drawing.Size(1312, 707);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnEliminar_Correo);
             this.Controls.Add(this.btnEditar_Correo);
             this.Controls.Add(this.btnAgregar_Correo);
@@ -484,5 +497,6 @@
         private System.Windows.Forms.Button btnEliminar_Correo;
         private System.Windows.Forms.Button btnEditar_Correo;
         private System.Windows.Forms.Button btnAgregar_Correo;
+        private System.Windows.Forms.Label lblInfo;
     }
 }
