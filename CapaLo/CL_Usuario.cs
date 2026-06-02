@@ -167,11 +167,11 @@ namespace CapaLogica
                 try
                 {
                     string query = @"SELECT * FROM usuario 
-                             WHERE Nombre_Usuario = @usuario 
+                             WHERE Correo = @correo 
                              AND Contrasena = @contrasena";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.Parameters.AddWithValue("@correo", usuario);
                     cmd.Parameters.AddWithValue("@contrasena", contrasena);
 
                     conexion.Open();

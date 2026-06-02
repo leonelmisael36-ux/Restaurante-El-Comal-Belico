@@ -29,17 +29,17 @@ namespace Proyecto_Restaurante
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nombreUsuario = txtCorreo.Text.Trim();
+            string correo = txtCorreo.Text.Trim();
             string contrasena = txtContraseña.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(nombreUsuario) ||
+            if (string.IsNullOrWhiteSpace(correo) ||
                 string.IsNullOrWhiteSpace(contrasena))
             {
                 MessageBox.Show("Completa todos los campos");
                 return;
             }
 
-            Usuario usuarioLogueado = usuario.Login(nombreUsuario, contrasena);
+            Usuario usuarioLogueado = usuario.Login(correo, contrasena);
 
             if (usuarioLogueado != null)
             {
@@ -63,7 +63,7 @@ namespace Proyecto_Restaurante
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                MessageBox.Show("Correo o contraseña incorrectos");
             }
         }
 
