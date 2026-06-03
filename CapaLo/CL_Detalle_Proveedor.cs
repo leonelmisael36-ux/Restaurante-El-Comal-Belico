@@ -80,7 +80,7 @@ namespace CapaLogica
 
                     if (!estado.Equals("Activo", StringComparison.OrdinalIgnoreCase))
                     {
-                        MesaggeBox.Show("El proveedor está inactivo");
+                        Console.WriteLine("El proveedor está inactivo");
                         return false;
                     }
 
