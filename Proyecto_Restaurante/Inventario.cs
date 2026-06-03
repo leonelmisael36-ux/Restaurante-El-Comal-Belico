@@ -213,9 +213,7 @@ namespace Proyecto_Restaurante
             else if (filtro == "Ingrediente")
             {
                 if (int.TryParse(texto, out int idIngrediente))
-                {
                     resultado = busqueda.BuscarPorIngrediente(idIngrediente);
-                }
                 else
                 {
                     MessageBox.Show("El ID del ingrediente debe ser numérico");
@@ -225,21 +223,17 @@ namespace Proyecto_Restaurante
             else if (filtro == "Fecha")
             {
                 if (DateTime.TryParse(texto, out DateTime fecha))
-                {
                     resultado = busqueda.BuscarPorFecha(fecha);
-                }
                 else
                 {
-                    MessageBox.Show("Fecha inválida. Usa un formato válido.");
+                    MessageBox.Show("Fecha inválida");
                     return;
                 }
             }
             else if (filtro == "Stock")
             {
                 if (decimal.TryParse(texto, out decimal stock))
-                {
                     resultado = busqueda.BuscarPorStock(stock);
-                }
                 else
                 {
                     MessageBox.Show("El stock debe ser numérico");
@@ -249,17 +243,15 @@ namespace Proyecto_Restaurante
             else if (filtro == "Stock Minimo")
             {
                 if (decimal.TryParse(texto, out decimal stockMinimo))
-                {
                     resultado = busqueda.BuscarPorStockMinimo(stockMinimo);
-                }
                 else
                 {
                     MessageBox.Show("El stock mínimo debe ser numérico");
                     return;
                 }
-
-                dtgvCliente.DataSource = resultado;
             }
+
+            dtgvCliente.DataSource = resultado;
         }
 
         private void btnReiniciar_Click(object sender, EventArgs e)
@@ -305,20 +297,18 @@ namespace Proyecto_Restaurante
         {
             if (string.IsNullOrWhiteSpace(cmbBuscarIngrediente.Text))
             {
-                MessageBox.Show("Selecciona un tipo de búsqueda", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona un tipo de búsqueda", "Validación");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txtbBsucarIngrediente.Text))
             {
-                MessageBox.Show("Ingresa un valor para buscar", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingresa un valor para buscar", "Validación");
                 return;
             }
 
-            string filtro = cmbBuscar.Text;
-            string texto = txbBuscar.Text.Trim();
+            string filtro = cmbBuscarIngrediente.Text;
+            string texto = txtbBsucarIngrediente.Text.Trim();
 
             List<Ing> resultado = new List<Ing>();
 
@@ -328,8 +318,7 @@ namespace Proyecto_Restaurante
                     resultado = busquedaIngredientes.BuscarPorId(id);
                 else
                 {
-                    MessageBox.Show("El ID debe ser numérico", "Validación",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El ID debe ser numérico", "Validación");
                     return;
                 }
             }
@@ -342,7 +331,7 @@ namespace Proyecto_Restaurante
                 resultado = busquedaIngredientes.BuscarPorUnidad(texto);
             }
 
-            dtgvCliente.DataSource = resultado;
+            dataGridView1.DataSource = resultado;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

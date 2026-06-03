@@ -296,7 +296,7 @@
             // lbl_IdIngrediente
             // 
             this.lbl_IdIngrediente.AutoSize = true;
-            this.lbl_IdIngrediente.Location = new System.Drawing.Point(435, 26);
+            this.lbl_IdIngrediente.Location = new System.Drawing.Point(250, 489);
             this.lbl_IdIngrediente.Name = "lbl_IdIngrediente";
             this.lbl_IdIngrediente.Size = new System.Drawing.Size(35, 13);
             this.lbl_IdIngrediente.TabIndex = 87;
