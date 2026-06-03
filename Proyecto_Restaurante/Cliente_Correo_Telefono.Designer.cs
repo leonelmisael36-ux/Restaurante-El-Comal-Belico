@@ -276,9 +276,9 @@
             // 
             this.dtgvCorreo.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvCorreo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCorreo.Location = new System.Drawing.Point(396, 387);
+            this.dtgvCorreo.Location = new System.Drawing.Point(382, 387);
             this.dtgvCorreo.Name = "dtgvCorreo";
-            this.dtgvCorreo.Size = new System.Drawing.Size(847, 240);
+            this.dtgvCorreo.Size = new System.Drawing.Size(861, 240);
             this.dtgvCorreo.TabIndex = 140;
             this.dtgvCorreo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCorreo_CellClick);
             this.dtgvCorreo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCorreo_CellContentClick);
@@ -335,9 +335,9 @@
             // 
             this.dtgvTelefono.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dtgvTelefono.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvTelefono.Location = new System.Drawing.Point(398, 99);
+            this.dtgvTelefono.Location = new System.Drawing.Point(382, 99);
             this.dtgvTelefono.Name = "dtgvTelefono";
-            this.dtgvTelefono.Size = new System.Drawing.Size(847, 230);
+            this.dtgvTelefono.Size = new System.Drawing.Size(863, 230);
             this.dtgvTelefono.TabIndex = 135;
             this.dtgvTelefono.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTelefono_CellClick);
             this.dtgvTelefono.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTelefono_CellContentClick);

@@ -65,9 +65,9 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Peru;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(44, 482);
+            this.btnEditar.Location = new System.Drawing.Point(44, 453);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(196, 60);
+            this.btnEditar.Size = new System.Drawing.Size(167, 43);
             this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -79,7 +79,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Location = new System.Drawing.Point(44, 402);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(196, 57);
+            this.btnAgregar.Size = new System.Drawing.Size(167, 45);
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -257,9 +257,9 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1240, 552);
+            this.btnSalir.Location = new System.Drawing.Point(255, 508);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(185, 62);
+            this.btnSalir.Size = new System.Drawing.Size(186, 46);
             this.btnSalir.TabIndex = 35;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -269,9 +269,9 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(523, 552);
+            this.btnRegresar.Location = new System.Drawing.Point(263, 401);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(200, 62);
+            this.btnRegresar.Size = new System.Drawing.Size(178, 46);
             this.btnRegresar.TabIndex = 34;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
@@ -342,9 +342,9 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(259, 456);
+            this.btnEliminar.Location = new System.Drawing.Point(44, 510);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(196, 60);
+            this.btnEliminar.Size = new System.Drawing.Size(163, 45);
             this.btnEliminar.TabIndex = 52;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -366,9 +366,9 @@
             // 
             this.btnCorreo_Telefono.BackColor = System.Drawing.Color.Peru;
             this.btnCorreo_Telefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCorreo_Telefono.Location = new System.Drawing.Point(877, 552);
+            this.btnCorreo_Telefono.Location = new System.Drawing.Point(263, 453);
             this.btnCorreo_Telefono.Name = "btnCorreo_Telefono";
-            this.btnCorreo_Telefono.Size = new System.Drawing.Size(200, 62);
+            this.btnCorreo_Telefono.Size = new System.Drawing.Size(178, 49);
             this.btnCorreo_Telefono.TabIndex = 57;
             this.btnCorreo_Telefono.Text = "Correo/Telefono";
             this.btnCorreo_Telefono.UseVisualStyleBackColor = false;
@@ -401,7 +401,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_124301;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1465, 641);
+            this.ClientSize = new System.Drawing.Size(1465, 577);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.btnCorreo_Telefono);

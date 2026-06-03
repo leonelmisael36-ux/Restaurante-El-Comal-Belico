@@ -66,10 +66,10 @@
             // txtbId_Platillo
             // 
             this.txtbId_Platillo.BackColor = System.Drawing.Color.Chocolate;
-            this.txtbId_Platillo.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbId_Platillo.Location = new System.Drawing.Point(33, 271);
+            this.txtbId_Platillo.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbId_Platillo.Location = new System.Drawing.Point(33, 250);
             this.txtbId_Platillo.Name = "txtbId_Platillo";
-            this.txtbId_Platillo.Size = new System.Drawing.Size(289, 30);
+            this.txtbId_Platillo.Size = new System.Drawing.Size(289, 25);
             this.txtbId_Platillo.TabIndex = 21;
             this.txtbId_Platillo.TextChanged += new System.EventHandler(this.txtbId_Platillo_TextChanged);
             // 
@@ -78,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 223);
+            this.label1.Location = new System.Drawing.Point(39, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 24);
             this.label1.TabIndex = 20;
@@ -88,10 +88,10 @@
             // txtbId_Proveedor
             // 
             this.txtbId_Proveedor.BackColor = System.Drawing.Color.Chocolate;
-            this.txtbId_Proveedor.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbId_Proveedor.Font = new System.Drawing.Font("Modern No. 20", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbId_Proveedor.Location = new System.Drawing.Point(33, 146);
             this.txtbId_Proveedor.Name = "txtbId_Proveedor";
-            this.txtbId_Proveedor.Size = new System.Drawing.Size(289, 30);
+            this.txtbId_Proveedor.Size = new System.Drawing.Size(289, 25);
             this.txtbId_Proveedor.TabIndex = 19;
             this.txtbId_Proveedor.TextChanged += new System.EventHandler(this.txtbId_Proveedor_TextChanged);
             // 
@@ -110,9 +110,9 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(33, 502);
+            this.btnEliminar.Location = new System.Drawing.Point(33, 437);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(204, 58);
+            this.btnEliminar.Size = new System.Drawing.Size(168, 55);
             this.btnEliminar.TabIndex = 55;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -122,9 +122,9 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Peru;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(33, 430);
+            this.btnEditar.Location = new System.Drawing.Point(33, 364);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(204, 54);
+            this.btnEditar.Size = new System.Drawing.Size(168, 55);
             this.btnEditar.TabIndex = 54;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -134,9 +134,9 @@
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Peru;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(33, 347);
+            this.btnAgregar.Location = new System.Drawing.Point(33, 303);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(204, 56);
+            this.btnAgregar.Size = new System.Drawing.Size(168, 45);
             this.btnAgregar.TabIndex = 53;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -146,7 +146,7 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(63, 855);
+            this.btnRegresar.Location = new System.Drawing.Point(33, 788);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(182, 50);
             this.btnRegresar.TabIndex = 56;
@@ -158,7 +158,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(63, 921);
+            this.btnSalir.Location = new System.Drawing.Point(33, 854);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(182, 50);
             this.btnSalir.TabIndex = 57;
@@ -170,7 +170,7 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(1093, 18);
+            this.btnReiniciar.Location = new System.Drawing.Point(1083, 33);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciar.TabIndex = 63;
@@ -182,7 +182,7 @@
             // 
             this.txbBuscar.BackColor = System.Drawing.Color.Chocolate;
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(764, 18);
+            this.txbBuscar.Location = new System.Drawing.Point(764, 35);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(137, 24);
             this.txbBuscar.TabIndex = 62;
@@ -192,7 +192,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Peru;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(931, 15);
+            this.btnBuscar.Location = new System.Drawing.Point(931, 32);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(128, 29);
             this.btnBuscar.TabIndex = 61;
@@ -210,7 +210,7 @@
             "Nombre Proveedor",
             "ID Ingrediente",
             "Nombre Ingrediente"});
-            this.cmbBuscar.Location = new System.Drawing.Point(558, 16);
+            this.cmbBuscar.Location = new System.Drawing.Point(558, 33);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
             this.cmbBuscar.TabIndex = 60;
@@ -221,7 +221,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(423, 18);
+            this.label11.Location = new System.Drawing.Point(423, 35);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 59;
@@ -240,7 +240,7 @@
             // lbl_IdProveedor
             // 
             this.lbl_IdProveedor.AutoSize = true;
-            this.lbl_IdProveedor.Location = new System.Drawing.Point(376, 137);
+            this.lbl_IdProveedor.Location = new System.Drawing.Point(358, 35);
             this.lbl_IdProveedor.Name = "lbl_IdProveedor";
             this.lbl_IdProveedor.Size = new System.Drawing.Size(35, 13);
             this.lbl_IdProveedor.TabIndex = 86;
@@ -250,7 +250,7 @@
             // lbl_IdPlatillo
             // 
             this.lbl_IdPlatillo.AutoSize = true;
-            this.lbl_IdPlatillo.Location = new System.Drawing.Point(376, 196);
+            this.lbl_IdPlatillo.Location = new System.Drawing.Point(358, 66);
             this.lbl_IdPlatillo.Name = "lbl_IdPlatillo";
             this.lbl_IdPlatillo.Size = new System.Drawing.Size(35, 13);
             this.lbl_IdPlatillo.TabIndex = 87;
@@ -261,7 +261,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Peru;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1093, 337);
+            this.button1.Location = new System.Drawing.Point(1093, 328);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 30);
             this.button1.TabIndex = 93;
@@ -273,7 +273,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.Chocolate;
             this.textBox1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(764, 337);
+            this.textBox1.Location = new System.Drawing.Point(764, 333);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(137, 24);
             this.textBox1.TabIndex = 92;
@@ -282,7 +282,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Peru;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(931, 334);
+            this.button2.Location = new System.Drawing.Point(931, 330);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 29);
             this.button2.TabIndex = 91;
@@ -300,7 +300,7 @@
             "Descripcion",
             "Disponible",
             "Fecha"});
-            this.comboBox1.Location = new System.Drawing.Point(558, 335);
+            this.comboBox1.Location = new System.Drawing.Point(558, 331);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 26);
             this.comboBox1.TabIndex = 90;
@@ -310,7 +310,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(423, 337);
+            this.label3.Location = new System.Drawing.Point(423, 333);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 21);
             this.label3.TabIndex = 89;
@@ -320,7 +320,7 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(427, 385);
+            this.dataGridView1.Location = new System.Drawing.Point(427, 364);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(821, 247);
             this.dataGridView1.TabIndex = 88;
@@ -329,7 +329,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Peru;
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1093, 669);
+            this.button3.Location = new System.Drawing.Point(1093, 631);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(155, 30);
             this.button3.TabIndex = 99;
@@ -341,7 +341,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.Color.Chocolate;
             this.textBox2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(764, 669);
+            this.textBox2.Location = new System.Drawing.Point(764, 637);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(137, 24);
             this.textBox2.TabIndex = 98;
@@ -350,7 +350,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Peru;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(931, 666);
+            this.button4.Location = new System.Drawing.Point(931, 634);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 29);
             this.button4.TabIndex = 97;
@@ -369,7 +369,7 @@
             "Ciudad",
             "Estado",
             "Estado Proveedor"});
-            this.comboBox2.Location = new System.Drawing.Point(558, 667);
+            this.comboBox2.Location = new System.Drawing.Point(558, 635);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(182, 26);
             this.comboBox2.TabIndex = 96;
@@ -379,7 +379,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(423, 669);
+            this.label4.Location = new System.Drawing.Point(423, 637);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 21);
             this.label4.TabIndex = 95;
@@ -389,7 +389,7 @@
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(427, 717);
+            this.dataGridView2.Location = new System.Drawing.Point(427, 667);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(821, 256);
             this.dataGridView2.TabIndex = 94;
@@ -411,7 +411,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_123849;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1340, 982);
+            this.ClientSize = new System.Drawing.Size(1284, 943);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox2);
