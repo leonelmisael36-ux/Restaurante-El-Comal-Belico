@@ -31,7 +31,7 @@ namespace CapaValidar
                 mensaje += "El código postal es demasiado largo\n";
 
             if (datos.YaExisteNombre(obj.NombreEmpresa))
-                mensaje += "Ya existe un proveedor con ese nombre\n";
+                mensaje += "Ya existe esta empresa\n";
 
             if (mensaje != "")
                 return false;
@@ -57,8 +57,10 @@ namespace CapaValidar
             if (!string.IsNullOrWhiteSpace(obj.CPPr) && obj.CPPr.Length > 10)
                 mensaje += "El código postal es demasiado largo\n";
 
+            obj.NombreEmpresa = obj.NombreEmpresa.Trim();
+
             if (datos.YaExisteNombreEditar(obj.Id_Proveedor, obj.NombreEmpresa))
-                mensaje += "Ya existe otro proveedor con ese nombre\n";
+                mensaje += "Ya existe esta empresa\n";
 
             if (mensaje != "")
                 return false;

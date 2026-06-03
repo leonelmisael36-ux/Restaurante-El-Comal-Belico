@@ -163,7 +163,7 @@ namespace CapaLogica
             {
                 string query = @"SELECT COUNT(*) 
                          FROM proveedor 
-                         WHERE NombreEmpresa = @Nombre 
+                         WHERE TRIM(LOWER(NombreEmpresa)) = TRIM(LOWER(@Nombre))
                          AND Id_Proveedor <> @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);

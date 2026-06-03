@@ -59,10 +59,35 @@ namespace CapaLogica
             {
                 try
                 {
+                    conexion.Open();
+
+                    string queryProveedor = @"SELECT EstadoProveedor 
+                                      FROM proveedor 
+                                      WHERE Id_Proveedor = @Id";
+
+                    MySqlCommand cmdProv = new MySqlCommand(queryProveedor, conexion);
+                    cmdProv.Parameters.AddWithValue("@Id", obj.Id_Proveedor);
+
+                    object result = cmdProv.ExecuteScalar();
+
+                    if (result == null)
+                    {
+                        Console.WriteLine("El proveedor no existe");
+                        return false;
+                    }
+
+                    string estado = result.ToString().Trim();
+
+                    if (!estado.Equals("Activo", StringComparison.OrdinalIgnoreCase))
+                    {
+                        MesaggeBox.Show("El proveedor está inactivo");
+                        return false;
+                    }
+
                     string query = @"INSERT INTO detalle_proveedor
-                            (Id_Proveedor, Id_Ingrediente, Cantidad, Fecha)
-                            VALUES
-                            (@Id_Proveedor, @Id_Ingrediente, @Cantidad, @Fecha)";
+                    (Id_Proveedor, Id_Ingrediente, Cantidad, Fecha)
+                    VALUES
+                    (@Id_Proveedor, @Id_Ingrediente, @Cantidad, @Fecha)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
 
@@ -71,13 +96,12 @@ namespace CapaLogica
                     cmd.Parameters.AddWithValue("@Cantidad", obj.Cantidad);
                     cmd.Parameters.AddWithValue("@Fecha", obj.Fecha);
 
-                    conexion.Open();
                     respuesta = cmd.ExecuteNonQuery() > 0;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    respuesta = false;
+                    return false;
                 }
             }
 
