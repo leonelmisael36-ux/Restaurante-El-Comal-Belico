@@ -44,14 +44,22 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.lbl_Id = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.btnReiniciar = new System.Windows.Forms.Button();
+            this.txbCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.cmbBuscarCliente = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtgvCliente = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDetallePedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(900, 438);
+            this.btnSalir.Location = new System.Drawing.Point(30, 557);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(212, 57);
             this.btnSalir.TabIndex = 79;
@@ -63,12 +71,13 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(43, 438);
+            this.btnRegresar.Location = new System.Drawing.Point(30, 404);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(209, 60);
+            this.btnRegresar.Size = new System.Drawing.Size(212, 48);
             this.btnRegresar.TabIndex = 78;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnReiniciarDetallePedido
             // 
@@ -110,10 +119,10 @@
             this.cmbDetallePedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDetallePedido.FormattingEnabled = true;
             this.cmbDetallePedido.Items.AddRange(new object[] {
-            "Id",
-            "Descripcion",
-            "Disponible",
-            "Fecha"});
+            "ID Pedido",
+            "Fecha",
+            "Total",
+            "Cliente"});
             this.cmbDetallePedido.Location = new System.Drawing.Point(437, 63);
             this.cmbDetallePedido.Name = "cmbDetallePedido";
             this.cmbDetallePedido.Size = new System.Drawing.Size(182, 26);
@@ -137,7 +146,7 @@
             this.dtgvDetallePedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDetallePedido.Location = new System.Drawing.Point(322, 104);
             this.dtgvDetallePedido.Name = "dtgvDetallePedido";
-            this.dtgvDetallePedido.Size = new System.Drawing.Size(790, 316);
+            this.dtgvDetallePedido.Size = new System.Drawing.Size(790, 257);
             this.dtgvDetallePedido.TabIndex = 80;
             this.dtgvDetallePedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDetallePedido_CellClick);
             this.dtgvDetallePedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDetallePedido_CellContentClick);
@@ -204,12 +213,13 @@
             // 
             this.btnDetalle.BackColor = System.Drawing.Color.Peru;
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Location = new System.Drawing.Point(478, 441);
+            this.btnDetalle.Location = new System.Drawing.Point(30, 471);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(212, 57);
             this.btnDetalle.TabIndex = 91;
             this.btnDetalle.Text = "Detalle Pedido";
             this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // lbl_Id
             // 
@@ -232,13 +242,97 @@
             this.lblInfo.TabIndex = 93;
             this.lblInfo.Text = "Usuario: ";
             // 
+            // btnReiniciar
+            // 
+            this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
+            this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReiniciar.Location = new System.Drawing.Point(957, 379);
+            this.btnReiniciar.Name = "btnReiniciar";
+            this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
+            this.btnReiniciar.TabIndex = 99;
+            this.btnReiniciar.Text = "Reiniciar";
+            this.btnReiniciar.UseVisualStyleBackColor = false;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
+            // 
+            // txbCliente
+            // 
+            this.txbCliente.BackColor = System.Drawing.Color.Chocolate;
+            this.txbCliente.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCliente.Location = new System.Drawing.Point(625, 379);
+            this.txbCliente.Name = "txbCliente";
+            this.txbCliente.Size = new System.Drawing.Size(192, 24);
+            this.txbCliente.TabIndex = 98;
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.Peru;
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarCliente.Location = new System.Drawing.Point(823, 378);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(128, 29);
+            this.btnBuscarCliente.TabIndex = 97;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // cmbBuscarCliente
+            // 
+            this.cmbBuscarCliente.BackColor = System.Drawing.Color.Chocolate;
+            this.cmbBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBuscarCliente.FormattingEnabled = true;
+            this.cmbBuscarCliente.Items.AddRange(new object[] {
+            "ID",
+            "Nombre",
+            "Ciudad",
+            "Apellido",
+            "Estado"});
+            this.cmbBuscarCliente.Location = new System.Drawing.Point(437, 378);
+            this.cmbBuscarCliente.Name = "cmbBuscarCliente";
+            this.cmbBuscarCliente.Size = new System.Drawing.Size(182, 26);
+            this.cmbBuscarCliente.TabIndex = 96;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(318, 382);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(113, 21);
+            this.label11.TabIndex = 95;
+            this.label11.Text = "Buscar Por:";
+            // 
+            // dtgvCliente
+            // 
+            this.dtgvCliente.BackgroundColor = System.Drawing.Color.RosyBrown;
+            this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCliente.Location = new System.Drawing.Point(322, 421);
+            this.dtgvCliente.Name = "dtgvCliente";
+            this.dtgvCliente.Size = new System.Drawing.Size(790, 259);
+            this.dtgvCliente.TabIndex = 94;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 25);
+            this.toolStrip1.TabIndex = 100;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_123514;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1156, 541);
+            this.ClientSize = new System.Drawing.Size(1156, 703);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.btnReiniciar);
+            this.Controls.Add(this.txbCliente);
+            this.Controls.Add(this.btnBuscarCliente);
+            this.Controls.Add(this.cmbBuscarCliente);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.dtgvCliente);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.btnDetalle);
@@ -262,6 +356,7 @@
             this.Load += new System.EventHandler(this.Pedidos_Load);
             this.InputLanguageChanging += new System.Windows.Forms.InputLanguageChangingEventHandler(this.Pedidos_InputLanguageChanging);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDetallePedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +379,12 @@
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Label lbl_Id;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Button btnReiniciar;
+        private System.Windows.Forms.TextBox txbCliente;
+        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.ComboBox cmbBuscarCliente;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dtgvCliente;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

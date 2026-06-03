@@ -1,11 +1,12 @@
-﻿using System;
+﻿using CapaMo;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using static CapaMo.ConexChuy;
-using CapaMo;
-using MySql.Data.MySqlClient;
 
 namespace CapaLogica
 {
@@ -96,15 +97,13 @@ namespace CapaLogica
                 {
                     string query = @"UPDATE inventario
                             SET Id_Ingrediente = @Id_Ingrediente,
-                                Stock = @Stock,
-                                StockMinimo = @StockMinimo,
+                                StockMinimo = @StockMinimo
                             WHERE Id_Inventario = @Id_Inventario";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
 
                     cmd.Parameters.AddWithValue("@Id_Inventario", obj.Id_Inventario);
                     cmd.Parameters.AddWithValue("@Id_Ingrediente", obj.Id_Ingrediente);
-                    cmd.Parameters.AddWithValue("@Stock", obj.Stock);
                     cmd.Parameters.AddWithValue("@StockMinimo", obj.StockMinimo);
                     cmd.Parameters.AddWithValue("@FechaRegistro", obj.FechaRegistro);
 
@@ -169,35 +168,57 @@ namespace CapaLogica
             {
                 try
                 {
-                    conexion.Open();
-
-                    string existeQuery = @"SELECT COUNT(*) FROM detalle_proveedor 
-                                   WHERE Id_Ingrediente = @Id";
-
-                    MySqlCommand cmdExiste = new MySqlCommand(existeQuery, conexion);
-                    cmdExiste.Parameters.AddWithValue("@Id", idIngrediente);
-
-                    int existe = Convert.ToInt32(cmdExiste.ExecuteScalar());
-
-                    string query;
-
-                    if (existe > 0)
-                    {
-                        query = @"UPDATE inventario
-                          SET Stock = Stock + @Cantidad
-                          WHERE Id_Ingrediente = @Id";
-                    }
-                    else
-                    {
-                        query = @"INSERT INTO inventario
-                          (Id_Ingrediente, Stock, StockMinimo, FechaRegistro)
-                          VALUES (@Id, @Cantidad, 0, CURDATE())";
-                    }
+                    string query = @"UPDATE inventario
+                             SET Stock = Stock + @Cantidad
+                             WHERE Id_Ingrediente = @Id";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
                     cmd.Parameters.AddWithValue("@Cantidad", cantidad);
                     cmd.Parameters.AddWithValue("@Id", idIngrediente);
 
+                    conexion.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        public bool ExisteIngredienteInventario(int idIngrediente)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM inventario 
+                         WHERE Id_Ingrediente = @Id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id", idIngrediente);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
+        public bool DisminuirStock(int idIngrediente, decimal cantidad)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    string query = @"UPDATE inventario
+                             SET Stock = Stock - @Cantidad
+                             WHERE Id_Ingrediente = @Id";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@Cantidad", cantidad);
+                    cmd.Parameters.AddWithValue("@Id", idIngrediente);
+
+                    conexion.Open();
                     return cmd.ExecuteNonQuery() > 0;
                 }
                 catch (Exception ex)

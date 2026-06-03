@@ -228,5 +228,25 @@ namespace CapaLogica
                 return cmd.ExecuteScalar() != null;
             }
         }
+
+        public bool ExisteCorreoEditar(string correo, int idUsuario)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*)
+                         FROM usuario
+                         WHERE Correo = @Correo
+                         AND Id_Usuario <> @IdUsuario";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                cmd.Parameters.AddWithValue("@Correo", correo);
+                cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
     }
 }

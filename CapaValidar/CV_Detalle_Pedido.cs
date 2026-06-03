@@ -23,13 +23,13 @@ namespace CapaValidar
 
             if (obj.Id_Pedido <= 0)
                 mensaje += "El pedido es obligatorio\n";
-            else if (!datos.ExistePedido(obj.Id_Pedido))
-                mensaje += "El pedido no existe\n";
 
             if (obj.Id_Tipo <= 0)
-                mensaje += "El tipo de platillo es obligatorio\n";
+                mensaje += "El tipo es obligatorio\n";
             else if (!datos.ExisteTipo(obj.Id_Tipo))
-                mensaje += "El tipo de platillo no existe\n";
+                mensaje += "El tipo no existe\n";
+            else if (!datos.PlatilloDisponible(obj.Id_Tipo))
+                mensaje += "El platillo no está disponible\n";
 
             if (obj.Cantidad <= 0)
                 mensaje += "La cantidad debe ser mayor a 0\n";

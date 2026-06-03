@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clie = CapaMo.Clientes;
 
 namespace Proyecto_Restaurante
 {
@@ -20,6 +21,8 @@ namespace Proyecto_Restaurante
         CL_Pedido objPedido = new CL_Pedido();
         CV_Pedido cvPedido = new CV_Pedido();
         B_Pedido busqueda = new B_Pedido();
+        B_Clientes busquedaClientes = new B_Clientes();
+        CL_Clientes objCliente = new CL_Clientes();
 
         public Pedidos()
         {
@@ -36,6 +39,17 @@ namespace Proyecto_Restaurante
             dtgvDetallePedido.AllowUserToDeleteRows = false;
         }
 
+        void MostrarClientes()
+        {
+            dtgvCliente.DataSource = objCliente.Listar();
+
+            dtgvCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgvCliente.ReadOnly = true;
+            dtgvCliente.AllowUserToAddRows = false;
+            dtgvCliente.AllowUserToDeleteRows = false;
+            dtgvCliente.MultiSelect = false;
+        }
+
         void Limpiar()
         {
             txtIdCliente.Clear();
@@ -47,6 +61,7 @@ namespace Proyecto_Restaurante
             lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
 
             MostrarPedidos();
+            MostrarClientes();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -238,6 +253,78 @@ namespace Proyecto_Restaurante
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            Registros_Pedidos frm = new Registros_Pedidos();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbBuscarCliente.Text))
+            {
+                MessageBox.Show("Selecciona un tipo de búsqueda");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txbCliente.Text))
+            {
+                MessageBox.Show("Ingresa un valor para buscar");
+                return;
+            }
+
+            string filtro = cmbBuscarCliente.Text;
+            string texto = txbCliente.Text.Trim();
+
+            List<Clie> resultado = new List<Clie>();
+
+            if (filtro == "ID")
+            {
+                if (int.TryParse(texto, out int id))
+                {
+                    resultado = busquedaClientes.BuscarPorId(id);
+                }
+                else
+                {
+                    MessageBox.Show("El ID debe ser numérico");
+                    return;
+                }
+            }
+            else if (filtro == "Nombre")
+            {
+                resultado = busquedaClientes.BuscarPorNombre(texto);
+            }
+            else if (filtro == "Apellido")
+            {
+                resultado = busquedaClientes.BuscarPorApellido(texto);
+            }
+            else if (filtro == "Ciudad")
+            {
+                resultado = busquedaClientes.BuscarPorCiudad(texto);
+            }
+            else if (filtro == "Estado")
+            {
+                resultado = busquedaClientes.BuscarPorEstado(texto);
+            }
+
+            dtgvCliente.DataSource = resultado;
+        }
+
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            MostrarClientes();
+            cmbBuscarCliente.SelectedIndex = -1;
+            txbCliente.Clear();
         }
     }
 }

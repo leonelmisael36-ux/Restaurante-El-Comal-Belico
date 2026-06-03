@@ -167,8 +167,7 @@ namespace Proyecto_Restaurante
 
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("Ingresa un valor para buscar", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingresa un valor para buscar", "Validación");
                 return;
             }
 
@@ -183,8 +182,7 @@ namespace Proyecto_Restaurante
                     resultado = busqueda.BuscarPorId(id);
                 else
                 {
-                    MessageBox.Show("El ID debe ser numérico", "Validación",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El ID debe ser numérico", "Validación");
                     return;
                 }
             }
@@ -203,8 +201,7 @@ namespace Proyecto_Restaurante
                     resultado = busqueda.BuscarPorEstado(false);
                 else
                 {
-                    MessageBox.Show("Escribe 'Activo' o 'Inactivo'", "Validación",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Escribe 'Activo' o 'Inactivo'", "Validación");
                     return;
                 }
             }
@@ -214,8 +211,7 @@ namespace Proyecto_Restaurante
                     resultado = busqueda.BuscarPorFecha(fecha);
                 else
                 {
-                    MessageBox.Show("Formato de fecha inválido (ej: 2026-05-31)", "Validación",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Formato de fecha inválido (ej: 2026-05-31)", "Validación");
                     return;
                 }
             }

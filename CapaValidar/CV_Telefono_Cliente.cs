@@ -40,6 +40,9 @@ namespace CapaValidar
 
                 if (!obj.Telefono.All(char.IsDigit))
                     mensaje += "El teléfono solo debe contener números\n";
+
+                if (datos.ExisteTelefono(obj.Telefono))
+                    mensaje += "Este teléfono ya está registrado\n";
             }
 
             if (mensaje != "")
@@ -74,6 +77,9 @@ namespace CapaValidar
 
                 if (!obj.Telefono.All(char.IsDigit))
                     mensaje += "El teléfono solo debe contener números\n";
+
+                if (datos.ExisteTelefonoEditar(obj.Telefono, obj.Id_Telefono))
+                    mensaje += "Este teléfono ya está registrado\n";
             }
 
             if (mensaje != "")

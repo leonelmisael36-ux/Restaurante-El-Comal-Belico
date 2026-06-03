@@ -152,7 +152,7 @@ namespace CapaLogica
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = "SELECT COUNT(*) FROM cliente WHERE Id_Cliente = @Id";
+                string query = "SELECT COUNT(*) FROM clientes WHERE Id_Cliente = @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Id", idCliente);

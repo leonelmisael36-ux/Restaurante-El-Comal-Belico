@@ -142,7 +142,7 @@ namespace CapaLogica
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = "SELECT COUNT(*) FROM cliente WHERE Id_Cliente = @Id";
+                string query = "SELECT COUNT(*) FROM clientes WHERE Id_Cliente = @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Id", idCliente);
@@ -151,6 +151,43 @@ namespace CapaLogica
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
 
                 return count > 0;
+            }
+        }
+
+        public bool ExisteTelefono(string telefono)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*)
+                         FROM telefono_cliente
+                         WHERE Telefono = @Telefono";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Telefono", telefono);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
+        public bool ExisteTelefonoEditar(string telefono, int idTelefono)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*)
+                         FROM telefono_cliente
+                         WHERE Telefono = @Telefono
+                         AND Id_Telefono <> @IdTelefono";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                cmd.Parameters.AddWithValue("@Telefono", telefono);
+                cmd.Parameters.AddWithValue("@IdTelefono", idTelefono);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
             }
         }
     }

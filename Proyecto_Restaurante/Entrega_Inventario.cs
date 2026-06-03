@@ -21,6 +21,7 @@ namespace Proyecto_Restaurante
         B_Detalle_Proveedor busqueda = new B_Detalle_Proveedor();
         B_Proveedor busquedaPro = new B_Proveedor();
         CL_Proveedor objProveedor = new CL_Proveedor();
+        CL_Inventario objInventario = new CL_Inventario();
         public Entrega_Inventario()
         {
             InitializeComponent();
@@ -89,6 +90,8 @@ namespace Proyecto_Restaurante
 
             if (cvDetalle.Registrar(obj, out mensaje))
             {
+                objInventario.AumentarStock(idIngrediente, cantidad);
+
                 MessageBox.Show("Entrega registrada 😄");
                 MostrarEntrega();
                 Limpiar();
@@ -132,24 +135,7 @@ namespace Proyecto_Restaurante
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(dtgvEntrega.CurrentRow.Cells["Id_DetalleProveedor"].Value.ToString(), out int id))
-            {
-                MessageBox.Show("Selecciona un registro");
-                return;
-            }
 
-            string mensaje = "";
-
-            if (cvDetalle.Eliminar(id, out mensaje))
-            {
-                MessageBox.Show("Eliminado 😄");
-                MostrarEntrega();
-                Limpiar();
-            }
-            else
-            {
-                MessageBox.Show(mensaje);
-            }
         }
 
         private void cmbEntrega_SelectedIndexChanged(object sender, EventArgs e)
@@ -226,6 +212,7 @@ namespace Proyecto_Restaurante
             lblInfo.Text = $"Usuario: {Sesion.NombreUsuario}    Rol: {Sesion.Rol}";
 
             MostrarEntrega();
+            MostrarProveedores();
 
             cmbEntrega.Items.Clear();
             cmbEntrega.Items.Add("ID Detalle");
@@ -250,7 +237,7 @@ namespace Proyecto_Restaurante
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            Inventario frm = new Inventario();
+            Pantalla_Principalcs frm = new Pantalla_Principalcs();
             frm.Show();
             this.Hide();
         }
@@ -332,6 +319,53 @@ namespace Proyecto_Restaurante
         private void dtgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            if (!int.TryParse(dtgvEntrega.CurrentRow.Cells["Id_DetalleProveedor"].Value.ToString(), out int id))
+            {
+                MessageBox.Show("Selecciona un registro");
+                return;
+            }
+
+            if (!int.TryParse(dtgvEntrega.CurrentRow.Cells["Id_DetalleProveedor"].Value.ToString(), out int idDetalle))
+            {
+                MessageBox.Show("ID inválido");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "¿Seguro que deseas eliminar esta entrega?",
+                "Confirmar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            int idIngrediente = Convert.ToInt32(dtgvEntrega.CurrentRow.Cells["Id_Ingrediente"].Value);
+            decimal cantidad = Convert.ToDecimal(dtgvEntrega.CurrentRow.Cells["Cantidad"].Value);
+
+            bool stockActualizado = objInventario.DisminuirStock(idIngrediente, cantidad);
+
+            bool eliminado = objDetalle.Eliminar(idDetalle);
+
+            if (eliminado)
+            {
+                MessageBox.Show("Entrega eliminada correctamente 😄");
+                MostrarEntrega();
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar la entrega");
+            }
         }
     }
 }

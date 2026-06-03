@@ -35,6 +35,10 @@ namespace CapaValidar
             if (obj.FechaRegistro == default)
                 mensaje += "La fecha no es válida\n";
 
+            if (datos.ExisteIngredienteInventario(obj.Id_Ingrediente))
+                mensaje += "Este ingrediente ya está registrado en inventario\n";
+            
+
             if (mensaje != "")
                 return false;
 

@@ -87,7 +87,6 @@ namespace Proyecto_Restaurante
             obj.Nombre_Platillo = txtbNombre.Text;
             obj.Descripcion = rtxtboxDescripcion.Text;
             obj.Precio_Venta = nudPrecioVenta.Value;
-            obj.Id_Categoria = Convert.ToInt32(txtbIdcategoria.Text);
 
             string mensaje = "";
 
@@ -245,6 +244,24 @@ namespace Proyecto_Restaurante
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dtgvPlatillo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtgvPlatillo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow fila = dtgvPlatillo.Rows[e.RowIndex];
+
+            lbl_Id.Text = fila.Cells["Id_Platillo"].Value.ToString();
+            txtbNombre.Text = fila.Cells["Nombre_Platillo"].Value.ToString();
+            rtxtboxDescripcion.Text = fila.Cells["Descripcion"].Value.ToString();
+            nudPrecioVenta.Value = Convert.ToDecimal(fila.Cells["Precio_Venta"].Value);
+            txtbIdcategoria.Text = fila.Cells["Id_Categoria"].Value.ToString();
         }
     }
 }

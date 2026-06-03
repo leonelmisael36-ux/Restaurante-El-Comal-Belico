@@ -52,11 +52,10 @@ namespace CapaValidar
             if (obj.Descripcion != null && obj.Descripcion.Trim().Length < 3)
                 mensaje += "La descripción debe tener al menos 3 caracteres\n";
 
-            if (!string.IsNullOrWhiteSpace(obj.Descripcion))
-            {
-                if (datos.YaExisteDescripcionEditar(obj.Id_Categoria, obj.Descripcion.Trim()))
-                    mensaje += "Ya existe otra categoría con esa descripción\n";
-            }
+            string desc = obj.Descripcion.Trim();
+
+            if (datos.YaExisteDescripcionEditar(obj.Id_Categoria, desc))
+                mensaje += "Ya existe otra categoría con esa descripción\n";
 
             if (mensaje != "")
                 return false;

@@ -142,7 +142,7 @@ namespace CapaLogica
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = "SELECT 1 FROM cliente WHERE Id_Cliente = @Id LIMIT 1";
+                string query = "SELECT 1 FROM clientes WHERE Id_Cliente = @Id LIMIT 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@Id", idCliente);

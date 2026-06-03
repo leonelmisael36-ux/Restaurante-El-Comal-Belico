@@ -153,15 +153,13 @@ namespace Proyecto_Restaurante
         {
             if (string.IsNullOrWhiteSpace(cmbBuscar.Text))
             {
-                MessageBox.Show("Selecciona un tipo de búsqueda", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona un tipo de búsqueda", "Validación");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txbBuscar.Text))
             {
-                MessageBox.Show("Ingresa un valor para buscar", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingresa un valor para buscar", "Validación");
                 return;
             }
 

@@ -32,6 +32,8 @@ namespace CapaValidar
 
             if (obj.Id_Categoria <= 0)
                 mensaje += "La categoría es obligatoria\n";
+            else if (!datos.ExisteCategoria(obj.Id_Categoria))
+                mensaje += "La categoría no existe\n"; 
 
             if (mensaje != "")
                 return false;
@@ -65,6 +67,8 @@ namespace CapaValidar
 
             if (obj.Id_Categoria <= 0)
                 mensaje += "La categoría es obligatoria\n";
+            else if (!datos.ExisteCategoria(obj.Id_Categoria))
+                mensaje += "La categoría no existe\n";
 
             if (mensaje != "")
                 return false;

@@ -81,7 +81,7 @@ namespace CapaValidar
 
                 if (!obj.Correo.Contains("@") || !obj.Correo.Contains("."))
                     mensaje += "Formato de correo inválido\n";
-                else if (datos.ExisteCorreo(obj.Correo))
+                else if (datos.ExisteCorreoEditar(obj.Correo, obj.Id_Usuario))
                     mensaje += "Este correo ya está registrado\n";
             }
 

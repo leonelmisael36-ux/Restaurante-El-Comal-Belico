@@ -146,6 +146,21 @@ namespace CapaLogica
             return respuesta;
         }
 
+        public bool ExisteCategoria(int idCategoria)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = "SELECT COUNT(*) FROM categoria WHERE Id_Categoria = @Id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@Id", idCategoria);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
         public bool ExistePlatillo(string nombrePlatillo)
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))

@@ -21,7 +21,7 @@ namespace CapaLogica
                 {
                     string query = "SELECT * FROM categoria";
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    cmd.CommandType = System.Data.CommandType.Text;
+
                     conexion.Open();
 
                     using (MySqlDataReader dr = cmd.ExecuteReader())
@@ -41,7 +41,6 @@ namespace CapaLogica
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    lista = new List<Categoria>();
                 }
             }
 
@@ -50,16 +49,16 @@ namespace CapaLogica
 
         public bool Registrar(Categoria obj)
         {
-            bool respuesta = false;
-
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 try
                 {
+                    obj.Descripcion = obj.Descripcion.Trim();
+
                     string query = @"INSERT INTO categoria
-                                   (Descripcion, Disponible, FechaRegistro)
-                                    VALUES
-                                   (@Descripcion, @Disponible, @FechaRegistro)";
+                               (Descripcion, Disponible, FechaRegistro)
+                               VALUES
+                               (@Descripcion, @Disponible, @FechaRegistro)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
 
@@ -70,26 +69,24 @@ namespace CapaLogica
                     cmd.Parameters.AddWithValue("@FechaRegistro", obj.FechaRegistro);
 
                     conexion.Open();
-                    respuesta = cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() > 0;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    respuesta = false;
+                    return false;
                 }
             }
-
-            return respuesta;
         }
 
         public bool Editar(Categoria obj)
         {
-            bool respuesta = false;
-
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 try
                 {
+                    obj.Descripcion = obj.Descripcion.Trim();
+
                     string query = @"UPDATE categoria
                             SET Descripcion = @Descripcion,
                                 Disponible = @Disponible
@@ -102,44 +99,27 @@ namespace CapaLogica
                     cmd.Parameters.AddWithValue("@Disponible", obj.Disponible ? 1 : 0);
 
                     conexion.Open();
-                    respuesta = cmd.ExecuteNonQuery() > 0;
+                    return cmd.ExecuteNonQuery() > 0;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    respuesta = false;
+                    return false;
                 }
             }
-
-            return respuesta;
         }
 
-
-        public bool Existe(int idCategoria)
-        {
-            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
-            {
-                string query = "SELECT COUNT(*) FROM categoria WHERE Id_Categoria = @Id";
-
-                MySqlCommand cmd = new MySqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@Id", idCategoria);
-
-                conexion.Open();
-
-                int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                return count > 0;
-            }
-        }
 
         public bool YaExisteDescripcion(string descripcion)
         {
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
-                string query = "SELECT COUNT(*) FROM categoria WHERE Descripcion = @Desc";
+                string query = @"SELECT COUNT(*) 
+                             FROM categoria 
+                             WHERE LOWER(Descripcion) = LOWER(@Desc)";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@Desc", descripcion);
+                cmd.Parameters.AddWithValue("@Desc", descripcion.Trim());
 
                 conexion.Open();
 
@@ -152,12 +132,12 @@ namespace CapaLogica
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT COUNT(*) 
-                         FROM categoria 
-                         WHERE Descripcion = @Desc 
-                         AND Id_Categoria <> @Id";
+                             FROM categoria 
+                             WHERE LOWER(Descripcion) = LOWER(@Desc)
+                             AND Id_Categoria <> @Id";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@Desc", descripcion);
+                cmd.Parameters.AddWithValue("@Desc", descripcion.Trim());
                 cmd.Parameters.AddWithValue("@Id", id);
 
                 conexion.Open();

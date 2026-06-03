@@ -75,9 +75,9 @@ namespace CapaLogica
                     decimal subtotal = obj.Cantidad * precioUnitario;
 
                     string query = @"INSERT INTO detalle_pedido
-            (Id_Pedido, Id_Tipo, Cantidad, PrecioUnitario, Subtotal, FechaPedido)
+            (Id_Pedido, Id_Tipo, Cantidad, PrecioUnitario, Subtotal, FechaRegistro)
             VALUES
-            (@Id_Pedido, @Id_Tipo, @Cantidad, @PrecioUnitario, @Subtotal, @FechaPedido)";
+            (@Id_Pedido, @Id_Tipo, @Cantidad, @PrecioUnitario, @Subtotal, @FechaRegistro)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
 
@@ -86,7 +86,7 @@ namespace CapaLogica
                     cmd.Parameters.AddWithValue("@Cantidad", obj.Cantidad);
                     cmd.Parameters.AddWithValue("@PrecioUnitario", precioUnitario);
                     cmd.Parameters.AddWithValue("@Subtotal", subtotal);
-                    cmd.Parameters.AddWithValue("@FechaPedido", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@FechaRegistro", DateTime.Today);
 
                     respuesta = cmd.ExecuteNonQuery() > 0;
                 }
@@ -142,28 +142,82 @@ namespace CapaLogica
 
         public bool Eliminar(int idDetalle)
         {
-            bool respuesta = false;
-
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 try
                 {
-                    string query = "DELETE FROM detalle_pedido WHERE Id_Detalle = @Id_Detalle";
-
-                    MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    cmd.Parameters.AddWithValue("@Id_Detalle", idDetalle);
-
                     conexion.Open();
-                    respuesta = cmd.ExecuteNonQuery() > 0;
+
+                    int idPedido = 0;
+                    decimal subtotal = 0;
+
+                    string queryGet = @"SELECT Id_Pedido, Subtotal 
+                                FROM detalle_pedido 
+                                WHERE Id_Detalle = @Id";
+
+                    MySqlCommand cmdGet = new MySqlCommand(queryGet, conexion);
+                    cmdGet.Parameters.AddWithValue("@Id", idDetalle);
+
+                    using (MySqlDataReader dr = cmdGet.ExecuteReader())
+                    {
+                        if (!dr.Read())
+                            return false;
+
+                        idPedido = Convert.ToInt32(dr["Id_Pedido"]);
+                        subtotal = Convert.ToDecimal(dr["Subtotal"]);
+                    }
+
+                    string queryExistePedido = @"SELECT COUNT(*) 
+                                         FROM pedido 
+                                         WHERE Id_Pedido = @Id";
+
+                    MySqlCommand cmdExiste = new MySqlCommand(queryExistePedido, conexion);
+                    cmdExiste.Parameters.AddWithValue("@Id", idPedido);
+
+                    int existe = Convert.ToInt32(cmdExiste.ExecuteScalar());
+
+                    if (existe == 0)
+                    {
+                        Console.WriteLine("Pedido no existe");
+                        return false;
+                    }
+
+                    string queryTotal = @"SELECT Total 
+                                  FROM pedido 
+                                  WHERE Id_Pedido = @Id";
+
+                    MySqlCommand cmdTotal = new MySqlCommand(queryTotal, conexion);
+                    cmdTotal.Parameters.AddWithValue("@Id", idPedido);
+
+                    decimal totalActual = Convert.ToDecimal(cmdTotal.ExecuteScalar());
+
+                    decimal nuevoTotal = totalActual - subtotal;
+                    if (nuevoTotal < 0)
+                        nuevoTotal = 0;
+
+                    string queryUpdate = @"UPDATE pedido
+                                   SET Total = @Total
+                                   WHERE Id_Pedido = @Id";
+
+                    MySqlCommand cmdUpdate = new MySqlCommand(queryUpdate, conexion);
+                    cmdUpdate.Parameters.AddWithValue("@Total", nuevoTotal);
+                    cmdUpdate.Parameters.AddWithValue("@Id", idPedido);
+                    cmdUpdate.ExecuteNonQuery();
+
+                    string queryDelete = @"DELETE FROM detalle_pedido 
+                                   WHERE Id_Detalle = @Id";
+
+                    MySqlCommand cmdDelete = new MySqlCommand(queryDelete, conexion);
+                    cmdDelete.Parameters.AddWithValue("@Id", idDetalle);
+
+                    return cmdDelete.ExecuteNonQuery() > 0;
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    respuesta = false;
+                    return false;
                 }
             }
-
-            return respuesta;
         }
 
         public bool ExisteTipo(int idTipo)
@@ -195,6 +249,39 @@ namespace CapaLogica
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
 
                 return count > 0;
+            }
+        }
+
+        public bool PlatilloDisponible(int idTipo)
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    string query = @"
+                SELECT c.Disponible
+                FROM tipo_platillo tp
+                INNER JOIN platillo p ON tp.Id_Platillo = p.Id_Platillo
+                INNER JOIN categoria c ON p.Id_Categoria = c.Id_Categoria
+                WHERE tp.Id_Tipo = @Id";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@Id", idTipo);
+
+                    conexion.Open();
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result == null)
+                        return false;
+
+                    return Convert.ToBoolean(result);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
             }
         }
     }

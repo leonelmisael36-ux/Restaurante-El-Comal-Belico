@@ -85,17 +85,36 @@ namespace Proyecto_Restaurante
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtbIdIngrediente.Text))
+            {
+                MessageBox.Show("Ingresa el ID del platillo");
+                return;
+            }
+
             if (!int.TryParse(txtbIdIngrediente.Text, out int idPlatillo))
             {
                 MessageBox.Show("ID de platillo inválido");
                 return;
             }
 
-            Tipo_Platillo obj = new Tipo_Platillo();
+            if (string.IsNullOrWhiteSpace(cmBoxTamaño.Text))
+            {
+                MessageBox.Show("Selecciona el tamaño");
+                return;
+            }
 
-            obj.Id_Platillo = idPlatillo;
-            obj.Tamaño = cmBoxTamaño.Text;
-            obj.TipoPreparacion = rtxtboxDescripcion.Text;
+            if (string.IsNullOrWhiteSpace(rtxtboxDescripcion.Text))
+            {
+                MessageBox.Show("Ingresa la preparación del platillo");
+                return;
+            }
+
+            Tipo_Platillo obj = new Tipo_Platillo()
+            {
+                Id_Platillo = idPlatillo,
+                Tamaño = cmBoxTamaño.Text.Trim(),
+                TipoPreparacion = rtxtboxDescripcion.Text.Trim()
+            };
 
             string mensaje = "";
 
@@ -107,7 +126,9 @@ namespace Proyecto_Restaurante
             }
             else
             {
-                MessageBox.Show(mensaje);
+                MessageBox.Show(string.IsNullOrWhiteSpace(mensaje)
+                    ? "No se pudo registrar el tipo de platillo"
+                    : mensaje);
             }
         }
 

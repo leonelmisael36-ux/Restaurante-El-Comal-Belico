@@ -52,7 +52,7 @@ namespace Proyecto_Restaurante
 
         void Limpiar()
         {
-            txtbIdCliente.Clear();
+            txtbIdPedido.Clear();
             txtIdTipo.Clear();
             txtCantidad.Clear();
             lbl_Id.Text = "";
@@ -61,7 +61,7 @@ namespace Proyecto_Restaurante
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtbIdCliente.Text, out int idPedido))
+            if (!int.TryParse(txtbIdPedido.Text, out int idPedido))
             {
                 MessageBox.Show("ID Pedido inválido");
                 return;
@@ -112,7 +112,7 @@ namespace Proyecto_Restaurante
             Detalle_Pedido obj = new Detalle_Pedido()
             {
                 Id_Detalle = id,
-                Id_Pedido = int.Parse(txtbIdCliente.Text),
+                Id_Pedido = int.Parse(txtbIdPedido.Text),
                 Id_Tipo = int.Parse(txtIdTipo.Text),
                 Cantidad = int.Parse(txtCantidad.Text)
             };
@@ -341,7 +341,7 @@ namespace Proyecto_Restaurante
             lbl_Id.Text = dtgvPedido.Rows[e.RowIndex]
                 .Cells["Id_Detalle"].Value.ToString();
 
-            txtbIdCliente.Text = dtgvPedido.Rows[e.RowIndex]
+            txtbIdPedido.Text = dtgvPedido.Rows[e.RowIndex]
                 .Cells["Id_Pedido"].Value.ToString();
 
             txtIdTipo.Text = dtgvPedido.Rows[e.RowIndex]
@@ -353,7 +353,7 @@ namespace Proyecto_Restaurante
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            Pantalla_Principalcs frm = new Pantalla_Principalcs();
+            Pedidos frm = new Pedidos();
             frm.Show();
             this.Hide();
         }

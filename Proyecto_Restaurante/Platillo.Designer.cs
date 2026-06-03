@@ -40,7 +40,6 @@
             this.cmbBuscar = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dtgvPlatillo = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -183,20 +182,10 @@
             this.dtgvPlatillo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvPlatillo.Location = new System.Drawing.Point(400, 80);
             this.dtgvPlatillo.Name = "dtgvPlatillo";
-            this.dtgvPlatillo.Size = new System.Drawing.Size(904, 366);
+            this.dtgvPlatillo.Size = new System.Drawing.Size(904, 413);
             this.dtgvPlatillo.TabIndex = 63;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Peru;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(44, 559);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(180, 42);
-            this.btnEliminar.TabIndex = 80;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.dtgvPlatillo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPlatillo_CellClick);
+            this.dtgvPlatillo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPlatillo_CellContentClick);
             // 
             // btnEditar
             // 
@@ -226,7 +215,7 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(319, 546);
+            this.btnRegresar.Location = new System.Drawing.Point(378, 546);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(190, 55);
             this.btnRegresar.TabIndex = 81;
@@ -301,7 +290,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnReiniciar);
@@ -342,7 +330,6 @@
         private System.Windows.Forms.ComboBox cmbBuscar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dtgvPlatillo;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnRegresar;

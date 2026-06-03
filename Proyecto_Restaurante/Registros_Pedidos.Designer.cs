@@ -49,7 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdTipo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtbIdCliente = new System.Windows.Forms.TextBox();
+            this.txtbIdPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_Id = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
@@ -85,7 +85,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Peru;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(56, 475);
+            this.btnEliminar.Location = new System.Drawing.Point(26, 471);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(177, 49);
             this.btnEliminar.TabIndex = 100;
@@ -97,7 +97,7 @@
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Peru;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(56, 400);
+            this.btnEditar.Location = new System.Drawing.Point(26, 396);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(177, 46);
             this.btnEditar.TabIndex = 99;
@@ -109,7 +109,7 @@
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Peru;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(56, 337);
+            this.btnAgregar.Location = new System.Drawing.Point(26, 333);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(177, 46);
             this.btnAgregar.TabIndex = 98;
@@ -305,15 +305,15 @@
             this.label1.TabIndex = 82;
             this.label1.Text = "Id_Tipo";
             // 
-            // txtbIdCliente
+            // txtbIdPedido
             // 
-            this.txtbIdCliente.BackColor = System.Drawing.Color.Chocolate;
-            this.txtbIdCliente.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbIdCliente.Location = new System.Drawing.Point(26, 116);
-            this.txtbIdCliente.Name = "txtbIdCliente";
-            this.txtbIdCliente.Size = new System.Drawing.Size(240, 24);
-            this.txtbIdCliente.TabIndex = 81;
-            this.txtbIdCliente.TextChanged += new System.EventHandler(this.txtbIdCliente_TextChanged);
+            this.txtbIdPedido.BackColor = System.Drawing.Color.Chocolate;
+            this.txtbIdPedido.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbIdPedido.Location = new System.Drawing.Point(26, 116);
+            this.txtbIdPedido.Name = "txtbIdPedido";
+            this.txtbIdPedido.Size = new System.Drawing.Size(240, 24);
+            this.txtbIdPedido.TabIndex = 81;
+            this.txtbIdPedido.TextChanged += new System.EventHandler(this.txtbIdCliente_TextChanged);
             // 
             // label2
             // 
@@ -322,9 +322,9 @@
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(22, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 21);
+            this.label2.Size = new System.Drawing.Size(103, 21);
             this.label2.TabIndex = 80;
-            this.label2.Text = "Id_Cliente";
+            this.label2.Text = "Id_Pedido";
             // 
             // lbl_Id
             // 
@@ -353,7 +353,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources._1eb81457_6859_4119_9567_c9234c615f06;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1263, 718);
+            this.ClientSize = new System.Drawing.Size(1250, 718);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.btnSalir);
@@ -377,7 +377,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIdTipo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtbIdCliente);
+            this.Controls.Add(this.txtbIdPedido);
             this.Controls.Add(this.label2);
             this.Name = "Registros_Pedidos";
             this.Text = "Registros_Pedidos";
@@ -411,7 +411,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtIdTipo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtbIdCliente;
+        private System.Windows.Forms.TextBox txtbIdPedido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Id;
         private System.Windows.Forms.Label lblInfo;

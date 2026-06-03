@@ -11,6 +11,7 @@ namespace CapaValidar
     public class CV_Detalle_Proveedor
     {
         private CL_Detalle_Proveedor datos = new CL_Detalle_Proveedor();
+        private CL_Inventario datosInventario = new CL_Inventario();
 
         public List<Detalle_Proveedor> Listar()
         {
@@ -28,14 +29,20 @@ namespace CapaValidar
 
             if (obj.Id_Ingrediente <= 0)
                 mensaje += "El ingrediente es obligatorio\n";
+            else if (!datos.ExisteIngrediente(obj.Id_Ingrediente))
+                mensaje += "El ingrediente no existe\n";
 
             if (obj.Cantidad <= 0)
                 mensaje += "La cantidad debe ser mayor a 0\n";
 
+            if (!datosInventario.ExisteIngredienteInventario(obj.Id_Ingrediente))
+            {
+                mensaje = "Debes registrar este ingrediente en inventario primero";
+                return false;
+            }
+
             if (obj.Fecha == default)
                 mensaje += "La fecha no es válida\n";
-            else if (datos.ExisteDuplicado(obj.Id_Proveedor, obj.Id_Ingrediente))
-                mensaje += "Este proveedor ya tiene registrado este ingrediente\n";
 
             if (mensaje != "")
                 return false;
@@ -57,14 +64,14 @@ namespace CapaValidar
 
             if (obj.Id_Ingrediente <= 0)
                 mensaje += "El ingrediente es obligatorio\n";
+            else if (!datos.ExisteIngrediente(obj.Id_Ingrediente))
+                mensaje += "El ingrediente no existe\n";
 
             if (obj.Cantidad <= 0)
                 mensaje += "La cantidad debe ser mayor a 0\n";
 
             if (obj.Fecha == default)
                 mensaje += "La fecha no es válida\n";
-            else if (datos.ExisteDuplicado(obj.Id_Proveedor, obj.Id_Ingrediente))
-                mensaje += "Este proveedor ya tiene registrado este ingrediente\n";
 
             if (mensaje != "")
                 return false;
