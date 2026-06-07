@@ -205,5 +205,50 @@ namespace Busqueda
 
             return lista;
         }
+
+        public List<Proveedor> BuscarCamposNulos()
+        {
+            List<Proveedor> lista = new List<Proveedor>();
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT * 
+                         FROM proveedor
+                         WHERE 
+                             NULLIF(TRIM(CallePr), '') IS NULL OR
+                             NULLIF(TRIM(NumeroPr), '') IS NULL OR
+                             NULLIF(TRIM(ColoniaPr), '') IS NULL OR
+                             NULLIF(TRIM(CiudadPr), '') IS NULL OR
+                             NULLIF(TRIM(EstadoPr), '') IS NULL OR
+                             NULLIF(TRIM(CPPr), '') IS NULL OR
+                             NULLIF(TRIM(EstadoProveedor), '') IS NULL";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                conexion.Open();
+
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Proveedor()
+                        {
+                            Id_Proveedor = Convert.ToInt32(dr["Id_Proveedor"]),
+                            NombreEmpresa = dr["NombreEmpresa"].ToString(),
+                            RazonSocial = dr["RazonSocial"].ToString(),
+                            CallePr = dr["CallePr"].ToString(),
+                            NumeroPr = dr["NumeroPr"].ToString(),
+                            ColoniaPr = dr["ColoniaPr"].ToString(),
+                            CiudadPr = dr["CiudadPr"].ToString(),
+                            EstadoPr = dr["EstadoPr"].ToString(),
+                            CPPr = dr["CPPr"].ToString(),
+                            EstadoProveedor = dr["EstadoProveedor"].ToString()
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
     }
 }

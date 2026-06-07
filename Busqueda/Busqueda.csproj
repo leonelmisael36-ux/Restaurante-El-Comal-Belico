@@ -90,6 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="B_ConsultasAvanzadas.cs" />
     <Compile Include="B_Ingredientes.cs" />
     <Compile Include="B_Categoria.cs" />
     <Compile Include="B_Clientes.cs" />

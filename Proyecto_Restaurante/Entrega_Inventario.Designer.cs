@@ -156,7 +156,9 @@
             "Id",
             "Descripcion",
             "Disponible",
-            "Fecha"});
+            "Fecha",
+            "Ordenar por Cantidad",
+            "Entregas + Proveedor"});
             this.cmbEntrega.Location = new System.Drawing.Point(454, 64);
             this.cmbEntrega.Name = "cmbEntrega";
             this.cmbEntrega.Size = new System.Drawing.Size(217, 26);

@@ -120,7 +120,7 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(1149, 47);
+            this.btnReiniciar.Location = new System.Drawing.Point(1131, 43);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciar.TabIndex = 68;
@@ -159,7 +159,10 @@
             "Nombre",
             "Descripción",
             "Categoria",
-            "Precio"});
+            "Precio",
+            "Ordenar por Precio",
+            "Contar Platillos",
+            "Platillo + Categoria"});
             this.cmbBuscar.Location = new System.Drawing.Point(538, 44);
             this.cmbBuscar.Name = "cmbBuscar";
             this.cmbBuscar.Size = new System.Drawing.Size(193, 26);
@@ -182,7 +185,7 @@
             this.dtgvPlatillo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvPlatillo.Location = new System.Drawing.Point(400, 80);
             this.dtgvPlatillo.Name = "dtgvPlatillo";
-            this.dtgvPlatillo.Size = new System.Drawing.Size(904, 413);
+            this.dtgvPlatillo.Size = new System.Drawing.Size(886, 413);
             this.dtgvPlatillo.TabIndex = 63;
             this.dtgvPlatillo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPlatillo_CellClick);
             this.dtgvPlatillo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPlatillo_CellContentClick);
@@ -283,7 +286,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_123801;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1329, 608);
+            this.ClientSize = new System.Drawing.Size(1304, 608);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.txtbIdcategoria);

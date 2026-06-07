@@ -263,6 +263,7 @@ namespace Proyecto_Restaurante
 
             MostrarProveedorIngrediente();
             MostrarPlatillos();
+            MostrarProveedores();
         }
 
         private void dtgvCliente_CellClick(object sender, DataGridViewCellEventArgs e)

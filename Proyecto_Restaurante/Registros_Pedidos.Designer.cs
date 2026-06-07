@@ -61,7 +61,7 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(991, 639);
+            this.btnSalir.Location = new System.Drawing.Point(937, 648);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(202, 56);
             this.btnSalir.TabIndex = 102;
@@ -121,7 +121,7 @@
             // 
             this.btnReiniciarTipo.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarTipo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarTipo.Location = new System.Drawing.Point(1048, 334);
+            this.btnReiniciarTipo.Location = new System.Drawing.Point(991, 330);
             this.btnReiniciarTipo.Name = "btnReiniciarTipo";
             this.btnReiniciarTipo.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarTipo.TabIndex = 97;
@@ -143,7 +143,7 @@
             // 
             this.btnBuscarTipo.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarTipo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarTipo.Location = new System.Drawing.Point(879, 332);
+            this.btnBuscarTipo.Location = new System.Drawing.Point(841, 332);
             this.btnBuscarTipo.Name = "btnBuscarTipo";
             this.btnBuscarTipo.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarTipo.TabIndex = 95;
@@ -184,7 +184,7 @@
             this.dtgvTipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTipo.Location = new System.Drawing.Point(299, 367);
             this.dtgvTipo.Name = "dtgvTipo";
-            this.dtgvTipo.Size = new System.Drawing.Size(904, 253);
+            this.dtgvTipo.Size = new System.Drawing.Size(847, 253);
             this.dtgvTipo.TabIndex = 92;
             this.dtgvTipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTipo_CellContentClick);
             // 
@@ -192,7 +192,7 @@
             // 
             this.btnReiniciarPedido.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarPedido.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarPedido.Location = new System.Drawing.Point(1048, 39);
+            this.btnReiniciarPedido.Location = new System.Drawing.Point(991, 36);
             this.btnReiniciarPedido.Name = "btnReiniciarPedido";
             this.btnReiniciarPedido.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarPedido.TabIndex = 91;
@@ -214,7 +214,7 @@
             // 
             this.btnBuscarPedido.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarPedido.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPedido.Location = new System.Drawing.Point(879, 37);
+            this.btnBuscarPedido.Location = new System.Drawing.Point(841, 36);
             this.btnBuscarPedido.Name = "btnBuscarPedido";
             this.btnBuscarPedido.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarPedido.TabIndex = 89;
@@ -258,7 +258,7 @@
             this.dtgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvPedido.Location = new System.Drawing.Point(299, 72);
             this.dtgvPedido.Name = "dtgvPedido";
-            this.dtgvPedido.Size = new System.Drawing.Size(904, 232);
+            this.dtgvPedido.Size = new System.Drawing.Size(847, 232);
             this.dtgvPedido.TabIndex = 86;
             this.dtgvPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPedido_CellClick);
             this.dtgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPedido_CellContentClick);
@@ -353,7 +353,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources._1eb81457_6859_4119_9567_c9234c615f06;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1250, 718);
+            this.ClientSize = new System.Drawing.Size(1193, 718);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.btnSalir);

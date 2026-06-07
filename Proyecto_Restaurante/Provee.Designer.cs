@@ -170,9 +170,9 @@
             // 
             this.btnReiniciar.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciar.Location = new System.Drawing.Point(1083, 33);
+            this.btnReiniciar.Location = new System.Drawing.Point(1093, 33);
             this.btnReiniciar.Name = "btnReiniciar";
-            this.btnReiniciar.Size = new System.Drawing.Size(155, 30);
+            this.btnReiniciar.Size = new System.Drawing.Size(145, 30);
             this.btnReiniciar.TabIndex = 63;
             this.btnReiniciar.Text = "Reiniciar";
             this.btnReiniciar.UseVisualStyleBackColor = false;
@@ -184,7 +184,7 @@
             this.txbBuscar.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbBuscar.Location = new System.Drawing.Point(764, 35);
             this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(137, 24);
+            this.txbBuscar.Size = new System.Drawing.Size(173, 24);
             this.txbBuscar.TabIndex = 62;
             this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
             // 
@@ -192,7 +192,7 @@
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Peru;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(931, 32);
+            this.btnBuscar.Location = new System.Drawing.Point(950, 33);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(128, 29);
             this.btnBuscar.TabIndex = 61;
@@ -275,14 +275,14 @@
             this.textBox1.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(764, 333);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 24);
+            this.textBox1.Size = new System.Drawing.Size(173, 24);
             this.textBox1.TabIndex = 92;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Peru;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(931, 330);
+            this.button2.Location = new System.Drawing.Point(950, 330);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 29);
             this.button2.TabIndex = 91;
@@ -343,14 +343,14 @@
             this.textBox2.Font = new System.Drawing.Font("Modern No. 20", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(764, 637);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 24);
+            this.textBox2.Size = new System.Drawing.Size(173, 24);
             this.textBox2.TabIndex = 98;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Peru;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(931, 634);
+            this.button4.Location = new System.Drawing.Point(950, 634);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 29);
             this.button4.TabIndex = 97;

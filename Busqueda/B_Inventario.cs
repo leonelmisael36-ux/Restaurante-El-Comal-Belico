@@ -181,5 +181,38 @@ namespace Busqueda
 
             return lista;
         }
+
+        public List<Inventario> BuscarStockBajo()
+        {
+            List<Inventario> lista = new List<Inventario>();
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT * 
+                         FROM inventario 
+                         WHERE Stock < StockMinimo";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                conexion.Open();
+
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Inventario()
+                        {
+                            Id_Inventario = Convert.ToInt32(dr["Id_Inventario"]),
+                            Id_Ingrediente = Convert.ToInt32(dr["Id_Ingrediente"]),
+                            Stock = Convert.ToDecimal(dr["Stock"]),
+                            StockMinimo = Convert.ToDecimal(dr["StockMinimo"]),
+                            FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"])
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
     }
 }

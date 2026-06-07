@@ -26,6 +26,7 @@ namespace Proyecto_Restaurante
         B_Inventario busqueda = new B_Inventario();
         B_Ingredientes busquedaIngredientes = new B_Ingredientes();
         CL_Ingredientes objIngrediente = new CL_Ingredientes();
+        B_ConsultasAvanzadas busquedaAvanzada = new B_ConsultasAvanzadas();
         public Inventario()
         {
             InitializeComponent();
@@ -185,18 +186,30 @@ namespace Proyecto_Restaurante
         {
             if (string.IsNullOrWhiteSpace(cmbBuscar.Text))
             {
-                MessageBox.Show("Selecciona un tipo de búsqueda");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txbBuscar.Text))
-            {
-                MessageBox.Show("Ingresa un valor para buscar");
+                MessageBox.Show("Selecciona un tipo de búsqueda", "Validación");
                 return;
             }
 
             string filtro = cmbBuscar.Text;
+
+            if (filtro == "Stock Bajo")
+            {
+                dtgvCliente.DataSource = busqueda.BuscarStockBajo();
+                return;
+            }
+            else if (filtro == "Inventario + Ingrediente")
+            {
+                dtgvCliente.DataSource = busquedaAvanzada.InventarioIngrediente();
+                return;
+            }
+
             string texto = txbBuscar.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(txbBuscar.Text))
+            {
+                MessageBox.Show("Ingresa un valor para buscar", "Validación");
+                return;
+            }
 
             List<Inv> resultado = new List<Inv>();
 

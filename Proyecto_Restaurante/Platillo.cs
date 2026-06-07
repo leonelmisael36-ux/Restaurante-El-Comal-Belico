@@ -22,6 +22,7 @@ namespace Proyecto_Restaurante
         CL_Platillo objPlatillo = new CL_Platillo();
         CV_Platillo cvPlatillo = new CV_Platillo();
         B_Platillo busqueda = new B_Platillo();
+        B_ConsultasAvanzadas busquedaAvanzada = new B_ConsultasAvanzadas();
         public Platillo()
         {
             InitializeComponent();
@@ -87,6 +88,7 @@ namespace Proyecto_Restaurante
             obj.Nombre_Platillo = txtbNombre.Text;
             obj.Descripcion = rtxtboxDescripcion.Text;
             obj.Precio_Venta = nudPrecioVenta.Value;
+            obj.Id_Categoria = Convert.ToInt32(txtbIdcategoria.Text);
 
             string mensaje = "";
 
@@ -166,19 +168,35 @@ namespace Proyecto_Restaurante
         {
             if (string.IsNullOrWhiteSpace(cmbBuscar.Text))
             {
-                MessageBox.Show("Selecciona un tipo de búsqueda", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona un tipo de búsqueda", "Validación");
+                return;
+            }
+
+            string filtro = cmbBuscar.Text;
+
+            if (filtro == "Ordenar por Precio")
+            {
+                dtgvPlatillo.DataSource = busqueda.OrdenarPorPrecio();
+                return;
+            }
+            else if (filtro == "Platillo + Categoria")
+            {
+                dtgvPlatillo.DataSource = busquedaAvanzada.PlatilloCategoria();
+                return;
+            }
+            else if (filtro == "Contar Platillos")
+            {
+                int total = busqueda.ContarPlatillos();
+                MessageBox.Show("Total de platillos registrados: " + total);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(txbBuscar.Text))
             {
-                MessageBox.Show("Ingresa un valor para buscar", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingresa un valor para buscar", "Validación");
                 return;
             }
 
-            string filtro = cmbBuscar.Text;
             string texto = txbBuscar.Text.Trim();
 
             List<Pla> resultado = new List<Pla>();
@@ -186,13 +204,10 @@ namespace Proyecto_Restaurante
             if (filtro == "ID")
             {
                 if (int.TryParse(texto, out int id))
-                {
                     resultado = busqueda.BuscarPorId(id);
-                }
                 else
                 {
-                    MessageBox.Show("El ID debe ser numérico", "Validación",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El ID debe ser numérico", "Validación");
                     return;
                 }
             }
@@ -207,26 +222,20 @@ namespace Proyecto_Restaurante
             else if (filtro == "Categoria")
             {
                 if (int.TryParse(texto, out int idCat))
-                {
                     resultado = busqueda.BuscarPorCategoria(idCat);
-                }
                 else
                 {
-                    MessageBox.Show("La categoría debe ser numérica (ID)", "Validación",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("La categoría debe ser numérica (ID)", "Validación");
                     return;
                 }
             }
             else if (filtro == "Precio")
             {
                 if (decimal.TryParse(texto, out decimal precio))
-                {
                     resultado = busqueda.BuscarPorPrecio(precio);
-                }
                 else
                 {
-                    MessageBox.Show("El precio debe ser numérico", "Validación",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El precio debe ser numérico", "Validación");
                     return;
                 }
             }

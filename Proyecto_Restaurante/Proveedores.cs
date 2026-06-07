@@ -21,6 +21,8 @@ namespace Proyecto_Restaurante
         CL_Proveedor objProveedor = new CL_Proveedor();
         CV_Proveedor cvProveedor = new CV_Proveedor();
         B_Proveedor busqueda = new B_Proveedor();
+        B_ConsultasAvanzadas busquedaAvanzada = new B_ConsultasAvanzadas();
+
         public Proveedores()
         {
             InitializeComponent();
@@ -196,13 +198,25 @@ namespace Proyecto_Restaurante
                 return;
             }
 
+            string filtro = cmbBuscarProveedor.Text;
+
+            if (filtro == "Datos incompletos")
+            {
+                dtgvCliente.DataSource = busqueda.BuscarCamposNulos();
+                return;
+            }
+            else if (filtro == "Proveedor + Ingrediente")
+            {
+                dtgvCliente.DataSource = busquedaAvanzada.ProveedorIngrediente();
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txbProveedor.Text))
             {
                 MessageBox.Show("Ingresa un valor para buscar");
                 return;
             }
 
-            string filtro = cmbBuscarProveedor.Text;
             string texto = txbProveedor.Text.Trim();
 
             List<Proveedor> resultado = new List<Proveedor>();
@@ -210,9 +224,7 @@ namespace Proyecto_Restaurante
             if (filtro == "ID")
             {
                 if (int.TryParse(texto, out int id))
-                {
                     resultado = busqueda.BuscarPorId(id);
-                }
                 else
                 {
                     MessageBox.Show("El ID debe ser numérico");

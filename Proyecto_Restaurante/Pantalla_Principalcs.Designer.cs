@@ -116,12 +116,12 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Peru;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(42, 143);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(130, 42);
             this.button5.TabIndex = 97;
-            this.button5.Text = "Entregas";
+            this.button5.Text = "Entregas Inventario";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 

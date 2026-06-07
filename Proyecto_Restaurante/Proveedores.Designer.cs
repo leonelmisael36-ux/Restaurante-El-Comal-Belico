@@ -67,7 +67,7 @@
             // 
             this.btnReiniciarProveedor.BackColor = System.Drawing.Color.Peru;
             this.btnReiniciarProveedor.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReiniciarProveedor.Location = new System.Drawing.Point(1300, 60);
+            this.btnReiniciarProveedor.Location = new System.Drawing.Point(1252, 58);
             this.btnReiniciarProveedor.Name = "btnReiniciarProveedor";
             this.btnReiniciarProveedor.Size = new System.Drawing.Size(155, 30);
             this.btnReiniciarProveedor.TabIndex = 102;
@@ -89,7 +89,7 @@
             // 
             this.btnBuscarProveedor.BackColor = System.Drawing.Color.Peru;
             this.btnBuscarProveedor.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(1131, 58);
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(1101, 58);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(128, 29);
             this.btnBuscarProveedor.TabIndex = 86;
@@ -107,10 +107,11 @@
             "Nombre Empresa",
             "Ciudad",
             "Estado",
-            "Estado Proveedor"});
-            this.cmbBuscarProveedor.Location = new System.Drawing.Point(689, 57);
+            "Estado Proveedor",
+            "Datos incompletos"});
+            this.cmbBuscarProveedor.Location = new System.Drawing.Point(666, 57);
             this.cmbBuscarProveedor.Name = "cmbBuscarProveedor";
-            this.cmbBuscarProveedor.Size = new System.Drawing.Size(182, 26);
+            this.cmbBuscarProveedor.Size = new System.Drawing.Size(205, 26);
             this.cmbBuscarProveedor.TabIndex = 85;
             this.cmbBuscarProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbBuscarProveedor_SelectedIndexChanged);
             // 
@@ -131,7 +132,7 @@
             this.dtgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvCliente.Location = new System.Drawing.Point(551, 93);
             this.dtgvCliente.Name = "dtgvCliente";
-            this.dtgvCliente.Size = new System.Drawing.Size(904, 376);
+            this.dtgvCliente.Size = new System.Drawing.Size(856, 376);
             this.dtgvCliente.TabIndex = 83;
             this.dtgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellClick);
             this.dtgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCliente_CellContentClick);
@@ -140,9 +141,9 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Peru;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(1277, 514);
+            this.btnSalir.Location = new System.Drawing.Point(1229, 490);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(178, 50);
+            this.btnSalir.Size = new System.Drawing.Size(178, 49);
             this.btnSalir.TabIndex = 81;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -152,7 +153,7 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Peru;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(554, 514);
+            this.btnRegresar.Location = new System.Drawing.Point(541, 490);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(186, 49);
             this.btnRegresar.TabIndex = 80;
@@ -391,9 +392,9 @@
             // 
             this.Correo_Telefono.BackColor = System.Drawing.Color.Peru;
             this.Correo_Telefono.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Correo_Telefono.Location = new System.Drawing.Point(787, 511);
+            this.Correo_Telefono.Location = new System.Drawing.Point(765, 490);
             this.Correo_Telefono.Name = "Correo_Telefono";
-            this.Correo_Telefono.Size = new System.Drawing.Size(186, 52);
+            this.Correo_Telefono.Size = new System.Drawing.Size(186, 49);
             this.Correo_Telefono.TabIndex = 108;
             this.Correo_Telefono.Text = "Correo/Telefono";
             this.Correo_Telefono.UseVisualStyleBackColor = false;
@@ -403,9 +404,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Peru;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1027, 511);
+            this.button1.Location = new System.Drawing.Point(994, 490);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 52);
+            this.button1.Size = new System.Drawing.Size(186, 49);
             this.button1.TabIndex = 109;
             this.button1.Text = "Provee";
             this.button1.UseVisualStyleBackColor = false;
@@ -428,7 +429,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_Restaurante.Properties.Resources.Captura_de_pantalla_2026_05_31_123922;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1487, 622);
+            this.ClientSize = new System.Drawing.Size(1437, 622);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Correo_Telefono);

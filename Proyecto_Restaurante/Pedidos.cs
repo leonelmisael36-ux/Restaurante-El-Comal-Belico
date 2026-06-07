@@ -23,6 +23,7 @@ namespace Proyecto_Restaurante
         B_Pedido busqueda = new B_Pedido();
         B_Clientes busquedaClientes = new B_Clientes();
         CL_Clientes objCliente = new CL_Clientes();
+        B_ConsultasAvanzadas busquedaAvanzada = new B_ConsultasAvanzadas();
 
         public Pedidos()
         {
@@ -163,64 +164,80 @@ namespace Proyecto_Restaurante
         {
             if (string.IsNullOrWhiteSpace(cmbDetallePedido.Text))
             {
-                MessageBox.Show("Selecciona un filtro");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtDetallePedido.Text))
-            {
-                MessageBox.Show("Ingresa un valor");
+                MessageBox.Show("Selecciona un tipo de búsqueda");
                 return;
             }
 
             string filtro = cmbDetallePedido.Text;
-            string texto = txtDetallePedido.Text.Trim();
 
             List<Pedido> resultado = new List<Pedido>();
 
-            if (filtro == "ID Pedido")
+            if (filtro == "Pedido + Cliente")
             {
-                if (int.TryParse(texto, out int id))
-                    resultado = busqueda.BuscarPorId(id);
-                else
+                dtgvDetallePedido.DataSource = busquedaAvanzada.PedidoCliente();
+                return;
+            }
+
+            else if (filtro == "Ordenar Por Total")
+            {
+                resultado = busqueda.OrdenarPorTotal();
+            }
+
+            else
+            {
+                if (string.IsNullOrWhiteSpace(txtDetallePedido.Text))
                 {
-                    MessageBox.Show("ID inválido");
+                    MessageBox.Show("Ingresa un valor para buscar");
                     return;
                 }
-            }
-            else if (filtro == "Fecha")
-            {
-                if (DateTime.TryParse(texto, out DateTime fecha))
-                    resultado = busqueda.BuscarPorFecha(fecha);
-                else
+
+                string texto = txtDetallePedido.Text.Trim();
+
+                if (filtro == "ID Pedido")
                 {
-                    MessageBox.Show("Fecha inválida");
-                    return;
+                    if (int.TryParse(texto, out int id))
+                        resultado = busqueda.BuscarPorId(id);
+                    else
+                    {
+                        MessageBox.Show("El ID debe ser numérico");
+                        return;
+                    }
                 }
-            }
-            else if (filtro == "Total")
-            {
-                if (decimal.TryParse(texto, out decimal total))
-                    resultado = busqueda.BuscarPorTotal(total);
-                else
+                else if (filtro == "Fecha")
                 {
-                    MessageBox.Show("Total inválido");
-                    return;
+                    if (DateTime.TryParse(texto, out DateTime fecha))
+                        resultado = busqueda.BuscarPorFecha(fecha);
+                    else
+                    {
+                        MessageBox.Show("Fecha inválida");
+                        return;
+                    }
                 }
-            }
-            else if (filtro == "Cliente")
-            {
-                if (int.TryParse(texto, out int idCliente))
-                    resultado = busqueda.BuscarPorCliente(idCliente);
-                else
+                else if (filtro == "Total")
                 {
-                    MessageBox.Show("Cliente inválido");
-                    return;
+                    if (decimal.TryParse(texto, out decimal total))
+                        resultado = busqueda.BuscarPorTotal(total);
+                    else
+                    {
+                        MessageBox.Show("Total inválido");
+                        return;
+                    }
+                }
+                else if (filtro == "Cliente")
+                {
+                    if (int.TryParse(texto, out int idCliente))
+                        resultado = busqueda.BuscarPorCliente(idCliente);
+                    else
+                    {
+                        MessageBox.Show("Cliente inválido");
+                        return;
+                    }
                 }
             }
 
             dtgvDetallePedido.DataSource = resultado;
         }
+        
 
         private void btnReiniciarDetallePedido_Click(object sender, EventArgs e)
         {

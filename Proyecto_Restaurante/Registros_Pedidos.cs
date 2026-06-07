@@ -20,8 +20,8 @@ namespace Proyecto_Restaurante
         CV_Detalle_Pedido cvDetalle = new CV_Detalle_Pedido();
         B_Detalle_Pedido busqueda = new B_Detalle_Pedido();
         B_Tipo_Platillo_Union busquedaUnion = new B_Tipo_Platillo_Union();
-
         CV_Pedido objPedido = new CV_Pedido();
+        B_ConsultasAvanzadas busquedaAvanzada = new B_ConsultasAvanzadas();
 
         public Registros_Pedidos()
         {
@@ -162,6 +162,8 @@ namespace Proyecto_Restaurante
             cmbBuscarPedido.Items.Add("ID Pedido");
             cmbBuscarPedido.Items.Add("Tipo Platillo");
             cmbBuscarPedido.Items.Add("Fecha");
+            cmbBuscarPedido.Items.Add("Detalle Completo");
+            cmbBuscarPedido.Items.Add("Pedido Completo");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -206,7 +208,36 @@ namespace Proyecto_Restaurante
 
         private void btnBuscarPedido_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cmbBuscarPedido.Text))
+            {
+                MessageBox.Show("Selecciona un tipo de búsqueda");
+                return;
+            }
+
             string filtro = cmbBuscarPedido.Text;
+
+            if (filtro == "Detalle Completo")
+            {
+                dtgvPedido.DataSource = busquedaAvanzada.DetallePedidoPlatillo();
+                return;
+            }
+            else if (filtro == "Pedido Completo")
+            {
+                dtgvPedido.DataSource = busquedaAvanzada.PedidoCompleto();
+                return;
+            }
+            else if (filtro == "Ranking Platillos")
+            {
+                dtgvPedido.DataSource = busquedaAvanzada.RankingPlatillos();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txbPedido.Text))
+            {
+                MessageBox.Show("Ingresa un valor para buscar");
+                return;
+            }
+
             string texto = txbPedido.Text.Trim();
 
             List<Detalle_Pedido> resultado = new List<Detalle_Pedido>();
@@ -215,21 +246,41 @@ namespace Proyecto_Restaurante
             {
                 if (int.TryParse(texto, out int id))
                     resultado = busqueda.BuscarPorIdDetalle(id);
+                else
+                {
+                    MessageBox.Show("ID inválido");
+                    return;
+                }
             }
             else if (filtro == "ID Pedido")
             {
                 if (int.TryParse(texto, out int idPedido))
                     resultado = busqueda.BuscarPorPedido(idPedido);
+                else
+                {
+                    MessageBox.Show("ID Pedido inválido");
+                    return;
+                }
             }
             else if (filtro == "Tipo Platillo")
             {
                 if (int.TryParse(texto, out int idTipo))
                     resultado = busqueda.BuscarPorTipo(idTipo);
+                else
+                {
+                    MessageBox.Show("Tipo inválido");
+                    return;
+                }
             }
             else if (filtro == "Fecha")
             {
                 if (DateTime.TryParse(texto, out DateTime fecha))
                     resultado = busqueda.BuscarPorFecha(fecha);
+                else
+                {
+                    MessageBox.Show("Fecha inválida");
+                    return;
+                }
             }
 
             dtgvPedido.DataSource = resultado;

@@ -180,5 +180,38 @@ namespace Busqueda
 
             return lista;
         }
+
+        public List<Detalle_Proveedor> OrdenarPorCantidad()
+        {
+            List<Detalle_Proveedor> lista = new List<Detalle_Proveedor>();
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT * 
+                         FROM detalle_proveedor
+                         ORDER BY Cantidad DESC";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                conexion.Open();
+
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Detalle_Proveedor()
+                        {
+                            Id_DetalleProveedor = Convert.ToInt32(dr["Id_DetallePro"]),
+                            Id_Proveedor = Convert.ToInt32(dr["Id_Proveedor"]),
+                            Id_Ingrediente = Convert.ToInt32(dr["Id_Ingrediente"]),
+                            Cantidad = Convert.ToDecimal(dr["Cantidad"]),
+                            Fecha = Convert.ToDateTime(dr["Fecha"])
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
     }
 }

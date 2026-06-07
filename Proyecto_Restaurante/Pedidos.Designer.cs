@@ -122,7 +122,9 @@
             "ID Pedido",
             "Fecha",
             "Total",
-            "Cliente"});
+            "Cliente",
+            "Ordenar Por Total",
+            "Pedido + Cliente"});
             this.cmbDetallePedido.Location = new System.Drawing.Point(437, 63);
             this.cmbDetallePedido.Name = "cmbDetallePedido";
             this.cmbDetallePedido.Size = new System.Drawing.Size(182, 26);

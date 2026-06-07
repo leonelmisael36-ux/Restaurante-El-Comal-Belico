@@ -122,11 +122,12 @@
             "Ingrediente",
             "Fecha",
             "Stock",
-            "Stock",
-            "Minimo"});
-            this.cmbBuscar.Location = new System.Drawing.Point(450, 47);
+            "Minimo",
+            "Stock Bajo",
+            "Inventario + Ingrediente"});
+            this.cmbBuscar.Location = new System.Drawing.Point(449, 47);
             this.cmbBuscar.Name = "cmbBuscar";
-            this.cmbBuscar.Size = new System.Drawing.Size(182, 26);
+            this.cmbBuscar.Size = new System.Drawing.Size(183, 26);
             this.cmbBuscar.TabIndex = 71;
             this.cmbBuscar.SelectedIndexChanged += new System.EventHandler(this.cmbBuscar_SelectedIndexChanged);
             // 
@@ -135,7 +136,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label11.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(308, 50);
+            this.label11.Location = new System.Drawing.Point(309, 50);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 21);
             this.label11.TabIndex = 70;
@@ -206,7 +207,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(307, 385);
+            this.label1.Location = new System.Drawing.Point(309, 385);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 21);
             this.label1.TabIndex = 76;

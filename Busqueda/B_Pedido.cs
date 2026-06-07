@@ -142,5 +142,37 @@ namespace Busqueda
 
             return lista;
         }
+
+        public List<Pedido> OrdenarPorTotal()
+        {
+            List<Pedido> lista = new List<Pedido>();
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT * 
+                         FROM pedido
+                         ORDER BY Total DESC";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                conexion.Open();
+
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Pedido()
+                        {
+                            Id_Pedido = Convert.ToInt32(dr["Id_Pedido"]),
+                            FechaPedido = Convert.ToDateTime(dr["FechaPedido"]),
+                            Total = Convert.ToDecimal(dr["Total"]),
+                            Id_Cliente = dr["Id_Cliente"] == DBNull.Value ? 0 : Convert.ToInt32(dr["Id_Cliente"])
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
     }
 }

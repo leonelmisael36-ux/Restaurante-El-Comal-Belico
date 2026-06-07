@@ -22,6 +22,7 @@ namespace Proyecto_Restaurante
         B_Proveedor busquedaPro = new B_Proveedor();
         CL_Proveedor objProveedor = new CL_Proveedor();
         CL_Inventario objInventario = new CL_Inventario();
+        B_ConsultasAvanzadas busquedaAvanzada = new B_ConsultasAvanzadas();
         public Entrega_Inventario()
         {
             InitializeComponent();
@@ -150,7 +151,31 @@ namespace Proyecto_Restaurante
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(cmbEntrega.Text))
+            {
+                MessageBox.Show("Selecciona un filtro");
+                return;
+            }
+
             string filtro = cmbEntrega.Text;
+
+            if (filtro == "Ordenar por Cantidad")
+            {
+                dtgvEntrega.DataSource = busqueda.OrdenarPorCantidad();
+                return;
+            }
+            else if (filtro == "Entregas + Proveedor")
+            {
+                dtgvEntrega.DataSource = busquedaAvanzada.ProveedorEntregas();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtEntrega.Text))
+            {
+                MessageBox.Show("Ingresa un valor");
+                return;
+            }
+
             string texto = txtEntrega.Text.Trim();
 
             List<Detalle_Proveedor> resultado = new List<Detalle_Proveedor>();
@@ -159,26 +184,51 @@ namespace Proyecto_Restaurante
             {
                 if (int.TryParse(texto, out int id))
                     resultado = busqueda.BuscarPorIdDetalle(id);
+                else
+                {
+                    MessageBox.Show("ID inválido");
+                    return;
+                }
             }
             else if (filtro == "Proveedor")
             {
                 if (int.TryParse(texto, out int idProv))
                     resultado = busqueda.BuscarPorIdProveedor(idProv);
+                else
+                {
+                    MessageBox.Show("Proveedor inválido");
+                    return;
+                }
             }
             else if (filtro == "Ingrediente")
             {
                 if (int.TryParse(texto, out int idIng))
                     resultado = busqueda.BuscarPorIdIngrediente(idIng);
+                else
+                {
+                    MessageBox.Show("Ingrediente inválido");
+                    return;
+                }
             }
             else if (filtro == "Fecha")
             {
                 if (DateTime.TryParse(texto, out DateTime fecha))
                     resultado = busqueda.BuscarPorFecha(fecha);
+                else
+                {
+                    MessageBox.Show("Fecha inválida");
+                    return;
+                }
             }
             else if (filtro == "Cantidad")
             {
                 if (decimal.TryParse(texto, out decimal cant))
                     resultado = busqueda.BuscarPorCantidad(cant);
+                else
+                {
+                    MessageBox.Show("Cantidad inválida");
+                    return;
+                }
             }
 
             dtgvEntrega.DataSource = resultado;

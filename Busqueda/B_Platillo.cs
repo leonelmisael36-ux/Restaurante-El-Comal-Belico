@@ -180,5 +180,52 @@ namespace Busqueda
 
             return lista;
         }
+
+        public List<Platillo> OrdenarPorPrecio()
+        {
+            List<Platillo> lista = new List<Platillo>();
+
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT *
+                         FROM platillo
+                         ORDER BY Precio_Venta ASC";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                conexion.Open();
+
+                using (MySqlDataReader dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new Platillo()
+                        {
+                            Id_Platillo = Convert.ToInt32(dr["Id_Platillo"]),
+                            Nombre_Platillo = dr["Nombre_Platillo"].ToString(),
+                            Descripcion = dr["Descripcion"].ToString(),
+                            Precio_Venta = Convert.ToDecimal(dr["Precio_Venta"]),
+                            Id_Categoria = Convert.ToInt32(dr["Id_Categoria"])
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
+
+        public int ContarPlatillos()
+        {
+            using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
+            {
+                string query = @"SELECT COUNT(*) FROM platillo";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+                conexion.Open();
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
     }
 }
