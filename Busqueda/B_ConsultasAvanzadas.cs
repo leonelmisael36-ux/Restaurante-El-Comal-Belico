@@ -19,7 +19,7 @@ namespace Busqueda
                 string query = @"SELECT p.Id_Pedido, p.FechaPedido, p.Total,
                                         c.Nombre, c.Apellido
                                  FROM pedido p
-                                 INNER JOIN cliente c ON p.Id_Cliente = c.Id_Cliente";
+                                 INNER JOIN clientes c ON p.Id_Cliente = c.Id_Cliente";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 conexion.Open();
@@ -85,7 +85,7 @@ namespace Busqueda
                 string query = @"SELECT p.Id_Pedido, p.FechaPedido, c.Nombre AS Cliente,
                                 dp.Cantidad, pl.Nombre AS Platillo
                          FROM pedido p
-                         INNER JOIN cliente c ON p.Id_Cliente = c.Id_Cliente
+                         INNER JOIN clientes c ON p.Id_Cliente = c.Id_Cliente
                          INNER JOIN detalle_pedido dp ON p.Id_Pedido = dp.Id_Pedido
                          INNER JOIN platillo pl ON dp.Id_Tipo = pl.Id_Platillo";
 
@@ -150,7 +150,7 @@ namespace Busqueda
             {
                 string query = @"SELECT i.Id_Inventario, ing.Nombre, i.Stock, i.StockMinimo
                                  FROM inventario i
-                                 INNER JOIN ingrediente ing ON i.Id_Ingrediente = ing.Id_Ingrediente";
+                                 INNER JOIN ingredientes ing ON i.Id_Ingrediente = ing.Id_Ingrediente";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 conexion.Open();
@@ -213,7 +213,7 @@ namespace Busqueda
                 string query = @"SELECT p.NombreEmpresa, ing.Nombre, d.Cantidad
                                  FROM detalle_proveedor d
                                  INNER JOIN proveedor p ON d.Id_Proveedor = p.Id_Proveedor
-                                 INNER JOIN ingrediente ing ON d.Id_Ingrediente = ing.Id_Ingrediente";
+                                 INNER JOIN ingredientes ing ON d.Id_Ingrediente = ing.Id_Ingrediente";
 
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 conexion.Open();
