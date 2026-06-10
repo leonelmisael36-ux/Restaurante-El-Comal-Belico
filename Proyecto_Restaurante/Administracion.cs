@@ -70,7 +70,7 @@ namespace Proyecto_Restaurante
             cmbBuscar.Items.Add("Rol");
             cmbBuscar.Items.Add("Estado");
 
-            cmbRol.Items.Add("Admin");
+            cmbRol.Items.Add("Administrador");
             cmbRol.Items.Add("Empleado");
 
             cmbEstado.Items.Add("Activo");
