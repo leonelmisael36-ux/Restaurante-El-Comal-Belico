@@ -17,7 +17,7 @@ namespace Busqueda
             using (MySqlConnection conexion = new MySqlConnection(Conexion.cadena))
             {
                 string query = @"SELECT p.Id_Pedido, p.FechaPedido, p.Total,
-                                        c.Nombre, c.Apellido
+                                        c.NombreC, c.ApellidoC
                                  FROM pedido p
                                  INNER JOIN clientes c ON p.Id_Cliente = c.Id_Cliente";
 
@@ -33,8 +33,8 @@ namespace Busqueda
                             Id_Pedido = Convert.ToInt32(dr["Id_Pedido"]),
                             FechaPedido = Convert.ToDateTime(dr["FechaPedido"]),
                             Total = Convert.ToDecimal(dr["Total"]),
-                            Nombre = dr["Nombre"].ToString(),
-                            Apellido = dr["Apellido"].ToString()
+                            Nombre = dr["NombreC"].ToString(),
+                            Apellido = dr["ApellidoC"].ToString()
                         });
                     }
                 }
