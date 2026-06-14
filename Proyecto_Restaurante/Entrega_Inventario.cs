@@ -378,12 +378,6 @@ namespace Proyecto_Restaurante
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            if (!int.TryParse(dtgvEntrega.CurrentRow.Cells["Id_DetalleProveedor"].Value.ToString(), out int id))
-            {
-                MessageBox.Show("Selecciona un registro");
-                return;
-            }
-
             if (!int.TryParse(dtgvEntrega.CurrentRow.Cells["Id_DetalleProveedor"].Value.ToString(), out int idDetalle))
             {
                 MessageBox.Show("ID inválido");
@@ -398,11 +392,6 @@ namespace Proyecto_Restaurante
 
             if (result != DialogResult.Yes)
                 return;
-
-            int idIngrediente = Convert.ToInt32(dtgvEntrega.CurrentRow.Cells["Id_Ingrediente"].Value);
-            decimal cantidad = Convert.ToDecimal(dtgvEntrega.CurrentRow.Cells["Cantidad"].Value);
-
-            bool stockActualizado = objInventario.DisminuirStock(idIngrediente, cantidad);
 
             bool eliminado = objDetalle.Eliminar(idDetalle);
 

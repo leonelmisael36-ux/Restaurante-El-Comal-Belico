@@ -180,28 +180,19 @@ namespace CapaLogica
 
                     object result = cmdStockActual.ExecuteScalar();
 
-                    if (result == null)
+                    if (result != null)
                     {
-                        Console.WriteLine("Ingrediente no existe en inventario");
-                        return false;
+
+                        string queryStock = @"UPDATE inventario
+                          SET Stock = Stock - @Cantidad
+                          WHERE Id_Ingrediente = @Id";
+
+                        MySqlCommand cmdStock = new MySqlCommand(queryStock, conexion);
+                        cmdStock.Parameters.AddWithValue("@Cantidad", cantidad);
+                        cmdStock.Parameters.AddWithValue("@Id", idIngrediente);
+
+                        cmdStock.ExecuteNonQuery();
                     }
-
-                    decimal stockActual = Convert.ToDecimal(result);
-
-                    if (stockActual < cantidad)
-                    {
-                        Console.WriteLine("No se puede eliminar: stock insuficiente");
-                        return false;
-                    }
-
-                    string queryStock = @"UPDATE inventario
-                                  SET Stock = Stock - @Cantidad
-                                  WHERE Id_Ingrediente = @Id";
-
-                    MySqlCommand cmdStock = new MySqlCommand(queryStock, conexion);
-                    cmdStock.Parameters.AddWithValue("@Cantidad", cantidad);
-                    cmdStock.Parameters.AddWithValue("@Id", idIngrediente);
-                    cmdStock.ExecuteNonQuery();
 
                     string queryDelete = @"DELETE FROM detalle_proveedor
                                    WHERE Id_DetallePro = @Id";
